@@ -26,6 +26,8 @@ unzip ~/Downloads/isaac-sim-standalone-5.1.0-linux-x86_64.zip -d ~/isaac-sim
 위 명령어를 실행하면 아래와 같은 오류 팝업이 나온다.
 
 <img width="1487" height="213" alt="image" src="https://github.com/user-attachments/assets/3b8b92ed-c6ad-4311-9fb2-5542f2e1cb79" />
+<img width="502" height="527" alt="image" src="https://github.com/user-attachments/assets/e802b28f-bcd7-46b5-88a5-bb0739004a82" />
 IOMMU가 켜져 있으면, Linux에서 CUDA랑 NVIDIA 드라이버가 GPU 간 메모리 복사를 제대로 못 해서 오류, 깨짐, 크래스가 날 수 있다
-
+라는 오류 팝업이 뜨고 Isaac Sim App Selector가 실행된다.
 따라서, BIOS에서 IOMMU를 비활성화를 해야 한다.
+
