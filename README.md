@@ -7,7 +7,7 @@ https://docs.isaacsim.omniverse.nvidia.com/5.1.0/installation/download.html
 
 | Name | Version | Release Date | Links |
 |------|---------|--------------|-------|
-| <img src="docs/images/isaac_sim.png" width="32"/> Isaac Sim | 5.1.0 | October 2025 | [Linux (x86_64)](https://github.com/...) |
+| Isaac Sim | 5.1.0 | October 2025 | [Linux (x86_64)](https://download.isaacsim.omniverse.nvidia.com/isaac-sim-standalone-5.1.0-linux-x86_64.zip)) |
 
 
 
