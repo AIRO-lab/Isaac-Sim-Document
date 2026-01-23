@@ -12,12 +12,13 @@ https://docs.isaacsim.omniverse.nvidia.com/5.1.0/installation/download.html
 
 
 
-### 2. 폴더 생성 및 압축 해제
+### 2. 디렉토리 생성 및 압축 풀기
+디렉토리 생성
 ```bash
 mkdir -p ~/isaac-sim
 unzip ~/Downloads/isaac-sim-standalone-5.1.0-linux-x86_64.zip -d ~/isaac-sim
 ```
-
+압축 풀기
 ```bash
 ./post_install.sh
 ./isaac-sim.selector.sh
