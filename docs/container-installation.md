@@ -105,10 +105,13 @@ https://docs.isaacsim.omniverse.nvidia.com/5.1.0/installation/download.html#isaa
 다운 받은 isaacsim-webrtc-streaming-client-1.1.5-linux-x64.AppImage 파일을
 ~/docker 경로로 이동 후
 
+libfuse2 설치
 ```bash
 sudo apt update
 sudo apt install libfuse2
 ```
+
+권한 부여 및 실행
 ```bash
 cd ~/docker
 chmod +x isaacsim-webrtc-streaming-client-1.1.5-linux-x64.AppImage
