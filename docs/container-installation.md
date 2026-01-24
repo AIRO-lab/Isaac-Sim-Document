@@ -96,11 +96,26 @@ docker run --name isaac-sim --entrypoint bash -it --gpus all -e "ACCEPT_EULA=Y" 
 ```
 
 ### 7. Isaac Sim WebRTC Streaming Client 설치
+https://docs.isaacsim.omniverse.nvidia.com/5.1.0/installation/download.html#isaac-sim-latest-release
 | Name | Version | Release Date | Links |
 |------|---------|--------------|-------|
 | Isaac Sim WebRTC Streaming Client | 1.1.5 | October 2025 | [Linux (x86_64)](https://download.isaacsim.omniverse.nvidia.com/isaacsim-webrtc-streaming-client-1.1.5-linux-x64.AppImage) |
 
+다운 받은 isaacsim-webrtc-streaming-client-1.1.5-linux-x64.AppImage 파일을
+~/docker 경로로 이동 후
 
+```bash
+sudo apt update
+sudo apt install libfuse2
+```
+```bash
+cd ~/docker
+chmod +x isaacsim-webrtc-streaming-client-1.1.5-linux-x64.AppImage
+./isaacsim-webrtc-streaming-client-1.1.5-linux-x64.AppImage
+```
+
+실행하면 다음과 같은 화면이 나온다.
+<img width="820" height="655" alt="image" src="https://github.com/user-attachments/assets/23f0d4bc-bcbf-465e-b2d9-8ff43d907958" />
 
 
 
