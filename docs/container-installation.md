@@ -95,7 +95,7 @@ docker run --name isaac-sim --entrypoint bash -it --gpus all -e "ACCEPT_EULA=Y" 
 ./runheadless.sh -v
 ```
 
-### 7. Isaac Sim WebRTC Streaming Client 설치
+### 7. Isaac Sim WebRTC Streaming Client 설치 및 실행
 https://docs.isaacsim.omniverse.nvidia.com/5.1.0/installation/download.html#isaac-sim-latest-release
 | Name | Version | Release Date | Links |
 |------|---------|--------------|-------|
