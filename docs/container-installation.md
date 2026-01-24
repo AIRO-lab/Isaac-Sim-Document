@@ -6,7 +6,7 @@
 | Date | 2026-01-24 |
 | OS | Ubuntu 22.04 |
 | GPU | NVIDIA RTX 6000 Ada Generation |
-| GPU Driver | 580.126.09 |
+| Driver Version | 580.126.09 |
 | CUDA Version | 13.0 |
 
 ## 컨테이너 설치
