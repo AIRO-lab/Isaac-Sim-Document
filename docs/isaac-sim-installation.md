@@ -1,8 +1,5 @@
-# Isaac-Sim-Document
-Isaac Sim에서의 설치 및 튜토리얼 내용
-
-## 설치
-### 1. Isaac Sim zip 파일 다운로드
+# Isaac Sim Installation
+## 1. Isaac Sim zip 파일 다운로드
 https://docs.isaacsim.omniverse.nvidia.com/5.1.0/installation/download.html
 <img width="781" height="607" alt="image" src="https://github.com/user-attachments/assets/a17c6764-ce54-46ae-99b7-e250f6683268" />
 
@@ -12,7 +9,7 @@ https://docs.isaacsim.omniverse.nvidia.com/5.1.0/installation/download.html
 
 
 
-### 2. 디렉토리 생성 및 압축 풀기
+## 2. 디렉토리 생성 및 압축 풀기
 디렉토리 생성
 ```bash
 mkdir -p ~/isaac-sim
@@ -24,7 +21,7 @@ unzip ~/Downloads/isaac-sim-standalone-5.1.0-linux-x86_64.zip -d ~/isaac-sim
 
 
 
-### 3. 실행
+## 3. 실행
 ```bash
 ./post_install.sh
 ./isaac-sim.selector.sh
