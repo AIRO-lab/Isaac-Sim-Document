@@ -81,7 +81,10 @@ src="https://github.com/user-attachments/assets/e802b28f-bcd7-46b5-88a5-bb073900
 <img width="900" alt="Isaac Sim Main Window"
 src="https://github.com/user-attachments/assets/a0d83112-e15a-475e-90f8-4cd6c661a495" />
 
-
+여기까지 문제 없이 설치가 되었다면 앞으로 Isaac Sim을 실행할 때 다음 명령어를 사용하면 된다.
+```bash
+./isaac-sim.selector.sh
+```
 
 
 
