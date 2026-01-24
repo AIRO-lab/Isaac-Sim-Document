@@ -12,5 +12,6 @@
 | Isaac Sim Installation Type | Container |
 | Container Runtime | Docker |
 | Isaac Sim Version | 5.1.0 |
+| ROS Version | humble |
 
 
