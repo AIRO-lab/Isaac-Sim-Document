@@ -98,7 +98,8 @@ File-Import 에서 워크스페이스에서 turtlebot3/turtlebot3_description/ur
 
 Import를 하면 다음과 같은 팝업이 나타난다.
 해당 팝업 내용은 URDF를 USD로 변환해서 해당 경로에 저장하겠다는 내용이다.
-그러므로 Yes를 클릭한다.
+Yes를 클릭한다.
+
 <img width="464" height="105" alt="image" src="https://github.com/user-attachments/assets/c06cfda0-82e5-48e3-b5f7-fd1dc5a4a277" />
 
 다음과 같이 UEDF를 불러온 것을 확인할 수 있다.
