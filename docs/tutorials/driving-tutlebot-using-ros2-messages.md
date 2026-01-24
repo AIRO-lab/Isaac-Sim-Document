@@ -15,7 +15,7 @@
 | ROS Version | humble |
 
 ## 필수 조건
-1. URDF Import: Turtlebot가 되어야 한다.
+1. 앞서 예제 URDF Import: Turtlebot가 되어야 한다.
 
 
 
