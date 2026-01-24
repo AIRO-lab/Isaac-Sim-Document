@@ -70,22 +70,13 @@ Isaac Sim을 실행하면 아래와 같이 **Isaac Sim App Selector** 창이 나
 여기서 **Isaac Sim**을 선택한 후 **START** 버튼을 누르면,
 두 번째 이미지와 같이 기본 빈 Stage가 열린 Isaac Sim 메인 화면이 실행된다.
 
-### Isaac Sim Launch Process
+| Isaac Sim App Selector | Isaac Sim Main Window (New Stage) |
+|-|-|
+| <img src="https://github.com/user-attachments/assets/e802b28f-bcd7-46b5-88a5-bb0739004a82" width="300"/> | <img src="https://github.com/user-attachments/assets/a0d83112-e15a-475e-90f8-4cd6c661a495" width="300"/> |
 
-**Isaac Sim App Selector**
-
-<img width="500" alt="Isaac Sim App Selector"
-src="https://github.com/user-attachments/assets/e802b28f-bcd7-46b5-88a5-bb0739004a82" />
-
-**Isaac Sim Main Window (New Stage)**
-
-<img width="900" alt="Isaac Sim Main Window"
-src="https://github.com/user-attachments/assets/a0d83112-e15a-475e-90f8-4cd6c661a495" />
-
-여기까지 문제 없이 설치가 되었다면 앞으로 Isaac Sim을 실행할 때 다음 명령어를 사용하면 된다.
+## 실행 명령어
 ```bash
-cd ~/isaac-sim
-./isaac-sim.selector.sh
+~/isaac-sim/isaac-sim.selector.sh
 ```
 
 
