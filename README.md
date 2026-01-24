@@ -16,9 +16,12 @@ https://docs.isaacsim.omniverse.nvidia.com/5.1.0/installation/download.html
 디렉토리 생성
 ```bash
 mkdir -p ~/isaac-sim
-unzip ~/Downloads/isaac-sim-standalone-5.1.0-linux-x86_64.zip -d ~/isaac-sim
 ```
 압축 풀기
+```bash
+unzip ~/Downloads/isaac-sim-standalone-5.1.0-linux-x86_64.zip -d ~/isaac-sim
+```
+실행
 ```bash
 ./post_install.sh
 ./isaac-sim.selector.sh
@@ -34,7 +37,7 @@ IOMMU가 켜져 있으면, Linux에서 CUDA랑 NVIDIA 드라이버가 GPU 간 �
 
 메인보드가 SUPERMICRO 같은 경우 설정 방법은 다음과 같다.
 
-#### **Intel VT for Directed I/O (VT-d)** Disabled
+### Intel VT for Directed I/O (VT-d) Disabled
 | Step | Screenshot | Path / Description |
 |------|-----------|--------------------|
 | 1 | <img src="https://github.com/user-attachments/assets/ccf9846d-4826-45a8-a159-2c752d53f3e8" width="300"/> | BIOS 진입 후 **Advanced** 탭 선택 후 **Chipset Configuration** 진입 |
@@ -49,7 +52,7 @@ IOMMU가 켜져 있으면, Linux에서 CUDA랑 NVIDIA 드라이버가 GPU 간 �
 **X2APIC**를 Disable 하지 않고 **Intel VT for Directed I/O (VT-d)** 만 Disabled 하게 되면
 저장하고 나와도 **Intel VT for Directed I/O (VT-d)** 는 다시 Enabled 가 된다.
 
-#### **X2APIC** Disabled
+### **X2APIC** Disabled
 | Step | Screenshot | Path / Description |
 |------|-----------|--------------------|
 | 1 | <img src="https://github.com/user-attachments/assets/ccf9846d-4826-45a8-a159-2c752d53f3e8" width="300"/> | BIOS 진입 후 **Advanced** 탭 선택 후 **CPU Configuration** 진입 |
