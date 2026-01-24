@@ -54,17 +54,20 @@ docker run --name isaac-sim --entrypoint bash -it --gpus all -e "ACCEPT_EULA=Y" 
 id
 ```
 <img width="561" height="42" alt="image" src="https://github.com/user-attachments/assets/24df8eee-2e4a-4a67-b41a-5188b00750d2" />
+
 id 명령어를 실행하면 위와 같이 uid, gid를 확인할 수 있다.
 이후, Docker가 아닌 일반 터미널에서 아래 명령어 수행한다.
 sudo chown -R <container_uid>:<container_gid> ~/IsaacSim-ros_workspaces
 ```bash
 sudo chown -R 1234:1234 ~/IsaacSim-ros_workspaces
 ```
+이 작업을 통해 Docker에서 IsaacSim-ros_workspaces의 소유권을 가지게 되어 접근 권한이 생겼다.
+
+또한, 위 Docker 실행 명령어를 보면
+-v ~/IsaacSim-ros_workspaces:/humble_ws:rw를 추가하여
+Isaac Sim에서 URDF 파일을 가져올 수 있게 워크스페이스를 마운트 해주었고, :rw는 읽기/쓰기 권한을 의미한다.
 
 ### Isaac Sim 실행
-docker 실행 시킬 때 URDF 파일을 가져올 수 있게 
--v ~/IsaacSim-ros_workspaces:/humble_ws \
-와 같이 URDF가 있는 워크스페이스를 마운트 해줘야 한다.
 ```bash
 docker run --name isaac-sim --entrypoint bash -it --gpus all -e "ACCEPT_EULA=Y" --rm --network=host \
     -e "PRIVACY_CONSENT=Y" \
@@ -93,8 +96,25 @@ File-Import 에서 워크스페이스에서 turtlebot3/turtlebot3_description/ur
 위 설정을 진행한 후 Import
 <img width="920" height="555" alt="image" src="https://github.com/user-attachments/assets/0e74590b-9597-4389-bf97-70cd189b624d" />
 
-
+Import를 하면 다음과 같은 팝업이 나타난다.
+해당 팝업 내용은 URDF를 USD로 변환해서 해당 경로에 저장하겠다는 내용이다.
+그러므로 Yes를 클릭한다.
 <img width="464" height="105" alt="image" src="https://github.com/user-attachments/assets/c06cfda0-82e5-48e3-b5f7-fd1dc5a4a277" />
+
+다음과 같이 UEDF를 불러온 것을 확인할 수 있다.
+<img width="1850" height="1053" alt="image" src="https://github.com/user-attachments/assets/fd9674c9-26af-4b9b-9159-1b62474e60fe" />
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
