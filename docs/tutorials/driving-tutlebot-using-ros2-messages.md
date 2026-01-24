@@ -110,7 +110,15 @@ ros2 topic list
 ```
 <img width="236" height="72" alt="image" src="https://github.com/user-attachments/assets/4394cc70-4c57-4d44-8435-88704a89bf58" />
 
-3. 다음 명령어를 통해 로봇을 앞으로 움직이거나 멈추는 토픽 게시
+3. Isaac Sim과 ROS 2 연동
+```bash
+cd ~/IsaacSim-ros_workspaces/humble_ws
+export FASTRTPS_DEFAULT_PROFILES_FILE=/home/oms/IsaacSim-ros_workspaces/humble_ws/fastdds.xml
+source /opt/ros/humble/setup.bash
+source install/local_setup.bash
+```
+
+4. 다음 명령어를 통해 로봇을 앞으로 움직이거나 멈추는 토픽 게시
 앞으로 가기
 ```bash
 ros2 topic pub /cmd_vel geometry_msgs/Twist "{'linear': {'x': 0.2, 'y': 0.0, 'z': 0.0}, 'angular': {'x': 0.0, 'y': 0.0, 'z': 0.0}}"
