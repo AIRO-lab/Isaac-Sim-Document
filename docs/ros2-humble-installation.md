@@ -75,7 +75,7 @@ sudo apt install python3-rosdep build-essential
 sudo apt install python3-colcon-common-extensions
 ```
 
-### 3. 소싱
+### 3. ROS2 라이브러리 소싱
 ```bash
 source /opt/ros/humble/setup.bash
 ```
@@ -96,7 +96,7 @@ rosdep install -i --from-path src --rosdistro humble -y
 colcon build
 ```
 
-### 6. 소싱
+### 6. ROS2 워크스페이스 소싱
 ```bash
 source install/local_setup.bash
 ```
