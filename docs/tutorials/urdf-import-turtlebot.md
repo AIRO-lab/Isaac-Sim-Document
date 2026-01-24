@@ -39,7 +39,6 @@ xacro ./turtlebot3_burger.urdf "namespace:=${namespace:+$namespace/}" > tb3_burg
 
 ### URDF 파일 접근 권한 부여
 URDF 파일을 불러올려면 그 URDF 파일의 접근 권한이 있어야 한다.
-우선 Docker를 실행하고 id로 uid, gid를 확인해야 한다.
 ```bash
 docker run --name isaac-sim --entrypoint bash -it --gpus all -e "ACCEPT_EULA=Y" --rm --network=host \
     -e "PRIVACY_CONSENT=Y" \
@@ -52,17 +51,13 @@ docker run --name isaac-sim --entrypoint bash -it --gpus all -e "ACCEPT_EULA=Y" 
     -v ~/IsaacSim-ros_workspaces:/humble_ws:rw \
     -u 1234:1234 \
     nvcr.io/nvidia/isaac-sim:5.1.0
-id
 ```
-<img width="561" height="42" alt="image" src="https://github.com/user-attachments/assets/24df8eee-2e4a-4a67-b41a-5188b00750d2" />
-
-id 명령어를 실행하면 위와 같이 uid, gid를 확인할 수 있다.
-이후, Docker가 아닌 일반 터미널에서 아래 명령어 수행한다.
+위 Docker 실행 명령어에서 -u 1234:1234는 user의 uid, gid를 의미한다.
+해당 uid, gid를 이용하여 다음 명령어를 통해 소유권을 가지게 할 수 있다.
 sudo chown -R <container_uid>:<container_gid> ~/IsaacSim-ros_workspaces
 ```bash
 sudo chown -R 1234:1234 ~/IsaacSim-ros_workspaces
 ```
-이 작업을 통해 Docker에서 IsaacSim-ros_workspaces의 소유권을 가지게 되어 접근 권한이 생겼다.
 
 또한, 위 Docker 실행 명령어를 보면
 -v ~/IsaacSim-ros_workspaces:/humble_ws:rw를 추가하여
