@@ -5,18 +5,18 @@
 sudo apt update
 sudo apt install -y curl 
 ```
-# Docker installation using the convenience script
+Docker installation using the convenience script
 ```bash
 curl -fsSL https://get.docker.com -o get-docker.sh
 sudo sh get-docker.sh
 ```
-# Post-install steps for Docker
+Post-install steps for Docker
 ```bash
 sudo groupadd docker
 sudo usermod -aG docker $USER
 newgrp docker
 ```
-# Verify Docker
+Verify Docker
 ```bash
 docker run hello-world
 ```
@@ -31,17 +31,17 @@ curl -fsSL https://nvidia.github.io/libnvidia-container/gpgkey | sudo gpg --dear
     && \
     sudo apt-get update
 ```
-# Install the NVIDIA Container Toolkit packages
+Install the NVIDIA Container Toolkit packages
 ```bash
 sudo apt-get install -y nvidia-container-toolkit
 sudo systemctl restart docker
 ```
-# Configure the container runtime
+Configure the container runtime
 ```bash
 sudo nvidia-ctk runtime configure --runtime=docker
 sudo systemctl restart docker
 ```
-# Verify NVIDIA Container Toolkit
+Verify NVIDIA Container Toolkit
 ```bash
 docker run --rm --runtime=nvidia --gpus all ubuntu nvidia-smi
 ```
