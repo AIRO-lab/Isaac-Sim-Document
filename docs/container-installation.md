@@ -121,8 +121,23 @@ Connect를 누르면 다음과 같이 Isaac Sim 인터페이스가 나타난다.
 |-|-|
 | <img src="https://github.com/user-attachments/assets/23f0d4bc-bcbf-465e-b2d9-8ff43d907958" width="300"/> | <img src="https://github.com/user-attachments/assets/26919689-4653-4ac6-ab3f-ffe6d12a3afe" width="300"/> |
 
-
-
+## 실행 명령어
+```bash
+docker run --name isaac-sim --entrypoint bash -it --gpus all -e "ACCEPT_EULA=Y" --rm --network=host \
+    -e "PRIVACY_CONSENT=Y" \
+    -v ~/docker/isaac-sim/cache/main:/isaac-sim/.cache:rw \
+    -v ~/docker/isaac-sim/cache/computecache:/isaac-sim/.nv/ComputeCache:rw \
+    -v ~/docker/isaac-sim/logs:/isaac-sim/.nvidia-omniverse/logs:rw \
+    -v ~/docker/isaac-sim/config:/isaac-sim/.nvidia-omniverse/config:rw \
+    -v ~/docker/isaac-sim/data:/isaac-sim/.local/share/ov/data:rw \
+    -v ~/docker/isaac-sim/pkg:/isaac-sim/.local/share/ov/pkg:rw \
+    -u 1234:1234 \
+    nvcr.io/nvidia/isaac-sim:5.1.0
+./runheadless.sh -v
+```
+```bash
+~/docker/isaacsim-webrtc-streaming-client-1.1.5-linux-x64.AppImage
+```
 
 
 
