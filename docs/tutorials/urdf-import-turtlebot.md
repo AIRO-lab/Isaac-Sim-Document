@@ -56,7 +56,12 @@ docker run --name isaac-sim --entrypoint bash -it --gpus all -e "ACCEPT_EULA=Y" 
 해당 uid, gid를 이용하여 다음 명령어를 통해 소유권을 가지게 할 수 있다.
 sudo chown -R <container_uid>:<container_gid> ~/IsaacSim-ros_workspaces
 ```bash
-sudo chown -R 1234:1234 ~/IsaacSim-ros_workspaces/humble_ws
+sudo chown -R 1234:1234 ~/IsaacSim-ros_workspaces
+```
+
+해당 소유권을 다시 사용자로 하고 싶으면 다음 명령어와 같다.
+```bash
+sudo chown -R $USER:$USER ~/IsaacSim-ros_workspaces
 ```
 
 또한, 위 Docker 실행 명령어를 보면
