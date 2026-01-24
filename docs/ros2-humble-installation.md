@@ -137,6 +137,7 @@ license agreement from NVIDIA CORPORATION is strictly prohibited.</license>
 ```
 
 **ROS2를 사용할 터미널에 Fast DDS 미들웨어를 설정 및 UDP 전송 활성화**
+
 export FASTRTPS_DEFAULT_PROFILES_FILE=<path_to_ros2_ws>/fastdds.xml
 ```bash
 export FASTRTPS_DEFAULT_PROFILES_FILE=/home/oms/IsaacSim-ros_workspaces/humble_ws/fastdds.xml
