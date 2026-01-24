@@ -87,7 +87,8 @@ base_footprint의 Articulation Root API를 삭제 후, turtlebot3_burger에 Arti
 
 <img width="506" height="196" alt="image" src="https://github.com/user-attachments/assets/2176b775-6bd9-4e8e-a3aa-ca1a638ad5e1" />
 
-<img width="538" height="464" alt="image" src="https://github.com/user-attachments/assets/59f9aa39-56ce-4db9-8a0b-9d851de2478c" />
+<img width="538" height="464" alt="image" src="https://github.com/user-attachments/assets/109eb1d8-1f66-498b-8f45-60ea4202da51" />
+
 
 Property 탭에서 'Add Target...'을 클릭하여 turtlebot3_burger을 추가합니다.
 turtlebot3_burger을 Articulation Root API가 적용되어 있어야 합니다.
