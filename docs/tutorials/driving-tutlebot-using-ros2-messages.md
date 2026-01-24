@@ -120,7 +120,8 @@ ros2 topic pub /cmd_vel geometry_msgs/Twist "{'linear': {'x': 0.2, 'y': 0.0, 'z'
 ```bash
 ros2 topic pub /cmd_vel geometry_msgs/Twist "{'linear': {'x': 0.0, 'y': 0.0, 'z': 0.0}, 'angular': {'x': 0.0, 'y': 0.0, 'z': 0.0}}"
 ```
-[Driving TurtleBot using ROS 2 Messages_1.webm](https://github.com/user-attachments/assets/7fd39b75-94e7-4e0f-a5c4-ec1344f39850)
+[Driving TurtleBot using ROS 2 Messages_1.webm](https://github.com/user-attachments/assets/cd3af97f-639b-4cad-b565-5f41905b6ce3)
+
 
 5. 다음 명령어를 통해 teleop_twist_keyboard를 이용하여 터틀봇을 더 쉽게 이동
 ```bash
@@ -129,7 +130,8 @@ sudo apt-get install ros-$ROS_DISTRO-teleop-twist-keyboard
 ```bash
 ros2 run teleop_twist_keyboard teleop_twist_keyboard
 ```
-[Driving TurtleBot using ROS 2 Messages_2.webm](https://github.com/user-attachments/assets/7aa26a35-db73-4322-ab6c-db2c131bea12)
+[Driving TurtleBot using ROS 2 Messages_2.webm](https://github.com/user-attachments/assets/e71c6432-b12b-4b39-9fa0-bd3e2a6857a1)
+
 
 
 
