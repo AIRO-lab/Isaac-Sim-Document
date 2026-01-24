@@ -31,11 +31,13 @@ IOMMU가 켜져 있으면, Linux에서 CUDA랑 NVIDIA 드라이버가 GPU 간 �
 라는 오류 팝업이 뜨고 Isaac Sim App Selector가 실행된다.
 따라서, BIOS에서 IOMMU를 비활성화를 해야 한다.
 
-<img width="3462" height="1918" alt="image" src="https://github.com/user-attachments/assets/ccf9846d-4826-45a8-a159-2c752d53f3e8" />
-<img width="3450" height="1936" alt="image" src="https://github.com/user-attachments/assets/b9878d0e-f853-4af7-bb61-2eee4f96945a" />
-<img width="3064" height="1714" alt="image" src="https://github.com/user-attachments/assets/bbbe24b5-dab3-41f1-8a59-d9d0bc659b43" />
-<img width="3408" height="1937" alt="image" src="https://github.com/user-attachments/assets/257466e0-e4d2-4ceb-99f1-a3a3ef1231e0" />
-<img width="3673" height="2099" alt="image" src="https://github.com/user-attachments/assets/fe7a84c1-be5f-4fbf-9edf-edf948dd5d79" />
+| Step | Screenshot | Path / Description |
+|------|-----------|--------------------|
+| 1 | <img src="https://github.com/user-attachments/assets/ccf9846d-4826-45a8-a159-2c752d53f3e8" width="300"/> | BIOS 진입 후 **Advanced** 탭 선택 |
+| 2 | <img src="https://github.com/user-attachments/assets/b9878d0e-f853-4af7-bb61-2eee4f96945a" width="300"/> | **Chipset Configuration** 진입 |
+| 3 | <img src="https://github.com/user-attachments/assets/bbbe24b5-dab3-41f1-8a59-d9d0bc659b43" width="300"/> | **North Bridge** 선택 |
+| 4 | <img src="https://github.com/user-attachments/assets/257466e0-e4d2-4ceb-99f1-a3a3ef1231e0" width="300"/> | **IIO Configuration** 진입 |
+| 5 | <img src="https://github.com/user-attachments/assets/fe7a84c1-be5f-4fbf-9edf-edf948dd5d79" width="300"/> | **Intel VT for Directed I/O (VT-d)** → `Disabled` |
 
 
 
