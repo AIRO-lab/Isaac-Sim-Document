@@ -88,9 +88,37 @@ ros2 topic echo /clock
 **Camera Helper and RTX Lidar nodes**
 다가오는 튜토리얼에서는 ROS 2 카메라 헬퍼 노드와 ROS 2 RTX 라이다 헬퍼 노드를 관찰할 것입니다. 이 두 노드 모두 센서 퍼블리싱 파이프라인을 자동으로 생성하므로 퍼블리셔의 시스템 타임스탬프를 사용하려면 useSystemTime 입력 필드가 True로 설정되어 있는지 확인하세요.
 
+## Running ROS 2 Clock Subscriber
+1. Window > Graph Editors > Action Graph로 가서 Action graph를 생성하세요.
+2. 다음 사진과 같이 Action graph에 OmniGraph를 추가하세요.
+<img width="614" height="342" alt="image" src="https://github.com/user-attachments/assets/51b893f7-d3e1-44c2-93ea-a509a96c5883" />
 
+3. Play를 클릭하여 시뮬레이션을 시작합니다. Action graph 내에서 ROS2 구독 시계 노드를 선택하여 Property 창에서 타임스탬프 출력을 확인합니다. 타임스탬프가 0인지 확인합니다.
+<img width="511" height="268" alt="image" src="https://github.com/user-attachments/assets/55e29ce1-a0aa-4e89-ac03-9be1fbd7a203" />
 
+4. 새로운 ROS2 소스 터미널에서 다음 명령을 실행하여 시계 메시지를 수동으로 한 번 게시합니다.
+```bash
+ros2 topic pub  -t 1 /clock rosgraph_msgs/Clock "clock: { sec: 1, nanosec: 200000000 }"
+ros2 topic pub  -t 1 /clock rosgraph_msgs/Clock "clock: { sec: 0, nanosec: 0 }"
+ros2 topic pub  -t 1 /clock rosgraph_msgs/Clock "clock: { sec: 5, nanosec: 500000000 }"
+```
+ROS2 Subscribe Clock OmniGraph 노드의 timeStamp 값이 1.2로 변경되는지 확인합니다.
 
+5. 이전 명령을 다른 sec 및 nanosec 값으로 변경하여 ROS2 Subscribe Clock OmniGraph 노드의 timeStamp 필드에 반영된 값을 관찰합니다.
 
+[ROS 2 Clock_3.webm](https://github.com/user-attachments/assets/429cce56-4e22-477c-9dc7-5dea20abc20f)
 
+## Graph Shortcut
+몇 번의 클릭만으로 시계 그래프를 만들 수 있는 메뉴 바로가기를 제공합니다.
+
+**Tools > Robotics > ROS 2 OmniGraphs > Clock**로 이동합니다.
+
+나열된 ROS2 그래프가 보이지 않는 경우 ROS2 브리지를 활성화해야 합니다.
+
+그래프를 채우는 데 필요한 매개변수를 묻는 팝업 상자가 표시됩니다.
+
+그래프 경로를 제공하고 확인을 클릭하여 시뮬레이션된 시계를 게시하는 그래프가 무대에 나타나는지 확인합니다.
+<img width="632" height="331" alt="image" src="https://github.com/user-attachments/assets/b4c854a6-8648-4dcf-ac9d-4e53be4a3fa4" />
+<img width="276" height="135" alt="image" src="https://github.com/user-attachments/assets/5a1361a3-2c5e-44f5-813a-38882db433ae" />
+<img width="994" height="543" alt="image" src="https://github.com/user-attachments/assets/c1a1ca60-32df-48da-b7b1-2e636f530862" />
 
