@@ -38,3 +38,39 @@ ros2 param set /node_name use_sim_time true
 - **Isaac Read Simulation Time**: 현재 시뮬레이션 시간을 가져옵니다. 참고: 기본적으로 시뮬레이션 시간은 단조롭게 증가하므로 시뮬레이션이 중지되었다가 다시 재생되더라도 시간은 계속 증가합니다. 이는 주로 시뮬레이션이 초기화될 때 시간이 뒤로 이동할 때 발생할 수 있는 문제를 방지하기 위한 것입니다. 시뮬레이션이 초기화될 때마다 시계를 0에서 시작하도록 하려면 resetOnStop을 True로 설정할 수 있습니다.
 - **ROS 2 Publish Clock**: /clock 토픽에 시뮬레이션 시간을 publish 합니다.
 
+3. 새로운 ROS 2 소스 터미널에서 RViz를 시작합니다.
+```bash
+cd ~/IsaacSim-ros_workspaces/humble_ws/
+export FASTRTPS_DEFAULT_PROFILES_FILE=/home/oms/IsaacSim-ros_workspaces/humble_ws/fastdds.xml
+source /opt/ros/humble/setup.bash
+source install/local_setup.bash
+
+ros2 run rviz2 rviz2
+```
+
+4. 새로운 ROS 2 소스 터미널에서 RViz 노드에 대해 use_sim_time 매개변수를 true로 설정하세요. Isaac Sim에서 시뮬레이션이 중지되었는지 확인합니다.
+```bash
+cd ~/IsaacSim-ros_workspaces/humble_ws/
+export FASTRTPS_DEFAULT_PROFILES_FILE=/home/oms/IsaacSim-ros_workspaces/humble_ws/fastdds.xml
+source /opt/ros/humble/setup.bash
+source install/local_setup.bash
+
+ros2 param set /rviz use_sim_time true
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
