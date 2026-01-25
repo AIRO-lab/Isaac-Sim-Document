@@ -5,7 +5,8 @@
 
 https://docs.isaacsim.omniverse.nvidia.com/5.1.0/index.html
 
-
+## 개요
+**NVIDIA Isaac Sim**은 로봇 개발과 시뮬레이션을 위한 GPU 기반 물리 엔진 플랫폼입니다. 로봇 모델 로드, 센서 시뮬레이션, ROS2 연동, 강화학습 환경까지 지원합니다.
 
 ## 시스템 요구사항
 | Element | Minimum Spec | Good | Ideal |
