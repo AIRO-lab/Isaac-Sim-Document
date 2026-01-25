@@ -8,7 +8,16 @@ https://docs.isaacsim.omniverse.nvidia.com/5.1.0/index.html
 
 
 ## 시스템 요구사항
-
+| Element | Minimum Spec | Good | Ideal |
+|-|-|-|-|
+| OS | Ubuntu 22.04/24.04, Windows 10/11 | Ubuntu 22.04/24.04, Windows 10/11 | Ubuntu 22.04/24.04, Windows 10/11 |
+| CPU | Intel Core i7 (7th Generation), AMD Ryzen 5 | Intel Core i7 (9th Generation), AMD Ryzen 7 | Intel Core i9, X-series or higher, AMD Ryzen 9, Threadripper or higher |
+| Cores | 4 | 8 | 16 |
+| RAM | 32GB | 64GB | 64GB |
+| Storage | 50GB SSD | 500GB SSD | 1TB NVMe SSD |
+| GPU | GeForce RTX 4080 | GeForce RTX 5080 | RTX PRO 6000 Blackwell |
+| VRAM | 16GB | 16GB | 48GB |
+| Driver | Linux: 580.65.06, Windows: 580.88 | Linux: 580.65.06, Windows: 580.88 | Linux: 580.65.06, Windows: 580.88 |
 
 ## Tutorials
 튜토리얼의 순서는 다음과 같습니다.
