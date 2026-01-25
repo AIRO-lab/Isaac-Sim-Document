@@ -1,7 +1,7 @@
 # Isaac Sim Document
-Isaac Sim의 설치 및 환경구성, 튜토리얼 내용을 포함하고 있다.
+이 문서는 NVIDIA Isaac Sim 설치부터 기본 실행, ROS2 연동, 튜토리얼까지 실습 중심으로 정리된 한글 가이드입니다.
 
-본 내용은 Isaac Sim Documentation을 참고하여 작성되었다.
+원본 공식 Isaac Sim Documentation을 바탕으로 누구나 따라 설치하고 실행할 수 있도록 구성되었습니다.
 
 https://docs.isaacsim.omniverse.nvidia.com/5.1.0/index.html
 
