@@ -31,7 +31,7 @@ RTF는 시뮬레이션이 실시간과 비교하여 얼마나 빠르거나 느�
 
 3. 새로운 Action graph는 일반 ROS2 Publisher 노드에 연결된 Isaac Real Time Factor 노드로 생성되며, 이 노드는 std_msgs/msg/Float32 ROS 메시지를 publish 하도록 설정되어 있습니다.
 
-4. /Graph/ROS_GenericPub에서 찾은 Action Graph prim을 선택합니다. 마우스 오른쪽 버튼을 클릭하고 Open Graph를 선택합니다. 자동 생성된 그래프는 다음과 일치해야 합니다:
+4. /Graph/ROS_GenericPub에서 찾은 Action Graph prim을 선택합니다. 마우스 오른쪽 버튼을 클릭하고 Open Graph를 선택합니다. 자동 생성된 그래프는 다음과 일치해야 합니다
 
 <img width="372" height="410" alt="image" src="https://github.com/user-attachments/assets/b0887c90-a8b3-4f03-9820-80beccc0527d" />
 
