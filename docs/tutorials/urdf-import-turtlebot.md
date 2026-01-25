@@ -83,6 +83,9 @@ docker run --name isaac-sim --entrypoint bash -it --gpus all -e "ACCEPT_EULA=Y" 
     nvcr.io/nvidia/isaac-sim:5.1.0
 ./runheadless.sh -v
 ```
+```bash
+~/docker/isaacsim-webrtc-streaming-client-1.1.5-linux-x64.AppImage
+```
 
 ### simple_room.usd 불러오기
 Content 브라우저에서 Isaac Sim-Environments-Simple_Room에 simple_room.usd를 Stage 브라우저로 드래그
