@@ -1,4 +1,4 @@
-# Container Installation
+<img width="649" height="452" alt="image" src="https://github.com/user-attachments/assets/4a72afcb-7509-4bde-9d00-ab9dfe0758dc" /># Container Installation
 ## Environment Infomation
 | Item | Description |
 |-|-|
@@ -58,7 +58,6 @@ Verify NVIDIA Container Toolkit
 ```bash
 docker run --rm --runtime=nvidia --gpus all ubuntu nvidia-smi
 ```
-
 
 ## 컨테이너 배포
 ### 1. GPU 드라이버 버전 확인
@@ -130,12 +129,25 @@ cd ~/docker
 chmod +x isaacsim-webrtc-streaming-client-1.1.5-linux-x64.AppImage
 ./isaacsim-webrtc-streaming-client-1.1.5-linux-x64.AppImage
 ```
+**Isaac Sim WebRTC Streaming Client 실행 전 주의 사항**
+Streaming Client는 Isaac Sim이 완전히 로드된 이후에만 실행해야 합니다.
+
+- Isaac Sim 앱이 완전히 로드되기 전에 Streaming Client를 실행하면 연결 실패, 검은 화면, 타임아웃이 발생할 수 있습니다.
+- Isaac Sim 최초 실행 시에는 쉐이더 캐시 생성으로 인해 로딩에 수 분이 소요될 수 있습니다.
+
+Isaac Sim 실행 터미널에서 다음과 같은 로그가 출력된 이후에만 Streaming Client를 실행하세요
+```text
+`Isaac Sim Full Streaming App is loaded.`
+```
+
+Issac Sim 실행 시 `-v` 옵션을 사용하면 쉐이더 캐시 생성 중 상세 로그를 확인할 수 있습니다.
+```bash
+./isaac-sim.sh -v
+```
 
 실행하면 다음과 같은 화면이 나온다.
 Isaac Sim의 로컬 인스턴스에 연결하려면 Server 입력칸에 기본 IP 주소인 127.0.0.1을 입력 후
 Connect를 누르면 다음과 같이 Isaac Sim 인터페이스가 나타난다.
-
-(Isaac Sim 실행 터미널에서 `Isaac Sim Full Streaming App is loaded.`라는 문구가 나온 후 Connect를 진행할 것)
 | Connect Interface | Streaming Interface |
 |-|-|
 | <img src="https://github.com/user-attachments/assets/23f0d4bc-bcbf-465e-b2d9-8ff43d907958" width="300"/> | <img src="https://github.com/user-attachments/assets/26919689-4653-4ac6-ab3f-ffe6d12a3afe" width="300"/> |
