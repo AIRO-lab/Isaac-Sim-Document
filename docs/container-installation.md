@@ -1,4 +1,4 @@
-<img width="649" height="452" alt="image" src="https://github.com/user-attachments/assets/4a72afcb-7509-4bde-9d00-ab9dfe0758dc" /># Container Installation
+# Container Installation
 ## Environment Infomation
 | Item | Description |
 |-|-|
