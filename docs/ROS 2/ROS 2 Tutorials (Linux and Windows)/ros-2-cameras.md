@@ -40,7 +40,12 @@ Parameter:
 |  | topicName | rgb |
 |  | frameId | turtle |
 
-
+### Graph Explained
+- **On Playback Tick Node**: 시뮬레이션이 "Playing"일 때 틱 생성. 이 노드로부터 틱을 수신한 노드는 시뮬레이션 단계마다 계산 기능을 실행합니다.
+- **ROS 2 Context Node**: ROS 2는 미들웨어 통신에 DDS를 사용합니다. DDS는 Domain ID를 사용하여 물리적 네트워크를 공유하더라도 서로 다른 논리적 네트워크가 독립적으로 작동할 수 있도록 합니다. 같은 Domain의 ROS 2 노드는 서로 자유롭게 검색하고 메시지를 보낼 수 있는 반면, 다른 Domain의 ROS 2 노드는 그렇지 않습니다. ROS 2 컨텍스트 노드는 주어진 Domain ID로 컨텍스트를 생성합니다. 기본적으로 0으로 설정되어 있습니다. Domain ID Env Var 사용을 선택하면 현재 Isaac Sim 인스턴스를 실행한 환경에서 `ROS_DOMAIN_ID`를 가져옵니다.
+- **Isaac Create Render Product**: 주어진 카메라 프림에서 렌더링된 데이터를 획득하고 그 경로를 렌더 제품 프림으로 출력하는 렌더 제품 프림 만듭니다. 명령에 따라 활성화된 필드를 확인하거나 선택 해제하여 렌더링을 활성화하거나 비활성화할 수 있습니다.
+- **Isaac Run One Simulation Frame**: 이 노드는 파이프라인이 처음부터 한 번만 실행되도록 보장합니다.
+- **ROS 2 Camera Helper**: publish 할 데이터 유형과 이를 publish 할 ros topic을 나타냅니다.
 
 
 
