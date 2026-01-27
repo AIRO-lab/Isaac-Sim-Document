@@ -25,3 +25,23 @@
 | 5 | <img src="https://github.com/user-attachments/assets/76616624-d713-45ed-8f4c-08de10f0871f" width="300"/> | `Camera_1`의 Translate를 `x=-3.5,y=-2.5,z=0.05` Orient를 `x=90.0,y=-50.0,z=0.0`<br>`Camera_2`의 Translate를 `x=3.5,y=-2.5,z=0.05` Orient를 `x=90.0,y=50.0,z=0.0`<br>(`Camera`의 위치와 회전은 임의의 서로 다른 위치로 하셔도 됩니다.) |
 | 6 | <img src="https://github.com/user-attachments/assets/06db84f0-bcae-4875-b994-165ee4c0f1e8" width="300"/> | Viewport 상단에 Camere 버튼을 눌러<br>`Viewport 1` **Cameras > Camera_1**<br>`Viewport 2` **Cameras > Camera_2** |
 
+## Building the Graph for an RGB Publisher
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
