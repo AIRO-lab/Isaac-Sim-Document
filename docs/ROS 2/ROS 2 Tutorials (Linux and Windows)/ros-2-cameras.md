@@ -17,7 +17,7 @@
 
 ## Setting Up Cameras
 | Step | Screenshot | Description |
-|------|-----------|--------------------|
+|-|-|-|
 | 1 | <img src="https://github.com/user-attachments/assets/534a28c1-07c3-4b61-ba0e-572bfe966aa4"/> | Content 창에서 **Isaac Sim > Environment > Simple_Room**에서 `simple_room.usd`를 Stage 창으로 드래그 |
 | 2 | <img src="https://github.com/user-attachments/assets/e011d9bf-08f6-4d9a-a3f9-fe02df035b30" width="300"/> | **Window > Viewports > Viewports 2**<br>Viewports 2 활성화 |
 | 3 | <img src="https://github.com/user-attachments/assets/c2711f5f-b786-4d2d-ae8d-02b3b22bd77b" width="300"/> | **Create > Camera**<br>Camera 2대 생성 |
@@ -26,9 +26,19 @@
 | 6 | <img src="https://github.com/user-attachments/assets/06db84f0-bcae-4875-b994-165ee4c0f1e8" width="300"/> | Viewport 상단에 Camere 버튼을 눌러<br>`Viewport 1` **Cameras > Camera_1**<br>`Viewport 2` **Cameras > Camera_2** |
 
 ## Building the Graph for an RGB Publisher
+1. **Window > Action Editors > Action Graph**
+2. **New Action Graph** 클릭
+3. 다음과 같이 Action Graph 구성
+<img width="971" height="409" alt="image" src="https://github.com/user-attachments/assets/002afdcc-1d58-46f0-a304-e16b524873c9" />
 
-
-
+Parameter:
+| Node | Input Field | Value |
+|-|-|-|
+| Isaac Create Render Product | cameraPrim | /World/Camera_1 |
+|  | enabled | True |
+| ROS 2 Camera Helper | type | rgb |
+|  | topicName | rgb |
+|  | frameId | turtle |
 
 
 
