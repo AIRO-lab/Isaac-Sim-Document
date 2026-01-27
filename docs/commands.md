@@ -1,8 +1,4 @@
-
-
-
-
-
+# Commands
 
 ```bash
 docker run --name isaac-sim --entrypoint bash -it --gpus all -e "ACCEPT_EULA=Y" --rm --network=host \
@@ -17,4 +13,7 @@ docker run --name isaac-sim --entrypoint bash -it --gpus all -e "ACCEPT_EULA=Y" 
     -u 1234:1234 \
     nvcr.io/nvidia/isaac-sim:5.1.0
 ./runheadless.sh -v
+```
+```bash
+~/docker/isaacsim-webrtc-streaming-client-1.1.5-linux-x64.AppImage
 ```
