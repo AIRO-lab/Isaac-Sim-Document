@@ -82,6 +82,7 @@ Camera Helper Node가 연결된 상태에서 Play을 누른 후, Action Graph �
 Graph Path, the Camera Prim, frameId, Node Namespaces(있는 경우)를 입력하고 게시할 데이터에 해당하는 확인란을 선택해야 합니다.
 
 이렇게 하면 노드가 기존 그래프에 추가되고 기존 tick node, context node, and simulation time node가 존재하는 경우 이 노드를 사용합니다.
+
 <img width="460" height="550" alt="image" src="https://github.com/user-attachments/assets/9ee8ac7a-5bb2-4a7c-a9a7-72de89409a33" />
 
 ## Depth and Other Perception Ground Truth Data
