@@ -47,7 +47,13 @@ Parameter:
 - **Isaac Run One Simulation Frame**: 이 노드는 파이프라인이 처음부터 한 번만 실행되도록 보장합니다.
 - **ROS 2 Camera Helper**: publish 할 데이터 유형과 이를 publish 할 ros topic을 나타냅니다.
 
+**Camera Helper Node**
 
+Camera Helper Node는 사용자로부터 복잡한 후처리 네트워크를 추상화하고 있습니다.
+
+Camera Helper Node가 연결된 상태에서 Play을 누른 후, Action Graph 창의 왼쪽 상단 모서리에 있는 아이콘을 클릭하면 Action Graph 목록에 새로운 것이 나타날 수 있습니다: `/Render/PostProcessing/SDGPipeline`.
+
+이 그래프는 Camera Helper Node에서 자동으로 생성됩니다. 파이프라인은 렌더러로부터 관련 데이터를 가져와 처리한 다음 해당 ROS Publisher에게 보냅니다. 이 그래프는 실행 중인 세션에서만 생성됩니다. 자산의 일부로 저장되지 않으며 Stage 트리에 표시되지 않습니다.
 
 
 
