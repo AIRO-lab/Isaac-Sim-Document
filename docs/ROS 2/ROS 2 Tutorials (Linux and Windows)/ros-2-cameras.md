@@ -18,8 +18,10 @@
 ## Setting Up Cameras
 | Step | Screenshot | Description |
 |------|-----------|--------------------|
-| 1 | <img src="https://github.com/user-attachments/assets/e011d9bf-08f6-4d9a-a3f9-fe02df035b30" width="300"/> | **Window > Viewports > Viewports 2**<br>Viewports 2 활성화 |
-| 2 | <img src="https://github.com/user-attachments/assets/c2711f5f-b786-4d2d-ae8d-02b3b22bd77b" width="300"/> | **Create > Camera**<br>Camera 2대 생성 |
-| 3 | <img src="https://github.com/user-attachments/assets/2b9cdcfe-f5f5-4364-9df2-5e8454eb2428" width="300"/> | Stage 창에서 생성된 카메라를 `Camera_1`, `Camera_2`로 변경 |
-| 4 | <img src="https://github.com/user-attachments/assets/76616624-d713-45ed-8f4c-08de10f0871f" width="300"/> | `Camera_1`의 Translate를 `x=-3.5,y=-2.5,z=0.05` Orient를 `x=90.0,y=-50.0,z=0.0`<br>`Camera_2`의 Translate를 `x=3.5,y=-2.5,z=0.05` Orient를 `x=90.0,y=50.0,z=0.0`<br>(`Camera`의 위치와 회전은 임의의 서로 다른 위치로 하셔도 됩니다.) |
-| 5 | <img src="https://github.com/user-attachments/assets/06db84f0-bcae-4875-b994-165ee4c0f1e8" width="300"/> | Viewport 상단에 Camere 버튼을 눌러<br>`Viewport 1` **Cameras > Camera_1**<br>`Viewport 2` **Cameras > Camera_2** |
+| 1 | <img src="https://github.com/user-attachments/assets/534a28c1-07c3-4b61-ba0e-572bfe966aa4"/> | Content 창에서 **Isaac Sim > Environment > Simple_Room**에서 `simple_room.usd`를 Stage 창으로 드래그 |
+| 2 | <img src="https://github.com/user-attachments/assets/e011d9bf-08f6-4d9a-a3f9-fe02df035b30" width="300"/> | **Window > Viewports > Viewports 2**<br>Viewports 2 활성화 |
+| 3 | <img src="https://github.com/user-attachments/assets/c2711f5f-b786-4d2d-ae8d-02b3b22bd77b" width="300"/> | **Create > Camera**<br>Camera 2대 생성 |
+| 4 | <img src="https://github.com/user-attachments/assets/2b9cdcfe-f5f5-4364-9df2-5e8454eb2428" width="300"/> | Stage 창에서 생성된 카메라를 `Camera_1`, `Camera_2`로 변경 |
+| 5 | <img src="https://github.com/user-attachments/assets/76616624-d713-45ed-8f4c-08de10f0871f" width="300"/> | `Camera_1`의 Translate를 `x=-3.5,y=-2.5,z=0.05` Orient를 `x=90.0,y=-50.0,z=0.0`<br>`Camera_2`의 Translate를 `x=3.5,y=-2.5,z=0.05` Orient를 `x=90.0,y=50.0,z=0.0`<br>(`Camera`의 위치와 회전은 임의의 서로 다른 위치로 하셔도 됩니다.) |
+| 6 | <img src="https://github.com/user-attachments/assets/06db84f0-bcae-4875-b994-165ee4c0f1e8" width="300"/> | Viewport 상단에 Camere 버튼을 눌러<br>`Viewport 1` **Cameras > Camera_1**<br>`Viewport 2` **Cameras > Camera_2** |
+
