@@ -1,4 +1,4 @@
-# Isaac Sim Installation
+# Isaac Sim Workstation Installation
 ## Environment Infomation
 | Item | Description |
 |-|-|
