@@ -17,12 +17,12 @@ docker run --name isaac-sim --entrypoint bash -it --gpus all -e "ACCEPT_EULA=Y" 
 ```bash
 ./runheadless.sh -v
 ```
+### Terminal 2
 ```bash
 ~/docker/isaacsim-webrtc-streaming-client-1.1.5-linux-x64.AppImage
 ```
 
 ## ROS 2
-### Terminal 2
 ```bash
 cd ~/IsaacSim-ros_workspaces/humble_ws/
 export FASTRTPS_DEFAULT_PROFILES_FILE=/home/oms/IsaacSim-ros_workspaces/humble_ws/fastdds.xml
