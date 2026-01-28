@@ -50,7 +50,7 @@ IOMMU가 켜져 있으면, Linux에서 CUDA랑 NVIDIA 드라이버가 GPU 간 �
 ### Intel VT for Directed I/O (VT-d) Disabled
 | Step | Screenshot | Path / Description |
 |:-:|:-:|-|
-| 1 | <img src="https://github.com/user-attachments/assets/ccf9846d-4826-45a8-a159-2c752d53f3e8" width="300"/> | BIOS 진입 후 **Advanced** 탭 선택 후 **Chipset Configuration** 진입 |
+| 1 | <img src="https://github.com/user-attachments/assets/ccf9846d-4826-45a8-a159-2c752d53f3e8" width="300"/> | BIOS 진입 후 **Advanced** 탭 선택 후<br>**Chipset Configuration** 진입 |
 | 2 | <img src="https://github.com/user-attachments/assets/b9878d0e-f853-4af7-bb61-2eee4f96945a" width="300"/> | **North Bridge** 진입 |
 | 3 | <img src="https://github.com/user-attachments/assets/bbbe24b5-dab3-41f1-8a59-d9d0bc659b43" width="300"/> | **IIO Configuration** 진입 |
 | 4 | <img src="https://github.com/user-attachments/assets/257466e0-e4d2-4ceb-99f1-a3a3ef1231e0" width="300"/> | **Intel VT for Directed I/O (VT-d)** 진입 |
@@ -65,7 +65,7 @@ IOMMU가 켜져 있으면, Linux에서 CUDA랑 NVIDIA 드라이버가 GPU 간 �
 ### **X2APIC** Disabled
 | Step | Screenshot | Path / Description |
 |:-:|:-:|-|
-| 1 | <img src="https://github.com/user-attachments/assets/ccf9846d-4826-45a8-a159-2c752d53f3e8" width="300"/> | BIOS 진입 후 **Advanced** 탭 선택 후 **CPU Configuration** 진입 |
+| 1 | <img src="https://github.com/user-attachments/assets/ccf9846d-4826-45a8-a159-2c752d53f3e8" width="300"/> | BIOS 진입 후 **Advanced** 탭 선택 후<br>**CPU Configuration** 진입 |
 | 2 | <img src="https://github.com/user-attachments/assets/0a77c151-59ee-4772-8f5a-d1a3f0c107b7" width="300"/> | **Extended APIC** → `Disabled` |
 
 IOMMU 비활성화 확인 명령어
