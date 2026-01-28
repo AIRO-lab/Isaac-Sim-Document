@@ -47,7 +47,7 @@ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/isaac-sim/exts/isaacsim.ros2.bridge/hum
 |:-:|:-:|
 | <img src="https://github.com/user-attachments/assets/869104a1-03c2-46b9-9d70-f91debec637a" width="300"/> | <img src="https://github.com/user-attachments/assets/10d64ebe-9546-4b82-9d61-c8324a41115f" width="300"/> |
 > [!NOTE]
-> 실행 시 `rclpy loaded`로그가 출력된 뒤, 잠시 대기하면 다음과 같은 실행 로그가 나타난다.<br>
+> 실행 시 `rclpy loaded` 로그가 출력된 뒤, 잠시 대기하면 다음과 같은 실행 로그가 나타난다.<br>
 > `Module omni.replicator.core.ogn.python.impl.nodes.OgnAugment 843efe5 load on device 'cuda:0' took 0.81 ms  (cached)`<br><br>
 > 해당 로그가 출력되면 노드가 정상적으로 실행된 상태이며,<br>
-> 이후 `ros2 topic list`명령을 통해 `/rgb_augmented` 토픽이 생성된 것을 확인할 수 있다.
+> 이후 `ros2 topic list` 명령을 통해 `/rgb_augmented` 토픽이 생성된 것을 확인할 수 있다.
