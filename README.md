@@ -22,7 +22,7 @@ https://docs.isaacsim.omniverse.nvidia.com/5.1.0/index.html
 
 ## Tutorials
 ### Getting Started with Importing and Controlling
-  - [URDF Import: Turtlebot](/docs/ROS%202/ROS%202%20Tutorials%20%28Linux%20and%20Windows%29/urdf-import-turtlebot.md)
+  - URDF Import: Turtlebot
   - Driving TurtleBot using ROS 2 Messages
 ### Timing
   - ROS 2 Clock
