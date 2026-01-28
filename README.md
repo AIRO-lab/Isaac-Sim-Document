@@ -21,7 +21,6 @@ https://docs.isaacsim.omniverse.nvidia.com/5.1.0/index.html
 | Driver | Linux: 580.65.06, Windows: 580.88 | Linux: 580.65.06, Windows: 580.88 | Linux: 580.65.06, Windows: 580.88 |
 
 ## Tutorials
-튜토리얼의 순서는 다음과 같습니다.
 ### Getting Started with Importing and Controlling
   - [URDF Import: Turtlebot](/docs/ROS%202/ROS%202%20Tutorials%20%28Linux%20and%20Windows%29/urdf-import-turtlebot.md)
   - [Driving TurtleBot using ROS 2 Messages](/docs/ROS%202/ROS%202%20Tutorials%20%28Linux%20and%20Windows%29/driving-tutlebot-using-ros-2-messages.md)
