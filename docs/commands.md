@@ -41,6 +41,9 @@ docker run --name isaac-sim \
   -u 1234:1234 \
   nvcr.io/nvidia/isaac-sim:5.1.0
 ```
+```bash
+sudo chown -R $(id -u):$(id -g) ~/IsaacSim-ros_workspaces
+```
 
 ## ROS 2
 ```bash
