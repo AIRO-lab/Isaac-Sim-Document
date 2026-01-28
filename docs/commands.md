@@ -38,7 +38,7 @@ docker run --name isaac-sim \
   -v ~/docker/isaac-sim/data:/isaac-sim/.local/share/ov/data:rw \
   -v ~/docker/isaac-sim/pkg:/isaac-sim/.local/share/ov/pkg:rw \
   -v ~/IsaacSim-ros_workspaces:/IsaacSim-ros_workspaces:rw \
-  -u 1234:1234 \
+  -u $(id -u):$(id -g) \
   nvcr.io/nvidia/isaac-sim:5.1.0
 ```
 ```bash
