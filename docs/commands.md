@@ -1,6 +1,6 @@
 # Commands
 ## Isaac Sim
-### Terminal 1
+**Terminal 1**
 ```bash
 docker run --name isaac-sim --entrypoint bash -it --gpus all -e "ACCEPT_EULA=Y" --rm --network=host \
     -e "PRIVACY_CONSENT=Y" \
@@ -17,7 +17,7 @@ docker run --name isaac-sim --entrypoint bash -it --gpus all -e "ACCEPT_EULA=Y" 
 ```bash
 ./runheadless.sh -v
 ```
-### Terminal 2
+**Terminal 2**
 ```bash
 ~/docker/isaacsim-webrtc-streaming-client-1.1.5-linux-x64.AppImage
 ```
