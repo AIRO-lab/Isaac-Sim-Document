@@ -25,8 +25,8 @@ https://docs.isaacsim.omniverse.nvidia.com/5.1.0/index.html
   - [Workstation Installation](/docs/Installation/Isaac%20Sim/isaac-sim-workstation-installation.md)
   - [Container Installation](/docs/Installation/Isaac%20Sim/isaac-sim-container-installation.md)
 
-### ROS 2 Humble
-  - [ROS 2 Installation](/docs/Installation/ROS%202/ros2-humble-installation.md)
+### ROS 2
+  - [ROS 2 Humble Installation](/docs/Installation/ROS%202/ros2-humble-installation.md)
 
 ## Tutorials
 ### Getting Started with Importing and Controlling
