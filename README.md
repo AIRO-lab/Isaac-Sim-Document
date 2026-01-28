@@ -22,11 +22,11 @@ https://docs.isaacsim.omniverse.nvidia.com/5.1.0/index.html
 
 ## Tutorials
 ### Getting Started with Importing and Controlling
-  - [URDF Import: Turtlebot](/docs/ROS%202/ROS%202%20Tutorials%20%28Linux%20and%20Windows%29/urdf-import-turtlebot.md)
-  - [Driving TurtleBot using ROS 2 Messages](/docs/ROS%202/ROS%202%20Tutorials%20%28Linux%20and%20Windows%29/driving-tutlebot-using-ros-2-messages.md)
+  - [URDF Import: Turtlebot](/docs/ROS%202/ROS%202%20Tutorials%20%28Linux%20and%20Windows%29/URDF%20Import:%20Turtlebot/urdf-import-turtlebot.md)
+  - [Driving TurtleBot using ROS 2 Messages](/docs/ROS%202/ROS%202%20Tutorials%20%28Linux%20and%20Windows%29/Driving%20TurtleBot%20using%20ROS%202%20Messages/driving-tutlebot-using-ros-2-messages.md)
 ### Timing
-  - [ROS 2 Clock](/docs/ROS%202/ROS%202%20Tutorials%20%28Linux%20and%20Windows%29/ros-2-clock.md)
-  - [ROS 2 Publish Real Time Factor (RTF)](/docs/ROS%202/ROS%202%20Tutorials%20%28Linux%20and%20Windows%29/ros-2-publish-real-time-factor.md)
+  - [ROS 2 Clock](/docs/ROS%202/ROS%202%20Tutorials%20%28Linux%20and%20Windows%29/ROS%202%20Clock/ros-2-clock.md)
+  - [ROS 2 Publish Real Time Factor (RTF)](/docs/ROS%202/ROS%202%20Tutorials%20%28Linux%20and%20Windows%29/ROS%202%20Publish%20Real%20Time%20Factor%20%28RTF%29/ros-2-publish-real-time-factor.md)
 
 ### Sensors and Control
   - [ROS 2 Cameras](/docs/ROS%202/ROS%202%20Tutorials%20%28Linux%20and%20Windows%29/ROS%202%20Cameras/ros-2-cameras.md)
