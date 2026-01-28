@@ -20,7 +20,7 @@
 ```bash
 ./python.sh standalone_examples/api/isaacsim.ros2.bridge/camera_noise.py
 ```
-위 명령어를 Docker에서 실행하게 되면 오류 몇 가지가 발생하여 순차적으로 오류 해결법을 제시한다.
+위 명령어를 Docker에서 실행하게 되면 오류 몇 가지가 발생하여 순차적으로 오류 해결법을 제시한다.<br>
 <br>
 **ROS2 Bridge startup failed**
 <img width="924" height="415" alt="image" src="https://github.com/user-attachments/assets/ff630cfe-f6df-4078-8638-35a775f3b20e" /><br>
