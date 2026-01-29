@@ -21,6 +21,22 @@ docker run --name isaac-sim --entrypoint bash -it --gpus all -e "ACCEPT_EULA=Y" 
 ```bash
 ~/docker/isaacsim-webrtc-streaming-client-1.1.5-linux-x64.AppImage
 ```
+
+## ROS 2
+```bash
+cd ~/IsaacSim-ros_workspaces/humble_ws/
+export FASTRTPS_DEFAULT_PROFILES_FILE=/home/oms/IsaacSim-ros_workspaces/humble_ws/fastdds.xml
+source /opt/ros/humble/setup.bash
+source install/local_setup.bash
+```
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+## Test
 **test**
 ```bash
 docker run --name isaac-sim \
@@ -45,10 +61,13 @@ docker run --name isaac-sim \
 sudo chown -R $(id -u):$(id -g) ~/IsaacSim-ros_workspaces
 ```
 
-## ROS 2
+### Docker
+컨테이너 확인
 ```bash
-cd ~/IsaacSim-ros_workspaces/humble_ws/
-export FASTRTPS_DEFAULT_PROFILES_FILE=/home/oms/IsaacSim-ros_workspaces/humble_ws/fastdds.xml
-source /opt/ros/humble/setup.bash
-source install/local_setup.bash
+docker ps -a
+```
+
+컨테이너 삭제
+```bash
+docker rm isaac-sim
 ```
