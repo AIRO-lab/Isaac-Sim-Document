@@ -71,3 +71,9 @@ docker ps -a
 ```bash
 docker rm isaac-sim
 ```
+
+`-u $(id -u):$(id -g)`로 실행 시 `/isaac-sim` 접근 권한 부여 (최초 1회 실행)
+```bash
+docker exec -it -u root isaac-sim bash
+chmod a+rx /isaac-sim
+```
