@@ -74,7 +74,7 @@ rviz2
 # grab our render product and directly set the camera prim
 render_product_path = get_active_viewport().get_render_product_path()
 set_camera_prim_path(render_product_path, CAMERA_STAGE_PATH)
-
+```
 <br>
 sensor 파이프라인 내에서 augmentation을 정의하는 방법에는 여러 가지가 있습니다
 - C++ OmniGraph node
@@ -82,6 +82,7 @@ sensor 파이프라인 내에서 augmentation을 정의하는 방법에는 여�
 - omni.warp kernel
 - numpy kernel
 numpy 및 omni.warp 커널 옵션은 기본 노이즈 함수를 정의하기 위해 아래에 설명되어 있습니다. 간결함을 위해 색상 값에 대한 경계를 벗어난 검사는 없습니다.
+
 ```python
 # GPU Noise Kernel for illustrative purposes, input is rgba, outputs rgb
 @wp.kernel
@@ -100,14 +101,17 @@ def image_gaussian_noise_warp(
     data_out[i, j, 1] = wp.uint8(float(data_in[i, j, 1]) + (255.0 * sigma * wp.randn(state_g)))
     data_out[i, j, 2] = wp.uint8(float(data_in[i, j, 2]) + (255.0 * sigma * wp.randn(state_b)))
 ```
+
 ```python
 # CPU noise kernel
 def image_gaussian_noise_np(data_in: np.ndarray, seed: int, sigma: float = 25.0):
     np.random.seed(seed)
     return data_in + sigma * np.random.randn(*data_in.shape)
 ```
+
 <br>
 두 함수 중 어느 것이든 rep.Augmentation.from_from_function()과 함께 사용하여 augmentation을 정의할 수 있습니다.
+
 ```python
 # register new augmented annotator that adds noise to rgba and then outputs to rgb to the ROS publisher can publish
 # the image_gaussian_noise_warp variable can be replaced with image_gaussian_noise_np to use the cpu version. Ensure to update device to "cpu" if using the cpu version.
