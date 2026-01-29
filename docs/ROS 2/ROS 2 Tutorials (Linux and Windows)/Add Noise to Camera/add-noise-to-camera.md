@@ -82,7 +82,7 @@ sensor 파이프라인 내에서 augmentation을 정의하는 방법에는 여�
 - Python OmniGraph node
 - omni.warp kernel
 - numpy kernel
-- 
+
 numpy 및 omni.warp 커널 옵션은 기본 노이즈 함수를 정의하기 위해 아래에 설명되어 있습니다. 간결함을 위해 색상 값에 대한 경계를 벗어난 검사는 없습니다.
 
 ```python
