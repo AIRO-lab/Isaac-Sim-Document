@@ -134,3 +134,43 @@ rep.annotators.register(
 > `seed`는 파이썬 함수와 워프 함수 모두에서 사용할 수 있는 선택적인 사전 정의된 Replicator Augmentation 인수입니다.<br>
 > 없음 또는 < 0으로 설정되면, Replicator의 전역 seed와 노드 식별자를 함께 사용하여 반복 가능한 고유 seed를 생성합니다.<br>
 > warp 커널과 함께 사용될 때, seed는 각 warp 커널 호출에 대해 새로운 정수 seed 값을 생성하는 난수 생성기를 초기화하는 데 사용됩니다.
+<br>
+
+다음으로, 새로운 *rgb_gaussian_noise* 주석기로 새로운 작성자를 생성하고 등록합니다.
+
+```python
+# Create a new writer with the augmented image
+rep.writers.register_node_writer(
+    name=f"CustomROS2PublishImage",
+    node_type_id="isaacsim.ros2.bridge.ROS2PublishImage",
+    annotators=[
+        "rgb_gaussian_noise",
+        omni.syntheticdata.SyntheticData.NodeConnectionTemplate(
+            "IsaacReadSimulationTime", attributes_mapping={"outputs:simulationTime": "inputs:timeStamp"}
+        ),
+    ],
+    category="custom",
+)
+
+# Register writer for Replicator telemetry tracking
+(
+    rep.WriterRegistry._default_writers.append("CustomROS2PublishImage")
+    if "CustomROS2PublishImage" not in rep.WriterRegistry._default_writers
+    else None
+)
+```
+<br>
+
+새로운 증강 `rgb_gaussian_noise` 주석기를 사용하는 `CustomROS2PublishImage` 작성기가 등록되었습니다. 초기화 후 렌더 제품을 replicator writer에 첨부할 수 있습니다. 이렇게 하면 ROS에 데이터를 캡처하고 publish 하기 시작합니다.
+
+```python
+# Create the new writer and attach to our render product
+writer = rep.writers.get(f"CustomROS2PublishImage")
+writer.initialize(topicName="rgb_augmented", frameId="sim_camera")
+writer.attach([render_product_path])
+```
+
+
+
+
+
