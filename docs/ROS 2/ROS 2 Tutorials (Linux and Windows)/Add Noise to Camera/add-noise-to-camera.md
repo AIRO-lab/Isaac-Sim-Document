@@ -74,8 +74,8 @@ rviz2
 # grab our render product and directly set the camera prim
 render_product_path = get_active_viewport().get_render_product_path()
 set_camera_prim_path(render_product_path, CAMERA_STAGE_PATH)
-```<br>
-
+```
+<br>
 sensor 파이프라인 내에서 augmentation을 정의하는 방법에는 여러 가지가 있습니다:
 - C++ OmniGraph node
 - Python OmniGraph node
@@ -105,8 +105,8 @@ def image_gaussian_noise_warp(
 def image_gaussian_noise_np(data_in: np.ndarray, seed: int, sigma: float = 25.0):
     np.random.seed(seed)
     return data_in + sigma * np.random.randn(*data_in.shape)
-```<br>
-
+```
+<br>
 두 함수 중 어느 것이든 rep.Augmentation.from_from_function()과 함께 사용하여 augmentation을 정의할 수 있습니다.
 ```bash
 # register new augmented annotator that adds noise to rgba and then outputs to rgb to the ROS publisher can publish
