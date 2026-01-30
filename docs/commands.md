@@ -24,6 +24,7 @@ docker run --name isaac-sim \
 `-u $(id -u):$(id -g)`로 Container의 id를 `host`의 id와 맞춰서 실행 시 Container는 `host`의 폴더 권한을 얻지만 Container 안에 `root(GID:0)`가 권한을 가지고 있는 `/isaac-sim`의 권한이 없어 접근을 못하기 때문에 권한을 부여 해줘야 한다.<br>
 (Container 생성 시 최초 1회 실행)
 ```bash
+docker start isaac-sim
 docker exec -it -u root isaac-sim bash
 chmod a+rx /isaac-sim
 ```
