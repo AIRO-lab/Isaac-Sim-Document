@@ -342,7 +342,7 @@ simulation_app.close()
 > def publish_depth(camera: Camera, freq): ...
 > def publish_rgb(camera: Camera, freq): ...
 > ```
-> 3. 토픽 생성 함수 호출 코드 주석 제거
+> 2. 토픽 생성 함수 호출 코드 주석 제거
 > ```bash
 > publish_camera_tf(camera)
 > publish_camera_info(camera, approx_freq)
