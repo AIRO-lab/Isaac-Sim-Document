@@ -330,7 +330,7 @@ simulation_app.close()
 
 ```
 > [!NOTE]
-> https://docs.isaacsim.omniverse.nvidia.com/5.1.0/ros2_tutorials/tutorial_ros2_camera_publishing.html
+> https://docs.isaacsim.omniverse.nvidia.com/5.1.0/ros2_tutorials/tutorial_ros2_camera_publishing.html<br>
 > 해당 튜토리얼 공식 문서를 보면 기능별로 코드 내용이 적혀있다.<br>
 > 순서대로 코드를 작성하게 되면 토픽 함수 호출 코드가 주석처리 되어 있어 토픽이 안생길뿐만 아니라 토픽 함수 정의가 메인 코드에서 토픽 함수 호출보다 아래에 정의되어 있어 문제가 생긴다.<br>
 > 그리하여 튜토리얼을 진행하기 위해 다음과 같은 수정을 하여 위 코드 내용이 된다.
