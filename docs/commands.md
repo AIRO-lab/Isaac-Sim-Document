@@ -5,6 +5,7 @@
 docker run --name isaac-sim \
   --entrypoint bash -it --gpus all \
   --network=host \
+  -u 1234:1234 \
   -e ACCEPT_EULA=Y \
   -e PRIVACY_CONSENT=Y \
   -e ROS_DISTRO=humble \
@@ -17,14 +18,8 @@ docker run --name isaac-sim \
   -v ~/docker/isaac-sim/data:/isaac-sim/.local/share/ov/data:rw \
   -v ~/docker/isaac-sim/pkg:/isaac-sim/.local/share/ov/pkg:rw \
   -v ~/IsaacSim-ros_workspaces:/IsaacSim-ros_workspaces:rw \
-  -u $(id -u):$(id -g) \
-  nvcr.io/nvidia/isaac-sim:5.1.0
-```
 
-```bash
-docker exec -it -u root isaac-sim bash
-chmod 755 /isaac-sim
-exit
+  nvcr.io/nvidia/isaac-sim:5.1.0
 ```
 
 ### Container 확인 및 삭제
