@@ -92,6 +92,11 @@ docker exec -it isaac-sim bash
 ```
 
 ### 실행 명령어 예시
+시각화 가능한 Isaac Sim 실행
+```bash
+./runheadless.sh -v
+```
+Python 파일 실행
 ```bash
 ./python.sh /IsaacSim-ros_workspaces/tutorial/src/publishing_camera_data.py \
   --/app/omni.graph.scriptnode/opt_in=true \
