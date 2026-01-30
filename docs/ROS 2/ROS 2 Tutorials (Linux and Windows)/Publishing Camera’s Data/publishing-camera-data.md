@@ -361,7 +361,7 @@ docker exec -it isaac-sim bash
 <br>
 <br>
 
-**토픽 확인**<br>
+### 토픽 확인
 새로운 터미널에서 다음 명령어를 수행하여 토픽을 확인한다.
 ```bash
 cd ~/IsaacSim-ros_workspaces/humble_ws/
@@ -380,7 +380,7 @@ TF에서 publish 되는 frame은 다음과 같습니다.<br>
 <br>
 <br>
 
-**Rviz2**
+### Rviz2
 1. 다음 명령어를 실행하여 Rviz2를 실행합니다.
 ```bash
 rviz2
