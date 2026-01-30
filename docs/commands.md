@@ -37,7 +37,7 @@ source install/local_setup.bash
 <br>
 
 ## Test
-**test**
+컨테이너 생성
 ```bash
 docker run --name isaac-sim \
   --entrypoint bash -it --gpus all \
