@@ -87,6 +87,11 @@ docker start isaac-sim
 docker stop isaac-sim
 ```
 
+실행 중인 컨테이너 들어가기
+```bash
+docker exec -it isaac-sim bash
+```
+
 `-u $(id -u):$(id -g)`로 실행 시 `/isaac-sim` 접근 권한 부여 (최초 1회 실행)
 ```bash
 docker exec -it -u root isaac-sim bash
