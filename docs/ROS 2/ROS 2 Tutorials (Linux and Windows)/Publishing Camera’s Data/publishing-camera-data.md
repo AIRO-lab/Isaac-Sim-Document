@@ -49,6 +49,33 @@ from isaacsim.core.nodes.scripts.utils import set_target_prims
 
 
 
+# Enable ROS 2 bridge extension
+extensions.enable_extension("isaacsim.ros2.bridge")
+
+simulation_app.update()
+
+simulation_context = SimulationContext(stage_units_in_meters=1.0)
+
+# Locate Isaac Sim assets folder to load environment and robot stages
+assets_root_path = nucleus.get_assets_root_path()
+if assets_root_path is None:
+    carb.log_error("Could not find Isaac Sim assets folder")
+    simulation_app.close()
+    sys.exit()
+
+# Loading the environment
+stage.add_reference_to_stage(assets_root_path + BACKGROUND_USD_PATH, BACKGROUND_STAGE_PATH)
+
+
+###### Camera helper functions for setting up publishers. ########
+
+# Paste functions from the tutorial here
+# def publish_camera_tf(camera: Camera): ...
+# def publish_camera_info(camera: Camera, freq): ...
+# def publish_pointcloud_from_depth(camera: Camera, freq): ...
+# def publish_depth(camera: Camera, freq): ...
+# def publish_rgb(camera: Camera, freq): ...
+
 def publish_camera_info(camera: Camera, freq):
     from isaacsim.ros2.bridge import read_camera_info
     # The following code will link the camera's render product and publish the data to the specified topic name.
@@ -85,8 +112,6 @@ def publish_camera_info(camera: Camera, freq):
     og.Controller.attribute(gate_path + ".inputs:step").set(step_size)
     return
 
-
-
 def publish_pointcloud_from_depth(camera: Camera, freq):
     # The following code will link the camera's render product and publish the data to the specified topic name.
     render_product = camera._render_product_path
@@ -119,8 +144,6 @@ def publish_pointcloud_from_depth(camera: Camera, freq):
 
     return
 
-
-
 def publish_rgb(camera: Camera, freq):
     # The following code will link the camera's render product and publish the data to the specified topic name.
     render_product = camera._render_product_path
@@ -147,8 +170,6 @@ def publish_rgb(camera: Camera, freq):
     og.Controller.attribute(gate_path + ".inputs:step").set(step_size)
 
     return
-
-
 
 def publish_depth(camera: Camera, freq):
     # The following code will link the camera's render product and publish the data to the specified topic name.
@@ -178,8 +199,6 @@ def publish_depth(camera: Camera, freq):
     og.Controller.attribute(gate_path + ".inputs:step").set(step_size)
 
     return
-
-
 
 def publish_camera_tf(camera: Camera):
     camera_prim = camera.prim_path
@@ -257,37 +276,6 @@ def publish_camera_tf(camera: Camera):
         targetPrimPaths=[camera_prim],
     )
     return
-
-
-
-
-
-# Enable ROS 2 bridge extension
-extensions.enable_extension("isaacsim.ros2.bridge")
-
-simulation_app.update()
-
-simulation_context = SimulationContext(stage_units_in_meters=1.0)
-
-# Locate Isaac Sim assets folder to load environment and robot stages
-assets_root_path = nucleus.get_assets_root_path()
-if assets_root_path is None:
-    carb.log_error("Could not find Isaac Sim assets folder")
-    simulation_app.close()
-    sys.exit()
-
-# Loading the environment
-stage.add_reference_to_stage(assets_root_path + BACKGROUND_USD_PATH, BACKGROUND_STAGE_PATH)
-
-
-###### Camera helper functions for setting up publishers. ########
-
-# Paste functions from the tutorial here
-# def publish_camera_tf(camera: Camera): ...
-# def publish_camera_info(camera: Camera, freq): ...
-# def publish_pointcloud_from_depth(camera: Camera, freq): ...
-# def publish_depth(camera: Camera, freq): ...
-# def publish_rgb(camera: Camera, freq): ...
 
 ###################################################################
 
