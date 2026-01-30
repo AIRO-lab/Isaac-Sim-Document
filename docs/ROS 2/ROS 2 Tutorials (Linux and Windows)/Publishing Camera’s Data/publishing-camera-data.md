@@ -370,6 +370,7 @@ source install/local_setup.bash
 ```bash
 ros2 topic list
 ```
+<img width="459" height="182" alt="image" src="https://github.com/user-attachments/assets/9ee29124-1a4f-4f57-928c-483b227afc17" />
 
 
 
