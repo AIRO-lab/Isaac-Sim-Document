@@ -91,7 +91,7 @@ docker stop isaac-sim
 docker exec -it isaac-sim bash
 ```
 
-### 실행 명령어 예시
+### 실행 명령어
 시각화 가능한 Isaac Sim 실행
 ```bash
 ./runheadless.sh -v
