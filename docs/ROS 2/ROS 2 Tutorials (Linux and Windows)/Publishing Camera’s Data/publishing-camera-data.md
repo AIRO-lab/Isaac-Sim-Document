@@ -19,7 +19,7 @@
 `/home/user/IsaacSim-ros_workspaces/ros2_tutorials/publishing_camera_data/publishing_camera_data.py`<br>
 Isaac Sim 워크스페이스에 위와 경로로 디렉토리를 만들어 publishing_camera_data.py를 만들어준다.<br>
 그 후 다음과 같이 코드 내용을 넣어준다.
-```bash
+```python
 import carb
 from isaacsim import SimulationApp
 import sys
@@ -319,16 +319,19 @@ simulation_app.close()
 ```
 > [!NOTE]
 > https://docs.isaacsim.omniverse.nvidia.com/5.1.0/ros2_tutorials/tutorial_ros2_camera_publishing.html<br>
-> 해당 튜토리얼 공식 문서를 보면 기능별로 코드 내용이 적혀있다.<br>
-> 순서대로 코드를 작성하게 되면 토픽 함수 호출 코드가 주석처리 되어 있어 토픽이 안생길뿐만 아니라 토픽 함수 정의가 메인 코드에서 토픽 함수 호출보다 아래에 정의되어 있어 문제가 생긴다.<br><br>
-> 그리하여 튜토리얼을 진행하기 위해 다음과 같은 수정을 하여 위 코드 내용이 된다.
-> 1. 토픽 함수 정의 코드 라이브러리 import 다음으로 이동
-> ```bash
-> def publish_camera_tf(camera: Camera): ...
-> def publish_camera_info(camera: Camera, freq): ...
-> def publish_pointcloud_from_depth(camera: Camera, freq): ...
-> def publish_depth(camera: Camera, freq): ...
-> def publish_rgb(camera: Camera, freq): ...
+> 해당 튜토리얼 공식 문서를 보면 메인 코드와 함수별로 코드 내용이 적혀있다.<br>
+> 순서대로 코드를 작성하여 토픽 함수 정의 코드를 메인 코드 아래에 넣게 되면 함수 정의가 메인 코드에서 토픽 함수 호출이 먼저 되어 오류가 발생한다.<br><br>
+> **코드 수정 내용은 다음과 같다.**
+> 1. 토픽 함수 정의 코드는 메인 코드 내 다음과 같은 코드 부분에 작성한다.
+> ```python
+> ###### Camera helper functions for setting up publishers. ########
+> <br>
+> # Paste functions from the tutorial here
+> # def publish_camera_tf(camera: Camera): ...
+> # def publish_camera_info(camera: Camera, freq): ...
+> # def publish_pointcloud_from_depth(camera: Camera, freq): ...
+> # def publish_depth(camera: Camera, freq): ...
+> # def publish_rgb(camera: Camera, freq): ...
 > ```
 > 2. 토픽 생성 함수 호출 코드 주석 제거
 > ```bash
