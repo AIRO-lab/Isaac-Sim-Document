@@ -40,14 +40,14 @@ Action Graph는 모든 시뮬레이션 프레임에 체크되므로 OmniGraph �
 
 <img width="500" alt="image" src="https://github.com/user-attachments/assets/7d3a69cc-18fc-461e-beb2-54ae058f97ba" /><br>
 
-3. `/World/Turtlebot3_burger/base_link/imu_link`의 prim 내부에 새로운 Action Graph를 생성하고 ROS_IMU라고 명명합니다<br>(그래프의 배치는 자동 ROS 2 네임스페이스 생성에 중요합니다).<br>이를 위해 `/World/Turtlebot3_burger/base_link/imu_link`의 prim을 선택한 다음, **Window > Graph Editors > Action Graph**로 이동하여 Action Graph를 생성합니다.
+3. `/World/Turtlebot3_burger/base_link/imu_link`의 prim 내부에 새로운 Action Graph를 생성하고 이름을 ROS_IMU으로 설정합니다.(그래프의 배치는 자동 ROS 2 네임스페이스 생성에 중요합니다).<br>이를 위해 `/World/Turtlebot3_burger/base_link/imu_link`의 prim을 선택한 다음, **Window > Graph Editors > Action Graph**로 이동하여 Action Graph를 생성합니다.
 
 <img width="500" alt="image" src="https://github.com/user-attachments/assets/858fa48f-c255-4ac4-a8a4-992a50368625" /><br>
 
 4. simulation gate 노드를 포함한 IMU용 그래프를 다음과 같이 구성하세요.
 > <img width="1000" alt="image" src="https://github.com/user-attachments/assets/ed58911a-ff70-4630-8867-5a8482b160e8" /><br>
 >
-> 각 노드에 대해 다음 속성을 설정합니다:<br>
+> 각 노드에 대해 다음 Property를 설정합니다:<br>
 > - **Isaac Simulation Gate** 노드의 Property 탭에서:
 > > step을 `2`로 설정합니다.<br>
 > > step 크기가 `2`라는 것은 downstream 노드가 다른 프레임마다 tick된다는 것을 의미합니다.<br>
@@ -57,7 +57,7 @@ Action Graph는 모든 시뮬레이션 프레임에 체크되므로 OmniGraph �
 > > frameId를 `imu_link`로 설정합니다.<br>
 > > 이는 주행거리 설정에서 생성한 TF publisher가 이미 publish하고 있는 TF 트리에 사용된 `imu_link` 프레임과 일치합니다.<br>
 
-
+## Setting Publish Rates for Nodes Within SDG Pipeline
 
 
 
