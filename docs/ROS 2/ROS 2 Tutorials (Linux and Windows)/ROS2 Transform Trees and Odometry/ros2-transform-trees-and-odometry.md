@@ -89,7 +89,7 @@ Turtlebot의 `/base_link` TF가 `/World`를 기준으로 publish되어 있는지
 > **ROS2 Publish Odometry** 노드는 전체 3D 속도 정보를 publish합니다. 선형 속도와 각속도 모두 3차원(x, y, z)으로 publish되므로 로봇의 motion state를 보다 완벽하게 표현할 수 있습니다.
 
 3. 이 시점에서 우리는 odometry 데이터를 publish하고 있으며, TF 트리는 오직 *odom -> base_link*로만 구성되어 있습니다.<br>또한 base_link 아래에 있는 관련 로봇 prim을 TF 트리에 추가하고자 합니다.<br>이를 위해, **ROS2 Publish Transform Tree** 노드를 그래프에 추가하고 위의 이전 노드들과 유사하게 Exec In, Context, Timestamp를 첨부합니다.
-> <img width="750" alt="image" src="https://github.com/user-attachments/assets/a589be8b-83ae-464d-9290-7f7bf17afcf9" /><br>
+> <img width="750" alt="image" src="https://github.com/user-attachments/assets/473bcb88-2779-45a8-b204-b2d6dfc43c75" /><br>
 >
 > **ROS2 Publish Transform Tree**의 Property 탭에서:
 > - parentPrim을 `/World/turtlebot3_burger/base_link`으로 설정하세요.
@@ -102,8 +102,8 @@ Turtlebot의 `/base_link` TF가 `/World`를 기준으로 publish되어 있는지
 > > - `/World/turtlebot3_burger/wheel_right_link`
 
 4. *odom -> base_link -> <other robot links>*로 구성된 TF 트리를 publish합니다.<br>이 다음 단계는 로봇의 실제 localization을 지정하려는 경우에만 필요합니다.<br>일반적으로 Nav2 AMCL과 같은 localization 지정용 ROS package는 global frame과 odom frame 간의 변환을 설정하는 역할을 합니다.<br>실제 localization 지정을 설정하려면 그래프에 다른 *ROS2 Publish Raw Transform Tree* 게시 노드를 추가하고 위의 이전 노드와 유사하게 Exec In, Context 및 Timestamp를 연결합니다.
-> <img width="750" alt="image" src="https://github.com/user-attachments/assets/a589be8b-83ae-464d-9290-7f7bf17afcf9" /><br>
->
+> <img width="750" alt="image" src="https://github.com/user-attachments/assets/1e31507e-d93d-4dc7-96e5-37eef22393a2" /><br>
+> 
 > **ROS2 Publish Raw Transform Tree**의 Property 탭에서:
 > - childFrameId을 `odom`으로 설정하세요.
 > - parentFrameId을 `world` 설정하세요.
