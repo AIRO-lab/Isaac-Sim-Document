@@ -108,7 +108,8 @@ RViz 내부의 모든 센서와 TF 트리를 한 번에 시각화하려면, RViz
 | TF |  |  | tf | tf |
 
 1. Content 탭에서 **Isaac Sim>Samples>ROS2>Scenario>Turtlebot_tutorial.usd**를 Stage로 드래그 합니다.<br>
-<img width="750" alt="image" src="https://github.com/user-attachments/assets/cbac3e71-0698-47bd-ae5c-1ea08dc26437" />
+<img width="750" alt="image" src="https://github.com/user-attachments/assets/cbac3e71-0698-47bd-ae5c-1ea08dc26437" /><br>
+<img width="1000" alt="image" src="https://github.com/user-attachments/assets/35d030ed-cdfa-4c19-a5f1-6e83d9402e8a" /><br>
 
 2. 새로운 터미널에서 다음 명령어를 통해 Rviz를 실행합니다.<br>
 ```bash
@@ -131,6 +132,7 @@ source install/local_setup.bash
 ```bash
 ros2 param set /rviz use_sim_time true
 ```
+<img width="1851" height="1052" alt="image" src="https://github.com/user-attachments/assets/1f10a1f6-bc8f-4b4f-8298-bec55b703267" />
 
 
 
