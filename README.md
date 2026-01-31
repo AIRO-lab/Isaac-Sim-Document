@@ -43,7 +43,7 @@ https://docs.isaacsim.omniverse.nvidia.com/5.1.0/index.html
   - [RTX Lidar Sensors](/docs/ROS%202/ROS%202%20Tutorials%20%28Linux%20and%20Windows%29/RTX%20Lidar%20Sensors/rtx-lidar-sensors.md)
   - [ROS2 Transform Trees and Odometry](/docs/ROS%202/ROS%202%20Tutorials%20(Linux%20and%20Windows)/ROS2%20Transform%20Trees%20and%20Odometry/ros2-transform-trees-and-odometry.md)
   - [ROS2 Setting Publish Rates](/docs/ROS%202/ROS%202%20Tutorials%20(Linux%20and%20Windows)/ROS2%20Setting%20Publish%20Rates/ros2-setting-publish-rates.md)
-  - [ROS 2 Quality of Service (QoS)]
+  - [ROS 2 Quality of Service (QoS)](/docs/ROS%202/ROS%202%20Tutorials%20(Linux%20and%20Windows)/ROS%202%20Quality%20of%20Service%20(QoS)/ros2-quality-of-service.md)
   - [ROS2 Joint Control: Extension Python Scripting](/docs/ROS%202/ROS%202%20Tutorials%20(Linux%20and%20Windows)/ROS2%20Joint%20Control:%20Extension%20Python%20Scripting/ros2-joint-control-extension-python-scripting.md)
   - [NameOverride Attribute]
   - [ROS 2 Ackermann Controller]
