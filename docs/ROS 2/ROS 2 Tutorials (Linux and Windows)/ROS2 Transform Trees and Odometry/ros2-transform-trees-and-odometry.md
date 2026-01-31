@@ -14,3 +14,6 @@
 | ROS 2 Distribution | Humble |
 | ROS 2 Installation | Native (Host) |
 | DDS Implementation | Fast DDS |
+
+## Getting Started
+- **RTX Lidar Sensors** 튜토리얼의 [rtx-lidar-sensors.md](/docs/ROS%202/ROS%202%20Tutorials%20(Linux%20and%20Windows)/RTX%20Lidar%20Sensors/rtx-lidar-sensors.md)를 열어주세요.
