@@ -55,10 +55,26 @@ ros2 topic list
 ```bash
 rviz2
 ```
-5. Rviz2에서 Fixed Frame을 `base_scan`으로 설정합니다.<br>해당 예제는 TF 구성이 안되어 있기 때문에 직접 입력해야 합니다.
+5. Rviz2에서 Fixed Frame을 `base_scan`으로 설정합니다.<br>해당 예제는 TF 구성이 안되어 있기 때문에 직접 입력해야 합니다.<br>TF 구성은 다음 예제인 [ROS2 Transform Trees and Odometry]에서 진행됩니다.<br>해당 예제에서 TF 구성 된 예시를 보시려면 [rtx_lidar_sensors.usd]를 참고하시기 바랍니다.
+<img width="750" alt="image" src="https://github.com/user-attachments/assets/18aa8162-a236-42dd-ba89-e0636619d050" />
 
+## Running the Example
+1. Docker에서 예제 스크립트를 실행하세요.
+```bash
+./python.sh standalone_examples/api/isaacsim.ros2.bridge/rtx_lidar.py
+```
 
-
+2. 새로운 터미널에서 다음 명령어를 실행하세요.
+```bash
+cd ~/IsaacSim-ros_workspaces/humble_ws/
+export FASTRTPS_DEFAULT_PROFILES_FILE=/home/oms/IsaacSim-ros_workspaces/humble_ws/fastdds.xml
+source /opt/ros/humble/setup.bash
+source install/local_setup.bash
+```
+```bash
+rviz2 -d ./src/isaac_tutorials/rviz2/rtx_lidar.rviz
+```
+<img width="750" alt="image" src="https://github.com/user-attachments/assets/5a21c5ca-6072-4acc-8fa3-cf67431a4480" />
 
 
 
