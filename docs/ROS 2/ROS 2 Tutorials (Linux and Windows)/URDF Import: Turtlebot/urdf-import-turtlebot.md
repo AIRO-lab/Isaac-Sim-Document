@@ -92,7 +92,7 @@ Content 브라우저에서 **Isaac Sim > Environments > Simple_Room**에 `simple
 <img width="1850" height="1053" alt="image" src="https://github.com/user-attachments/assets/a0b383e1-dce4-4b23-8598-855e800a45d4" />
 
 ### URDF 불러오기
-File-Import 에서 워크스페이스에서 **~/IsaacSim-ros_workspaces/humble_ws/src/turtlebot3/turtlebot3_description/urdf/`tb3_burger_processed.urdf`**를 선택
+File-Import 에서 워크스페이스에서 **~/IsaacSim-ros_workspaces/humble_ws/src/turtlebot3/turtlebot3_description/urdf/tb3_burger_processed.urdf**를 선택
 우측 프롬프트 창에서 Option 부분 설정 몇 가지를 진행
   1. Model 섹션에서 Referenced Model 설정
   2. Links 섹션에서 Moveable Base 설정
