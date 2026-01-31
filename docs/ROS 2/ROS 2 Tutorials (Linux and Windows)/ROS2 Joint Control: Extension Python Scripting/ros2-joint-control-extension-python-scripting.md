@@ -15,6 +15,7 @@
 | ROS 2 Installation | Native (Host) |
 | DDS Implementation | Fast DDS |
 
+## Add Joint States in UI
 
 
 
@@ -22,10 +23,23 @@
 
 
 
+## Graph Shortcut
 
 
 
 
+
+
+
+## Add Joint States in Extension
+
+
+
+
+
+
+
+## Position and Velocity Control Modes
 
 
 
