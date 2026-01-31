@@ -58,7 +58,9 @@ Turtlebot의 `/base_link` TF가 `/World`를 기준으로 publish되어 있는지
 *parentPrim* 필드에 *Camera_1*을 추가하고 property 변경 사이에 시뮬레이션을 중지하고 재생하면 `/base_link` TF가 이제 *Camera_1*에 상대적임을 확인할 수 있습니다.<br>
 
 ## Setting Up Odometry
-로봇의 odometry를 설정하려면 odometry ROS message와 해당 transforms을 publish합니다.
+로봇의 odometry를 설정하려면 odometry ROS message와 해당 transforms을 publish합니다.<br>
 
-
+1. 가져온 Turtlebot3 로봇의 Articulation Root가 `/World/Turtlebot3_burger`인지 확인합니다.<br>그렇지 않으면 `/World/Turtlebot3_burger/base_footprint`에서 Articulation Root를 제거하고 `/World/Turtlebot3_burger`에 추가합니다.<br>Articulation Root 섹션의 단계를 따라 Turtlebot3 로봇의 관절 루트를 변경합니다.
+> (Optional Exercise)
+> ROS2 Publish Transform Tree 노드의 **targetPrims** 필드에 `/World/Turtlebot3_burger`(기본값)를 추가하고, 로봇의 모든 링크(고정 또는 관절)의 TF가 `/tf` topic에 게시되는 것을 관찰합니다.
 
