@@ -167,6 +167,7 @@ target simulation frame rate와 많이 다른 publisg rate를 관찰하면 다�
 > ```bash
 > ./isaac-sim.fabric.sh --reset-user
 > ```
+
 > [!IMPORTANT]
 > 위의 명령어는 실험적인 것이며 아이작 심의 모든 기능이 지원되는 것은 아닙니다.<br>
 > 하지만 전반적인 성능이 더 좋을 수도 있습니다.<br>
