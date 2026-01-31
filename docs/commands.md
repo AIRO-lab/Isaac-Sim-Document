@@ -1,4 +1,13 @@
 # Commands
+## Directory Commands
+소유권 변경
+```bash
+sudo chown -R 1234:1234 ~/IsaacSim-ros_workspaces
+```
+```bash
+sudo chown -R $(id -u):$(id -g) ~/IsaacSim-ros_workspaces
+```
+
 ## Docker Commands
 ### Container 생성
 ```bash
