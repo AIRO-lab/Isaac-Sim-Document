@@ -82,16 +82,31 @@
 Static publishers는 메시지를 한 번만 publish할 때 유용할 수 있지만, topic에 연결된 subscribers 수에 관계없이 동일한 메시지를 사용할 수 있어야 합니다.<br>
 1. On Stage Event 및 Countdown OmniGraph 추가하여 다음과 같이 Action Graph를 수정합니다
 > <img width="500" alt="image" src="https://github.com/user-attachments/assets/785ee25c-58db-4120-8256-580b31267964" /><br>
-> - On Stage Event의 경우 eventName 이름을 시뮬레이션 시작 재생으로 설정했습니다.
+> - On Stage Event의 경우 `eventName` 이름을 `Simulation Start Play`으로 설정했습니다.
 > > <img width="500" alt="image" src="https://github.com/user-attachments/assets/46d1b48d-3f3e-48a2-92ae-8b1bee44b6e5" /><br>
-> - Countdown 노드의 경우 duration을 3으로 설정하고 period를 1로 설정합니다.<br>시뮬레이션이 Play된 후 ROS2 Publisher 노드를 3번 체크합니다.<br>ROS2 Publisher 노드의 경우 처음 2프레임이 설정에 사용되고 3프레임이 메시지를 publish합니다.
+> - Countdown 노드의 경우 `duration`을 `3`으로 설정하고 `period`를 `1`로 설정합니다.<br>시뮬레이션이 Play된 후 ROS2 Publisher 노드를 3번 체크합니다.<br>ROS2 Publisher 노드의 경우 처음 2프레임이 설정에 사용되고 3프레임이 메시지를 publish합니다.
 > > <img width="500" alt="image" src="https://github.com/user-attachments/assets/70d6c190-b502-405d-b868-c9b65fd09582" /><br>
 
+2. ROS2 QoS Profile 노드를 선택하고 Property 탭에서 다음과 같이 설정합니다.
+- createProfile을 `Default for publisher/subscribers`으로 설정합니다.
+- `depth`를 `1`로 설정합니다.
+- `durability`를 `transientLocal`로 설정합니다.
 
+3. **Play**를 눌러 시뮬레이션을 시작합니다.
 
+4. 새로운 터미널에서 다음 명령어를 실행하여 static message를 확인합니다
+> ```bash
+> cd ~/IsaacSim-ros_workspaces/humble_ws/
+> export FASTRTPS_DEFAULT_PROFILES_FILE=/home/oms/IsaacSim-ros_workspaces/humble_ws/fastdds.xml
+> source /opt/ros/humble/setup.bash
+> source install/local_setup.bash
+> ```
+> ```bash
+> ros2 topic echo /topic
+> ```
 
-
-
+6. 새로운 터미널에서 4번을 반복하고 이 second subscriber에 대해 static message가 다시 나타나는 것을 확인합니다.
+> <img width="929" height="91" alt="image" src="https://github.com/user-attachments/assets/eaf97e6a-cd5c-4a7b-a31a-3980b5f451cc" />
 
 
 
