@@ -147,7 +147,7 @@ Isaac Sim의 TF 뷰어를 사용하면 Viewport 창에서 시뮬레이션된 sce
 3. 시각화를 시작하려면 변환을 계산할 적절한 root frame을 선택합니다(예: publish된 변환 트리 사양에 따라 World 또는 world).
 > <img width="728" height="392" alt="image" src="https://github.com/user-attachments/assets/c9d40e47-5f5d-4329-95d7-756810f03392" />
 
-> > [!NOTE]
+> [!NOTE]
 > `/tf` 및/또는 `/tf_static` 주제 아래에 publication이 있음에도 불구하고 시각화(또는 특정 root frame)가 표시되지 않는 경우:
 > - **TF Viewer** 창을 열기 전에 시뮬레이션이 실행되고 있는지 확인합니다.
 > - **TF Viewer** 창을 닫았다가 다시 열어 TF subscription을 업데이트합니다.
