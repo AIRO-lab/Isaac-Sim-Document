@@ -70,7 +70,7 @@ Turtlebot의 `/base_link` TF가 `/World`를 기준으로 publish되어 있는지
 > ROS2 Publish Transform Tree 노드의 **targetPrims** 필드에 `/World/Turtlebot3_burger`(기본값)를 추가하고, 로봇의 모든 링크(고정 또는 관절)의 TF가 `/tf` topic에 게시되는 것을 관찰합니다.
 
 2. 새로운 Action Graph를 만들어 다음과 같이 Action Graph를 구성하세요.<br>
-> <img width="750" alt="image" src="https://github.com/user-attachments/assets/dd2de0c1-a899-4acd-8a21-382cf6bcc982" />
+> <img width="750" alt="image" src="https://github.com/user-attachments/assets/dd2de0c1-a899-4acd-8a21-382cf6bcc982" /><br>
 >
 > - **Isaac Compute Odometry**의 Property 탭에서:<br>
 > > chassisPrim에 `/World/turtlebot3_burger`를 추가합니다.<br>
