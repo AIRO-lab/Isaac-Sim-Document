@@ -69,6 +69,8 @@
 > ros2 topic info /topic -v
 > ```
 > QoS 프로파일의 출력은 Isaac Sim에서 정의한 것과 일치해야 합니다.<br>
+> <br>
+> <img width="300" alt="image" src="https://github.com/user-attachments/assets/9e0f7aa9-4c7d-401a-8ee2-474aae531dab" /><br>
 
 > [!NOTE]
 > 기본적으로 Fast DDS(이전의 Fast RTPS)는 Depth를 저장하지 않으므로 Depth policy이 알 수 없는 것으로 나타날 수 있습니다.<br>
