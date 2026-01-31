@@ -125,18 +125,51 @@ Camera 및 RTX Lidar sensor의 경우 SDG pipeline 내에서 자동으로 구성
 > > timeline.play()
 > > ```
 
-2. script editor에서 snippets(`Run (Ctrl+Enter)`)을 실행하고 시뮬레이션 속도에 미치는 영향을 확인합니다.<br>viewport show/hide menu **(eye) > Heads Up Display > FPS**로 이동하여 FPS 디스플레이를 활성화할 수 있습니다.
+2. script editor에서 snippets(`Run(Ctrl+Enter)`)을 실행하고 시뮬레이션 속도에 미치는 영향을 확인합니다.<br>viewport show/hide menu **(eye) > Heads Up Display > FPS**로 이동하여 FPS 디스플레이를 활성화할 수 있습니다.
 > <img width="300" alt="image" src="https://github.com/user-attachments/assets/b6ae993c-f4d9-4163-b7c4-a471518e7f6f" /><br>
 > <img width="300" alt="image" src="https://github.com/user-attachments/assets/f52cb73b-bd55-4b20-ac32-4b31fba8161d" /><br>
 > 
 > physics_rate를 다른 값으로 수정하고 FPS 수치를 확인해 보세요.
 
-
 ### Checking ROS 2 Publish Rate
-
-
-
+1. 시뮬레이션에서 **Play**를 누르세요.
+2. 다음 명령어를 사용하여 각 ROS topic의 publish rate를 확인합니다:
+> ```bash
+> ros2 topic hz /topic_name
+> ```
+> <br>
+> `/topic_name`은 아래에 나열된 각 sensor topic으로 대체됩니다.<br>
+> <br>
+> ublish rates가 추정됩니다.<br>
+> 고성능 기계에서는 최대 FPS가 이전 섹션에서 설정한 물리 속도(기본값 60Hz)에 더 가깝습니다.<br>
+3. 각 sensor topic에 대해 그들의 rates는 최대 시뮬레이션 FPS의 요소입니다.<br>(이전에 정의한 실행 단계에 따라 다름)
+- **/clock**: 시뮬레이션 FPS(기본값 약 60Hz)와 동일한 속도로 게시합니다.
+- **/imu**: sim_fps/2 (~30Hz) rate로 publish
+- **/scan**: sim_fps/12 (~5Hz) rate로 publish
+- **/camera_1/rgb/image_raw**: sim_fps/4 (~15Hz)로 publish
+- **/camera_1/rgb/camera_info**: sim_fps/6 (~10Hz)에서 publish
+이 튜토리얼의 모든 단계가 포함된 파일은<br>
+Isaac Sim에서 Content browser에서 **Isaac Sim>Samples>ROS2>Scenario>Turtlebot_tutorial_multi_sensor_publish_rates.usd**를 클릭하여 열 수 있습니다.<br>
+파일을 연 후에는 Setting Simulation Frame Rates 단계를 실행하여 target simulation rate를 설정하는 것을 잊지 마세요.<br>
+> [!NOTE]
+> `/camera_1/rgb/image_raw` topic이 예상보다 느린 rate로 publish되는 것을 관찰하면 각 이미지 메시지의 크기가 커서 네트워크 트래픽이나 DDS 대기열 관리에 병목 현상이 발생하기 때문일 수 있습니다.<br>
+> publish rate를 개선하려면 렌더 제품 해상도의 차원을 줄이는 것이 좋습니다.<br>
+> 이 작업은 Image Publisher `/World/ActionGraph_camera/isaac_create_render_product`에 연결된 render product 노드로 이동하여 scene을 재생하기 전에 dimensions을 수정하여 수행할 수 있습니다.
 
 ### Troubleshooting
+target simulation frame rate와 많이 다른 publisg rate를 관찰하면 다음을 시도해 보세요:<br>
+1. factory settings에서 Isaac Sim을 실행하여 지속적인 simulation frame rate settings을 지우세요:
+> ```bash
+> ./isaac-sim.sh --reset-user
+> ```
+
+2. 컴퓨터의 CPU 사용량을 확인하여 병목 현상을 식별합니다.<br>Isaac Sim의 사용량이 엄청나게 많다면 Fabric을 활성화한 상태에서 실행해 보세요:
+> ```bash
+> ./isaac-sim.fabric.sh --reset-user
+> ```
+> [!IMPORTANT]
+> 위의 명령어는 실험적인 것이며 아이작 심의 모든 기능이 지원되는 것은 아닙니다.<br>
+> 하지만 전반적인 성능이 더 좋을 수도 있습니다.<br>
+> Fabric을 처음 실행할 때는 --reset-user flag만 사용하면 됩니다.<br>
 
 
