@@ -115,7 +115,7 @@ Turtlebot의 `/base_link` TF가 `/World`를 기준으로 publish되어 있는지
 ```bash
 ros2 run tf2_tools view_frames
 ```
-[frames_2026-01-31_20.13.46.pdf](https://github.com/user-attachments/files/24981719/frames_2026-01-31_20.13.46.pdf)
+<img width="750" alt="image" src="https://github.com/user-attachments/assets/a74c92bf-c72e-4e47-b266-dfb8f96a21bd" />
 
 
 
