@@ -18,14 +18,9 @@
 ## Adding a RTX Lidar ROS 2 Bridge
 1. **Create > Sensors > RTX Lidar > NVIDIA > Example Rotary 2D**
 
-
-
 2. 생성된 Example Rotary 2D의 Prim을 */World/turtlebot3_burger/base_scan*으로 드래그하세요.<br>그 후 Example Rotary 2D의 Property 탭에서 위치를 `(0,0,0)`으로 설정합니다.
 
-
-
 3. **Create > Sensors > RTX Lidar > NVIDIA > Example Rotary**
-
 
 4. 생성된 Example Rotary의 Prim을 */World/turtlebot3_burger/base_scan*으로 드래그하세요.<br>그 후 Example Rotary의 Property 탭에서 위치를 `(0,0,0)`으로 설정합니다.
 
@@ -44,9 +39,19 @@
 > 
 > PointCloud 메시지는 **ROS2 RTX Lidar Helper**의 전체 스캔 publish 설정 값에 따라 매 프레임 또는 전체 스캔이 누적된 후에 게시됩니다.
 
-
-
-
+## RViz visualization
+1. Isaac Sim에서 **Play**를 눌러 시뮬레이션을 시작합니다.
+2. 새로운 터미널에서 다음 명령어를 입력하여 `Rviz2`를 실행합니다
+```bash
+cd ~/IsaacSim-ros_workspaces/humble_ws/
+export FASTRTPS_DEFAULT_PROFILES_FILE=/home/oms/IsaacSim-ros_workspaces/humble_ws/fastdds.xml
+source /opt/ros/humble/setup.bash
+source install/local_setup.bash
+```
+```bash
+rviz2
+```
+3. Rviz2에서 fixed_frame을 `base_scan`으로 설정합니다
 
 
 
