@@ -58,8 +58,36 @@ Action Graph는 모든 시뮬레이션 프레임에 체크되므로 OmniGraph �
 > > 이는 주행거리 설정에서 생성한 TF publisher가 이미 publish하고 있는 TF 트리에 사용된 `imu_link` 프레임과 일치합니다.<br>
 
 ## Setting Publish Rates for Nodes Within SDG Pipeline
+이전 섹션에서는 OmniGraph ROS2 publishing pipeline의 Isaac Simulation Gate 노드에 추가했습니다.<br>
+Camera 및 RTX Lidar sensor의 경우 SDG pipeline 내에서 자동으로 구성됩니다.<br>
+<br>
+각 publisher의 publish rate를 수정하려면 각 ROS2 Helper 노드 내의 **frameSkipCount** 매개변수를 수정할 수 있습니다.<br>
+1. `/World/Turtlebot3_burger/base_scan/ROS_LidarRTX`에 있는 Lidar Action Graph를 엽니다.<br>Ros2RTXLidarHelper 노드(`/World/Turtlebot3_burger/base_scan/ROS_LidarRTX/LaserScanPublish`)를 선택하고 Property에서 `frameSkipCount` 값을 `11`로 설정합니다.
+> <img width="300" alt="image" src="https://github.com/user-attachments/assets/d7c9caee-1b5a-4c2a-9875-c5dc1c0b18eb" /><br>
+> 
+> 이렇게 하면 publish 사이에 11프레임을 건너뛰고 SDG 파이프라인 내에 연결된 Isaac Simulation Gate 노드의 step 속성을 자동으로 11값으로 설정할 수 있습니다.<br>
+> 11프레임을 건너뛰는 것은 매 12프레임마다 publish하는 것과 같습니다.<br>
 
+2. 이 튜토리얼에서는 point cloud를 publish할 필요가 없으므로, point cloud에 대해 Ros2RTXLidarHelper 노드(`/World/Turtlebot3_burger/base_scan/ROS_LidarRTX/PointCloudPublish`)를 선택하고 활성화된 `enabled`를 비활성화하세요.
+> <img width="300" alt="image" src="https://github.com/user-attachments/assets/c27c947b-eec0-4158-b4ca-79ed1a797c1b" /><br>
 
+3. `/World/ActionGraph_camera`에 있는 Camera Action Graph를 엽니다.<br>`/World/ActionGraph_camera/isaac_create_render_product_01`를 선택하여 활성화된 `enabled`을 비활성화하여 두 번째 카메라 렌더 제품을 비활성화합니다.
+> <img width="300" alt="image" src="https://github.com/user-attachments/assets/8b08634a-82d7-4490-92fc-fdcb0393165b" /><br>
+
+4. RGB images를 위해 /World/ActionGraph_camera/ros2_camera_helper에서 `frameSkipCount` 값을 `3`으로 설정합니다.
+> <img width="300" alt="image" src="https://github.com/user-attachments/assets/c388f94b-a5b6-43e8-9483-e2234cb49a4d" /><br>
+> 
+> 이렇게 하면  publish 사이에 3프레임을 건너뛰고 SDG 파이프라인 내에 연결된 Isaac Simulation Gate 노드의 step 속성을 자동으로 4값으로 설정할 수 있습니다.<br>
+> 3프레임을 건너뛰는 것은 매 4프레임마다 publish하는 것과 같습니다.<br>
+
+5. 이 튜토리얼에서는 Camera1의 Depth Image를 publish할 필요가 없습니다.<br>`/World/ActionGraph_camera/ros2_camera_helper_02`에서 `enabled`을 비활성화하여 Depth Image에 대한 camera helper를 비활성화합니다.
+> <img width="300" alt="image" src="https://github.com/user-attachments/assets/42e27a71-bdf9-4cf8-8e18-c179a0dee758" /><br>
+
+6. camera info에 대한 Camera Info Helper 노드 설정의 속성 패널인 `/World/ActionGraph_camera/ros2_camera_info_helper`에서 `frameSkipCount` 값을 `5`로 설정합니다.
+> <img width="300" alt="image" src="https://github.com/user-attachments/assets/aee978f1-3d56-4beb-a0bc-93466b9d9f0b" /><br>
+> 
+> 이렇게 하면 publish 사이에 5프레임을 건너뛰고 SDG 파이프라인 내에 연결된 Isaac Simulation Gate 노드의 step 속성을 자동으로 6값으로 설정할 수 있습니다.<br>
+> 5프레임을 건너뛰는 것은 매 6프레임마다 publish하는 것과 같습니다.<br>
 
 
 
