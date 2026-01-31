@@ -41,7 +41,7 @@
 
 ## RViz visualization
 1. Isaac Sim에서 **Play**를 눌러 시뮬레이션을 시작합니다.
-2. 새로운 터미널에서 다음 명령어를 입력하여 `Rviz2`를 실행합니다
+2. 새로운 터미널에서 다음 명령어를 입력하여 토픽을 확인합니다 `Rviz2`를 실행합니다
 ```bash
 cd ~/IsaacSim-ros_workspaces/humble_ws/
 export FASTRTPS_DEFAULT_PROFILES_FILE=/home/oms/IsaacSim-ros_workspaces/humble_ws/fastdds.xml
@@ -49,9 +49,13 @@ source /opt/ros/humble/setup.bash
 source install/local_setup.bash
 ```
 ```bash
+ros2 topic list
+```
+3. `Rviz2`를 실행합니다.
+```bash
 rviz2
 ```
-3. Rviz2에서 fixed_frame을 `base_scan`으로 설정합니다
+5. Rviz2에서 fixed_frame을 `base_scan`으로 설정합니다
 
 
 
