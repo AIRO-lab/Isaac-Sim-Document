@@ -16,6 +16,16 @@
 | DDS Implementation | Fast DDS |
 
 ## Adding a RTX Lidar ROS 2 Bridge
+다음 명령어를 통해 Isaac Sim을 실행하세요.<br>
+```bash
+./runheadless.sh
+```
+다음 명령어를 통해 Isaac Sim 프로그램을 Streaming 하세요.<br>
+```bash
+./docker/isaacsim-webrtc-streaming-client-1.1.5-linux-x64.AppImage
+```
+<br>
+
 1. **Create > Sensors > RTX Lidar > NVIDIA > Example Rotary 2D**
 
 2. 생성된 Example Rotary 2D의 Prim을 */World/turtlebot3_burger/base_scan*으로 드래그하세요.<br>그 후 Example Rotary 2D의 Property 탭에서 위치를 `(0,0,0)`으로 설정합니다.
@@ -88,7 +98,7 @@ publish 노드의 모든 타임스탬프에 타임스탬프를 입력하는 노�
 <img width="500" alt="image" src="https://github.com/user-attachments/assets/355caea1-4a85-425f-9641-069f7f5969bf" /><br>
 <br>
 **frameId and topicName**<br>
-RViz 내부의 모든 센서와 TF 트리를 한 번에 시각화하려면, RViz가 이를 모두 인식하려면 frameId와 topicNames가 특정 규칙을 따라야 합니다. 아래 표는 이러한 규칙을 대략적으로 설명하고 있습니다. 아래의 다중 센서 예제를 보려면 USD asset을 참조하세요. USD 자산은 Isaac Sim Content 브라우저로 이동하여 **Isaac Sim>Samples>ROS2>Scenario>Turtlebot_tutorial.usd**를 클릭하면 확인할 수 있습니다.<br>
+RViz 내부의 모든 센서와 TF 트리를 한 번에 시각화하려면, RViz가 이를 모두 인식하려면 frameId와 topicNames가 특정 규칙을 따라야 합니다. 아래 표는 이러한 규칙을 대략적으로 설명하고 있습니다. 아래의 다중 센서 예제를 보려면 USD asset을 참조하세요.<br>
 | Source | frameId | nodeNamespace | topicName | type |
 |-|-|-|-|-|
 | Camera RGB | (device_name)_(data_type) | (device_name)/(data_type) | image_raw | rgb |
@@ -97,8 +107,30 @@ RViz 내부의 모든 센서와 TF 트리를 한 번에 시각화하려면, RViz
 | Lidar | base_scan |  | point_cloud | point_cloud |
 | TF |  |  | tf | tf |
 
+1. Content 탭에서 **Isaac Sim>Samples>ROS2>Scenario>Turtlebot_tutorial.usd**를 Stage로 드래그 합니다.<br>
+<img width="750" alt="image" src="https://github.com/user-attachments/assets/cbac3e71-0698-47bd-ae5c-1ea08dc26437" />
 
+2. 새로운 터미널에서 다음 명령어를 통해 Rviz를 실행합니다.<br>
+```bash
+cd ~/IsaacSim-ros_workspaces/humble_ws/
+export FASTRTPS_DEFAULT_PROFILES_FILE=/home/oms/IsaacSim-ros_workspaces/humble_ws/fastdds.xml
+source /opt/ros/humble/setup.bash
+source install/local_setup.bash
+```
+```bash
+rviz2 -d ./src/isaac_tutorials/rviz2/camera_lidar.rviz
+```
 
+3. 새로운 터미널에서 다음 명령어를 통해 시뮬레이션와 동기화를 하세요.<br>
+```bash
+cd ~/IsaacSim-ros_workspaces/humble_ws/
+export FASTRTPS_DEFAULT_PROFILES_FILE=/home/oms/IsaacSim-ros_workspaces/humble_ws/fastdds.xml
+source /opt/ros/humble/setup.bash
+source install/local_setup.bash
+```
+```bash
+ros2 param set /rviz use_sim_time true
+```
 
 
 
