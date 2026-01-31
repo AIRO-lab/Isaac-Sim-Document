@@ -126,3 +126,31 @@ Isaac Sim에서 Content 탭에서 **Isaac Sim>Sampions>ROS2>Scenario>Turtlebot_t
 ### Odometry Publisher
 **Tools > Robotics > ROS 2 OmniGraphs > Odometry**
 
+## Viewing the Transform Tree in Isaac Sim
+Isaac Sim의 TF 뷰어를 사용하면 Viewport 창에서 시뮬레이션된 scene 자체와 Isaac Sim 및/또는 외부 ROS 2 노드에서 publish한 TF 트리(`/tf` 및 `/tf_static` topic 아래)에 그림을 그릴 수 있습니다.<br>
+<br>
+1. **Window > Extensions**를 눌러 Extension Manager에서 `isaacsim.ros2.tf_viewer`를 검색하여 활성화합니다.
+<img width="500" alt="image" src="https://github.com/user-attachments/assets/e4d83f3b-b38c-4896-b8fd-230ac3b42482" />
+
+2. Extension 기능이 활성화된 후, 상단 메뉴 바로 이동하여 **Window > TF Viewew**를 클릭하여 transform viewer control 창을 엽니다.
+> <img width="750" alt="image" src="https://github.com/user-attachments/assets/80b88f53-f309-4468-83f7-75d1c7db6fd1" />
+> Window components:
+> A. 변환을 계산할 프레임.
+> B. 프레임(마커)이 표시되는지 여부. 마커 색상. 마커 크기(상대적).
+> C. 프레임 이름이 표시되는지 여부. 텍스트 색상. 텍스트 크기(상대적).
+> D. 프레임의 축이 표시되는지 여부(RGB -> XYZ 축). 축 길이(미터 단위). 축 두께(상대적).
+> E. 자식 프레임과 부모 프레임 간의 연결을 표시할지 여부. 선 색상. 선 두께(상대적).
+> F. 프레임 변환 업데이트 주파수(Hz). 주파수가 높을수록 시뮬레이션 성능이 저하될 수 있습니다.
+> G. TF 트리를 Reset합니다(transformation buffers 지우기). 예를 들어 `TF_OLD_DATA` 경고를 지우는 데 유용합니다.
+
+3. 시각화를 시작하려면 변환을 계산할 적절한 root frame을 선택합니다(예: publish된 변환 트리 사양에 따라 World 또는 world).
+> <img width="728" height="392" alt="image" src="https://github.com/user-attachments/assets/c9d40e47-5f5d-4329-95d7-756810f03392" />
+> > [!NOTE]
+> > `/tf` 및/또는 `/tf_static` 주제 아래에 publication이 있음에도 불구하고 시각화(또는 특정 root frame)가 표시되지 않는 경우:
+> > - **TF Viewer** 창을 열기 전에 시뮬레이션이 실행되고 있는지 확인합니다
+> > - **TF Viewer** 창을 닫았다가 다시 열어 TF subscription을 업데이트합니다
+> > - **TF Viewer** 창에서 Reset 버튼을 눌러 TF 트리를 재설정합니다
+
+
+
+
