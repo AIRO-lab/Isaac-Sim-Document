@@ -71,17 +71,18 @@ Turtlebot의 `/base_link` TF가 `/World`를 기준으로 publish되어 있는지
 
 2. 새로운 Action Graph를 만들어 다음과 같이 Action Graph를 구성하세요.<br>
 > <img width="750" alt="image" src="https://github.com/user-attachments/assets/dd2de0c1-a899-4acd-8a21-382cf6bcc982" />
-> - **Isaac Compute Odometry**의 Property 탭에서:
-> > chassisPrim에 `/World/turtlebot3_burger`를 추가합니다.
-> > 이 노드는 로봇의 시작 위치를 기준으로 현재 위치를 계산합니다.
-> > 이 노드의 출력은 `/odom` ROS 2 topic의 publisher와 `/odom` 프레임에서 `/base_link` 프레임으로의 단일 변환을 publisher하는 TF publisher 모두에 입력됩니다.
-> - **ROS2 Publish Raw Transform Tree**의 Property 탭에서:
-> > childFrameId에 `base_link`
-> > parentFrameId에 `odom`
-> > TF 트리에서 odom -> base_link 프레임을 publish합니다.
-> - **ROS2 Publish Odometry**의 Property 탭에서:
-> > chassisFrameId에 `base_link`
-> > odomFrameId에 `odom`
+>
+> - **Isaac Compute Odometry**의 Property 탭에서:<br>
+> > chassisPrim에 `/World/turtlebot3_burger`를 추가합니다.<br>
+> > 이 노드는 로봇의 시작 위치를 기준으로 현재 위치를 계산합니다.<br>
+> > 이 노드의 출력은 `/odom` ROS 2 topic의 publisher와 `/odom` 프레임에서 `/base_link` 프레임으로의 단일 변환을 publisher하는 TF publisher 모두에 입력됩니다.<br>
+> - **ROS2 Publish Raw Transform Tree**의 Property 탭에서:<br>
+> > childFrameId에 `base_link`<br>
+> > parentFrameId에 `odom`<br>
+> > TF 트리에서 odom -> base_link 프레임을 publish합니다.<br>
+> - **ROS2 Publish Odometry**의 Property 탭에서:<br>
+> > chassisFrameId에 `base_link`<br>
+> > odomFrameId에 `odom`<br>
 > > TF 트리에서 odom -> base_link 프레임을 publish합니다.
 
 > [!NOTE]
