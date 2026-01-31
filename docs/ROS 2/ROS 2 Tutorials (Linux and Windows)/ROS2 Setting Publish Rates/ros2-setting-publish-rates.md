@@ -19,7 +19,7 @@
 Action Graph는 모든 시뮬레이션 프레임에 체크되므로 OmniGraph 노드는 시뮬레이션 속도의 요인에 바인딩됩니다.<br>
 이 튜토리얼에서는 이러한 시뮬레이션 요인에서 게시 ROS2 노드를 구성하는 방법을 설명합니다.
 
-## Isaac Simulation Gate Node
+### Isaac Simulation Gate Node
 이 섹션에서는 정의된 대로 특정 프레임 수마다 OmniGraph를 체크하는 데 사용할 수 있는 Isaac Simulation Gate 노드를 보여줍니다.<br>
 이 OmniGraph 노드로 IMU publisher가 설정되어 있습니다.<br>
 
@@ -57,7 +57,7 @@ Action Graph는 모든 시뮬레이션 프레임에 체크되므로 OmniGraph �
 > > frameId를 `imu_link`로 설정합니다.<br>
 > > 이는 주행거리 설정에서 생성한 TF publisher가 이미 publish하고 있는 TF 트리에 사용된 `imu_link` 프레임과 일치합니다.<br>
 
-## Setting Publish Rates for Nodes Within SDG Pipeline
+### Setting Publish Rates for Nodes Within SDG Pipeline
 이전 섹션에서는 OmniGraph ROS2 publishing pipeline의 Isaac Simulation Gate 노드에 추가했습니다.<br>
 Camera 및 RTX Lidar sensor의 경우 SDG pipeline 내에서 자동으로 구성됩니다.<br>
 <br>
@@ -89,13 +89,34 @@ Camera 및 RTX Lidar sensor의 경우 SDG pipeline 내에서 자동으로 구성
 > 이렇게 하면 publish 사이에 5프레임을 건너뛰고 SDG 파이프라인 내에 연결된 Isaac Simulation Gate 노드의 step 속성을 자동으로 6값으로 설정할 수 있습니다.<br>
 > 5프레임을 건너뛰는 것은 매 6프레임마다 publish하는 것과 같습니다.<br>
 
+### Setting Simulation Frame Rates
+특정 노드를 다양한 속도로 체크하도록 ActionGraphs를 구성했습니다.<br>
+모든 ActionGraphs는 시뮬레이션 속도에 대해 정의된 최대 프레임 속도로 제한되므로 Python interface를 사용하여 이 시뮬레이션 프레임 속도를 수정할 수 있습니다.<br>
+<br>
+1. 스크립트 편집기에서 파이썬 코드를 실행하여 시뮬레이션 속도를 설정합니다. 창 > 스크립트 편집기로 이동하여 스크립트 편집기를 엽니다.
+> 시뮬레이션 속도를 설정하는 두 가지 방법이 있습니다:
+> - 탄소 설정 변경. 장면 재생 후 아래 스크립트를 실행합니다. 이 방법은 시뮬레이션 타임라인 실행률을 설정하는 것을 목표로 합니다. 이는 OnPlayBackTick 노드의 시간에 영향을 미칩니다.
+> > ```python
+> > # Change the carb settings. This is not persistent between when stopping and replaying
+> > 
+> > import carb
+> > physics_rate = 60 # fps
+> > carb_settings = carb.settings.get_settings()
+> > carb.settings.get_settings().set_bool("/app/runLoops/main/rateLimitEnabled", True)
+> > carb.settings.get_settings().set_int("/app/runLoops/main/rateLimitFrequency", int(physics_rate))
+> > carb.settings.get_settings().set_int("/persistent/simulation/minFrameRate", int(physics_rate))
+> > ```
+> - SetTimeCodesPerSecond 및 set_target_framerate 변경. 이 방법은 물리학 실행 속도를 설정하는 것을 목표로 합니다. 이는 IsaacReadSimulationTime 노드의 시간에 영향을 미칩니다.
+> > 
+
+
+2. 스크립트 편집기에서 스니펫을 실행하고 시뮬레이션 속도에 미치는 영향을 확인합니다. 뷰포트 표시/숨기기 메뉴(눈) > 헤드업 디스플레이 > FPS로 이동하여 FPS 디스플레이를 활성화할 수 있습니다.
+
+### Checking ROS 2 Publish Rate
 
 
 
 
-
-
-
-
+### Troubleshooting
 
 
