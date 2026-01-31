@@ -1,47 +1,20 @@
 # Commands
-## Isaac Sim
-**Terminal 1**
+## Directory Commands
+소유권 변경
 ```bash
-docker run --name isaac-sim --entrypoint bash -it --gpus all -e "ACCEPT_EULA=Y" --rm --network=host \
-    -e "PRIVACY_CONSENT=Y" \
-    -v ~/docker/isaac-sim/cache/main:/isaac-sim/.cache:rw \
-    -v ~/docker/isaac-sim/cache/computecache:/isaac-sim/.nv/ComputeCache:rw \
-    -v ~/docker/isaac-sim/logs:/isaac-sim/.nvidia-omniverse/logs:rw \
-    -v ~/docker/isaac-sim/config:/isaac-sim/.nvidia-omniverse/config:rw \
-    -v ~/docker/isaac-sim/data:/isaac-sim/.local/share/ov/data:rw \
-    -v ~/docker/isaac-sim/pkg:/isaac-sim/.local/share/ov/pkg:rw \
-    -v ~/IsaacSim-ros_workspaces:/IsaacSim-ros_workspaces:rw \
-    -u 1234:1234 \
-    nvcr.io/nvidia/isaac-sim:5.1.0
+sudo chown -R 1234:1234 ~/IsaacSim-ros_workspaces
 ```
 ```bash
-./runheadless.sh -v
-```
-**Terminal 2**
-```bash
-~/docker/isaacsim-webrtc-streaming-client-1.1.5-linux-x64.AppImage
+sudo chown -R $(id -u):$(id -g) ~/IsaacSim-ros_workspaces
 ```
 
-## ROS 2
-```bash
-cd ~/IsaacSim-ros_workspaces/humble_ws/
-export FASTRTPS_DEFAULT_PROFILES_FILE=/home/oms/IsaacSim-ros_workspaces/humble_ws/fastdds.xml
-source /opt/ros/humble/setup.bash
-source install/local_setup.bash
-```
-
-<br>
-<br>
-<br>
-<br>
-<br>
-
-## Test
-**test**
+## Docker Commands
+### Container 생성
 ```bash
 docker run --name isaac-sim \
   --entrypoint bash -it --gpus all \
   --network=host \
+  -u 1234:1234 \
   -e ACCEPT_EULA=Y \
   -e PRIVACY_CONSENT=Y \
   -e ROS_DISTRO=humble \
@@ -54,41 +27,51 @@ docker run --name isaac-sim \
   -v ~/docker/isaac-sim/data:/isaac-sim/.local/share/ov/data:rw \
   -v ~/docker/isaac-sim/pkg:/isaac-sim/.local/share/ov/pkg:rw \
   -v ~/IsaacSim-ros_workspaces:/IsaacSim-ros_workspaces:rw \
-  -u $(id -u):$(id -g) \
   nvcr.io/nvidia/isaac-sim:5.1.0
 ```
+
+### Container 확인 및 삭제
+Container 확인
+```bash
+docker ps -a
+```
+Container 삭제
+```bash
+docker rm isaac-sim
+```
+
+### Container 실행 및 종료
+Container 실행
+```bash
+docker start isaac-sim
+```
+Container 종료
+```bash
+docker stop isaac-sim
+```
+
+### Container 진입
+실행 중인 Container 진입
+```bash
+docker exec -it isaac-sim bash
+```
+
+### 실행 명령어
+시각화 가능한 Isaac Sim 실행
+```bash
+./runheadless.sh -v
+```
+Python 파일 실행
 ```bash
 ./python.sh /IsaacSim-ros_workspaces/tutorial/src/publishing_camera_data.py \
   --/app/omni.graph.scriptnode/opt_in=true \
   --/app/omni.graph.scriptnode/enable_opt_in=false    
 ```
-```bash
-sudo chown -R $(id -u):$(id -g) ~/IsaacSim-ros_workspaces
-```
 
-### Docker
-컨테이너 확인
+## ROS 2 Commands
 ```bash
-docker ps -a
-```
-
-컨테이너 삭제
-```bash
-docker rm isaac-sim
-```
-
-컨테이너 실행
-```bash
-docker start isaac-sim
-```
-
-컨테이너 종료
-```bash
-docker stop isaac-sim
-```
-
-`-u $(id -u):$(id -g)`로 실행 시 `/isaac-sim` 접근 권한 부여 (최초 1회 실행)
-```bash
-docker exec -it -u root isaac-sim bash
-chmod a+rx /isaac-sim
+cd ~/IsaacSim-ros_workspaces/humble_ws/
+export FASTRTPS_DEFAULT_PROFILES_FILE=/home/oms/IsaacSim-ros_workspaces/humble_ws/fastdds.xml
+source /opt/ros/humble/setup.bash
+source install/local_setup.bash
 ```
