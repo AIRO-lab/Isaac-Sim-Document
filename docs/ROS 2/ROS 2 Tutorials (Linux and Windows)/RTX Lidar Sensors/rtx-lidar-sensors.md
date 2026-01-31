@@ -49,7 +49,7 @@
 > 
 > PointCloud 메시지는 **ROS2 RTX Lidar Helper**의 전체 스캔 publish 설정 값에 따라 매 프레임 또는 전체 스캔이 누적된 후에 게시됩니다.
 
-## RViz visualization
+### RViz visualization
 1. Isaac Sim에서 **Play**를 눌러 시뮬레이션을 시작합니다.
 2. 새로운 터미널에서 다음 명령어를 입력하여 토픽을 확인합니다 `Rviz2`를 실행합니다
 ```bash
