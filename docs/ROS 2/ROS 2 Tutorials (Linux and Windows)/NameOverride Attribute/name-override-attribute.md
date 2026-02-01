@@ -46,6 +46,7 @@ Joint State 또는 `TF` publisher를 설정할 때, 기본 이름은 ROS link na
 > ```
 > <img width="500" alt="image" src="https://github.com/user-attachments/assets/ba53b572-2b49-4334-aacb-8a4d740a6a40" /><br>
 <br>
+
 **ROS Publishers:** <br>
 **ROS 2 Publish Transform Tree**와 **ROS 2 Publish Joint State** OmniGraph 노드는 주어진 prim에 대해 정의된 경우 `iaca:nameOverride` 속성에서 제공하는 이름을 자동으로 publish합니다.<br>
 <br>
