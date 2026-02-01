@@ -18,8 +18,28 @@
 ## Getting Started
 해당 예제를 진행하기 위해 다음을 진행하세요.
 - ackermann_msgs ROS 2 package가 필요합니다.<br>다음 명령어를 통해 설치하세요.
+> ```bash
+> sudo apt install ros-humble-ackermann-msgs
+> ```
 - Isaac Sim 내에서 **Window > Extensions**로 이동하여 `isaacsim.ros2.bridge`를 Enable하세요.
+> <img width="500" alt="image" src="https://github.com/user-attachments/assets/0fa2211b-b9fa-4a93-aa73-92dfd93973b3" />
 - ROS 2 워크스페이스에 `isaac_tutorials`, `cmdvel_to_ackermann` 패키지가 있어야 합니다.<br>없을 경우 [ROS 2 Humble Installation](/docs/Installation/ROS%202/ros2-humble-installation.md)를 참고하세요.
+
+## Ackermann Controller and Drive Setup
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
