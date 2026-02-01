@@ -28,7 +28,7 @@
 4. **Articulation Controller** Property에서 `targetPrim`에 `/franka`를 추가합니다.
 > <img width="500" alt="image" src="https://github.com/user-attachments/assets/1e5dbb7e-c3ab-48fa-ae6f-d017a410ccef" /><br>
 
-5. **Play**를 눌러 시뮬레이션을 시작하세요
+5. **Play**를 눌러 시뮬레이션을 시작하세요.
 
 6. 새로운 터미널에서 다음 명령어를 실행하여 franka를 제어하세요.
 > ```bash
@@ -52,7 +52,7 @@
 > ros2 topic echo /joint_states
 > ```
 
-> [ros2_joint_control_extension_python_scripting.webm](https://github.com/user-attachments/assets/080a992a-cc7d-4a57-836f-6e03b83f84b3)
+> [ros2_joint_control_extension_python_scripting_1.webm](https://github.com/user-attachments/assets/2ac8eb90-3d21-4720-b372-9a0e7cd8eafa)
 
 > [!NOTE]
 > Articulation root는 시뮬레이션에서 로봇을 구성하는 link와 joint의 집합인 Articulation tree의 시작을 설명합니다.<br>
@@ -70,7 +70,7 @@ NVIDIA Isaac Sim 사용의 다양한 Workflows.에 대한 자세한 내용은 Wo
 > <img width="1000" alt="image" src="https://github.com/user-attachments/assets/a2831870-a70f-47c9-ad2b-31894d54fe47" /><br>
 
 2. **Window > Script Editor**로 이동하여 다음 코드를 넣습니다.
-> ```bash
+> ```python
 > import omni.graph.core as og
 > 
 > og.Controller.edit(
@@ -99,13 +99,42 @@ NVIDIA Isaac Sim 사용의 다양한 Workflows.에 대한 자세한 내용은 Wo
 >             # Providing path to /panda robot to Articulation Controller node
 >             # Providing the robot path is equivalent to setting the targetPrim in Articulation Controller node
 >             # ("ArticulationController.inputs:usePath", True),      # if you are using an older version of Isaac Sim, you can  uncomment this line
->             ("ArticulationController.inputs:robotPath", "/panda"),
->             ("PublishJointState.inputs:targetPrim", "/panda")
+>             ("ArticulationController.inputs:robotPath", "/World/franka"),
+>             ("PublishJointState.inputs:targetPrim", "/World/franka")
 >         ],
 >     },
 > )
 > ```
+> <img width="500" alt="image" src="https://github.com/user-attachments/assets/716945b3-70f8-42f4-9f7c-7bb6154f55b2" /><br>
 
+3. **Script Editor**에서 **Run**을 클릭하여 Stage에서 Action Graph가 생기는지 확인합니다.
+> <img width="300" alt="image" src="https://github.com/user-attachments/assets/227c3199-22d0-46d6-a240-638633873e80" /><br>
+
+4. **Play**를 눌러 시뮬레이션을 시작하세요.
+
+5. 새로운 터미널에서 다음 명령어를 실행하여 franka를 제어하세요.
+> ```bash
+> cd ~/IsaacSim-ros_workspaces/humble_ws/
+> export FASTRTPS_DEFAULT_PROFILES_FILE=/home/oms/IsaacSim-ros_workspaces/humble_ws/fastdds.xml
+> source /opt/ros/humble/setup.bash
+> source install/local_setup.bash
+> ```
+> ```bash
+> ros2 run isaac_tutorials ros2_publisher.py
+> ```
+
+6. 새로운 터미널에서 다음 명령어를 실행하여 franka의 `joint_states`를 확인하세요.
+> ```bash
+> cd ~/IsaacSim-ros_workspaces/humble_ws/
+> export FASTRTPS_DEFAULT_PROFILES_FILE=/home/oms/IsaacSim-ros_workspaces/humble_ws/fastdds.xml
+> source /opt/ros/humble/setup.bash
+> source install/local_setup.bash
+> ```
+> ```bash
+> ros2 topic echo /joint_states
+> ```
+
+> [ros2_joint_control_extension_python_scripting_2.webm](https://github.com/user-attachments/assets/c1670166-fdab-429b-9d38-e2548db5d13f)
 
 ## Position and Velocity Control Modes
 
