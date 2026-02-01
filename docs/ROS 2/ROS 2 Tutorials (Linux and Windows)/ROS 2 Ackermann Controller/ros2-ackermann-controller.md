@@ -113,7 +113,7 @@ command velocity를 Ackermann drive stamped messages로 변환하여 키보드�
 > - `acceleration` (default_value=0.0): acceleration, 0은 가능한 한 빨리 변화하는 speed를 의미합니다 (ms^-2)
 > - `steering_velocity`(default_value=0.0): delta steering angle, 0은 가능한 한 빨리 angle 변경을 의미합니다(반지름/s)
 
-5. 새로운 터미널에서 다음 명령어를 실행하여 teleop_twist_keyboard를 통해 Twist 메시지를 publish하세요.
+5. 새로운 터미널에서 다음 명령어를 실행하여 `teleop_twist_keyboard`를 통해 Twist 메시지를 publish하세요.
 > ```bash
 > cd ~/IsaacSim-ros_workspaces/humble_ws/
 > export FASTRTPS_DEFAULT_PROFILES_FILE=/home/oms/IsaacSim-ros_workspaces/humble_ws/fastdds.xml
