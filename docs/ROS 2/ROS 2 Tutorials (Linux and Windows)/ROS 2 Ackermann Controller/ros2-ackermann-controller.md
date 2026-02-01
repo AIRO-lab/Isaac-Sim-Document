@@ -75,6 +75,7 @@
 > ```bash
 > ros2 run isaac_tutorials ros2_ackermann_publisher.py
 > ```
+
 > [ros2_ackermann_controller_1.webm](https://github.com/user-attachments/assets/f13f0a5e-1a54-40fb-aa9d-8aa88eca85c1)
 
 > [!NOTE]
@@ -84,13 +85,46 @@
 > - race track scene이 있는 Leatherback warehouse는 Content Browser의 **Isaac Sim>Sample>ROS2>Scenario>leatherback_ackermann**에 위치해 있습니다.
 
 ## Converting Twist Messages to AckermannDriveStamped Messages
+command velocity를 Ackermann drive stamped messages로 변환하여 키보드를 사용하여 Leatherback 로봇을 제어하려면:<br>
+1. Content Browser에서 **Isaac Sim>Sample>ROS2>Scenario>leatherback_ackermann**을 Stage로 드래그하여 race track scene이 있는 Leatherback warehouse를 엽니다.
+> <img width="1000" alt="image" src="https://github.com/user-attachments/assets/0c8fbece-b687-47f0-8837-2ce506b043dc" />
 
+2. 카메라를 `Camera_Chase`로 변경합니다.
+> <img width="300" alt="image" src="https://github.com/user-attachments/assets/49b29fb2-7f17-4fe0-9169-32b22ab01401" />
 
+3. **Play**를 눌러 시뮬레이션을 시작하세요.
 
+4. 새로운 터미널에서 다음 명령어를 실행하여 `cmd_vel`에서 Ackermann commands를 publish하세요.
+> ```bash
+> cd ~/IsaacSim-ros_workspaces/humble_ws/
+> export FASTRTPS_DEFAULT_PROFILES_FILE=/home/oms/IsaacSim-ros_workspaces/humble_ws/fastdds.xml
+> source /opt/ros/humble/setup.bash
+> source install/local_setup.bash
+> ```
+> ```bash
+> ros2 run isaac_tutorials ros2_ackermann_publisher.py
+> ```
 
+> [!NOTE]
+> launch parameters
+> <br>
+> - `publish_period_ms`(default_value=20): publishing dt (ms)
+> - `track_width` (default_value=0.2): wheel separation distance (m)
+> - `acceleration` (default_value=0.0): acceleration, 0은 가능한 한 빨리 변화하는 speed를 의미합니다 (ms^-2)
+> - `steering_velocity`(default_value=0.0): delta steering angle, 0은 가능한 한 빨리 angle 변경을 의미합니다(반지름/s)
 
+5. 새로운 터미널에서 다음 명령어를 실행하여 teleop_twist_keyboard를 통해 Twist 메시지를 publish하세요.
+> ```bash
+> cd ~/IsaacSim-ros_workspaces/humble_ws/
+> export FASTRTPS_DEFAULT_PROFILES_FILE=/home/oms/IsaacSim-ros_workspaces/humble_ws/fastdds.xml
+> source /opt/ros/humble/setup.bash
+> source install/local_setup.bash
+> ```
+> ```bash
+> ros2 run isaac_tutorials ros2_ackermann_publisher.py
+> ```
 
-
+> [ros2_ackermann_controller_2.webm](https://github.com/user-attachments/assets/b474f06f-a4be-4300-9732-5e6f8fcd697f)
 
 
 
