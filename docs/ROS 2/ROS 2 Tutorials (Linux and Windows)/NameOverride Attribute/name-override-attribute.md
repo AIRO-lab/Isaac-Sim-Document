@@ -54,6 +54,7 @@ Joint State 또는 `TF` publisher를 설정할 때, 기본 이름은 ROS link na
 ROS 2 Joint State Subscriber 파이프라인의 경우, 아래와 같이 **Isaac Joint Name Resolver** OmniGraph 노드를 드래그하여 파이프라인 내에 연결할 수 있습니다<br>
 > <img width="750" alt="image" src="https://github.com/user-attachments/assets/9e3bd54a-866b-4334-91ab-d6265aa68c00" /><br>
 <br>
+
 **Isaac Joint Name Resolver**의 경우 Target Prim 또는 Robot Path를 `/franka`로 설정합니다.<br>
 <br>
 외부 ROS 2 노드에서 사용자 지정 prim 이름을 사용하여 Isaac Sim에 joint commands을 publish하면 **Isaac Joint Name Resolver** 노드가 실제 prim path를 Artulation Controller에 제공하여 명령에 따라 prim을 조작할 수 있습니다.
