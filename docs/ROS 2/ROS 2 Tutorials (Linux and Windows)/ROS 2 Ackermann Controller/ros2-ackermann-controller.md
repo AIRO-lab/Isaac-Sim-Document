@@ -78,7 +78,8 @@
 > [ros2_ackermann_controller_1.webm](https://github.com/user-attachments/assets/f13f0a5e-1a54-40fb-aa9d-8aa88eca85c1)
 
 > [!NOTE]
-> 사전 구성된 Leatherback Assets<br>
+> 사전 구성된 Leatherback Assets
+> <br>
 > - Action Graph가 있는 Leatherback Assets은 Content Browser에서 **Isaac Sim>Sample>ROS2>Robots>Leatherback_ROS**에 있습니다.
 > - race track scene이 있는 Leatherback warehouse는 Content Browser의 **Isaac Sim>Sample>ROS2>Scenario>leatherback_ackermann**에 위치해 있습니다.
 
