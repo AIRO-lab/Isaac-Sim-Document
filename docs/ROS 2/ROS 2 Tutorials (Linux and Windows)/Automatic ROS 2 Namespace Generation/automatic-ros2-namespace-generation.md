@@ -107,8 +107,8 @@ namespace 생성 동작은 ROS publisher의 유형과 단계에서 위치에 따
 
 #### Adding the `isaac:namespace` Prim Attribute
 prim에 `isaac:namespace` 속성을 추가하려면 다음 단계를 따릅니다:
-> 1. prim을 선택하고 property 창에서 **Add**를 클릭합니다. popup 메뉴에서 **Isaac > Namespace**로 이동합니다. 이 속성이 prim에 적용됩니다.
-> 2. property 패널에서 namespace 필드에 namespace value을 추가합니다.
+> 1. prim을 선택하고 property 창에서 **Add**를 클릭합니다. popup 메뉴에서 **Isaac > Namespace**로 이동합니다. 이 속성이 prim에 적용됩니다.<br>
+> 2. property 패널에서 namespace 필드에 namespace value을 추가합니다.<br>
 > <img width="200" alt="image" src="https://github.com/user-attachments/assets/032e3771-fcd1-4c08-95a2-35d7b70823bb" /><br>
 
 #### Testing the isaac:namespace Prim Attribute
@@ -145,7 +145,7 @@ ros2 topic list
 > - `/lidar_link/laser_scan`<br>
 > - `/wheel_left/tf`<br>
 > - `/wheel_left/topic`<br>
-> <br>
+> 
 > 위 목록에서 자동으로 생성된 topic을 확인할 수 있습니다.<br>
 > namespace에 사용자 지정 이름 체계가 필요한 경우 각 ROS OmniGraph 노드에 대한 `nodeNamespace` 입력 필드를 입력할 수 있습니다.
 
