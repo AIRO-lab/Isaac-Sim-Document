@@ -63,16 +63,19 @@ ROS 2에서 namespaces를 관리하는 것은 다중 로봇 시뮬레이션에�
 >     wheel_right.AddTranslateOp().Set(value=(0.2, 0, 0))
 > ```
 
+2. **Create > Sensors > RTX Lidar > NVIDIA > Example Rotary 2D**로 이동하여 2D RTX Lidar sensor를 추가하고 `/mock_robot/base_link/lidar_link` 아래로 드래그합니다.
 
+3. **reate > Sensors > Camera and Depth Sensors > LeopardImaging > Hawk**로 이동하여 Hawk stereo camera system을 추가하고 `/mock_robot/base_link/camera_link` 아래로 드래그합니다.
 
+4. **Tools > Robotics > ROS 2 OmniGraphs > Generic Publisher**로 이동하여 Generic Publisher를 만듭니다.<br>**Generic Publisher Graph**를 `Publish String`로 설정하고 **Graph Path**를 `/mock_robot/base_link/wheel_left/String_graph`로 설정합니다.<br>그런 다음 **OK**을 누릅니다.
 
+5. **Tools > Robotics > ROS 2 OmniGraphs > TF Publisher**로 이동하여 TF Publisher를 만듭니다.<br>**Target Prim**을 `/mock_robot`으로 설정하고 **Graph Path**를 `/mock_robot/base_link/wheel_left/TF_graph`로 설정합니다.<br>그런 다음 **OK**을 누릅니다.
 
+6. **Tools > Robotics > ROS 2 OmniGraphs > Camera**로 이동하여 Camera Publisher를 만듭니다.<br>**Camera Prim**을 `/mock_robot/base_link/camera_link/Hawk/left/camera_left`로 설정하고 **Graph Path**를 `/mock_robot/base_link/camera_link/Hawk/Camera_Left_Graph`로 설정합니다. **Depth** 항목을 선택 취소한 다음 **OK**을 누릅니다.
 
+7. **Tools > Robotics > ROS 2 OmniGraphs > Camera**로 이동하여 second Camera Publisher를 만듭니다.<br>**Camera Prim**을 `/mock_robot/base_link/camera_link/Hawk/right/camera_right`로 설정하고 **Graph Path**를 `/mock_robot/base_link/camera_link/Hawk/Camera_Right_Graph`로 설정합니다. **Depth** 항목을 선택 취소한 다음 **OK**을 누릅니다.
 
-
-
-
-
+8. **ools > Robotics > ROS 2 OmniGraphs > RTX Lidar**로 이동하여 2D RTX Lidar Publisher를 만드세요.<br>**Lidar Prim**을 `/mock_robot/base_link/lidar_link/Example_Rotary_2D`로 설정하고 **Graph Path**를 `/mock_robot/base_link/lidar_link/Lidar_Graph`로 설정합니다. **Laser Scan**만 활성화된 다음 **OK**을 누르세요.
 
 
 
