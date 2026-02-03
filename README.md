@@ -47,7 +47,7 @@ https://docs.isaacsim.omniverse.nvidia.com/5.1.0/index.html
   - [ROS2 Joint Control: Extension Python Scripting](/docs/ROS%202/ROS%202%20Tutorials%20(Linux%20and%20Windows)/ROS2%20Joint%20Control:%20Extension%20Python%20Scripting/ros2-joint-control-extension-python-scripting.md)
   - [NameOverride Attribute](/docs/ROS%202/ROS%202%20Tutorials%20(Linux%20and%20Windows)/NameOverride%20Attribute/name-override-attribute.md)
   - [ROS 2 Ackermann Controller](/docs/ROS%202/ROS%202%20Tutorials%20(Linux%20and%20Windows)/ROS%202%20Ackermann%20Controller/ros2-ackermann-controller.md)
-  - [Automatic ROS 2 Namespace Generation]
+  - [Automatic ROS 2 Namespace Generation](/docs/ROS%202/ROS%202%20Tutorials%20(Linux%20and%20Windows)/Automatic%20ROS%202%20Namespace%20Generation/automatic-ros2-namespace-generation.md)
   - [Running a Reinforcement Learning Policy through ROS 2 and Isaac Sim]
 
 ### Standalone Workflow
