@@ -22,6 +22,7 @@ ROS 2에서 namespaces를 관리하는 것은 다중 로봇 시뮬레이션에�
 > <img width="736" height="218" alt="image" src="https://github.com/user-attachments/assets/cbc90cda-6e98-4743-a719-b5e21675275b" /><br>
 2. (Recommended) 모든 Isaac Sim ROS OmniGraph 노드의 namespaces를 자동으로 생성하도록 asset을 구성합니다.<br>이 튜토리얼은 Isaac Sim에서 namespaces를 설정하는 과정을 안내하여 효율적인 topic 관리와 충돌 방지를 가능하게 합니다.
 <br>
+
 ### Configuring the Asset
 #### Setting Up the Base Asset
 1. **Window > Script Editor**을 열고 다음 코드를 넣고 실행하세요.
