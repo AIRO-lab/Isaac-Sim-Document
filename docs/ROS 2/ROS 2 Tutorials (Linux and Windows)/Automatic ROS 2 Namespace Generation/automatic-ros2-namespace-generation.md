@@ -77,11 +77,65 @@ ROS 2에서 namespaces를 관리하는 것은 다중 로봇 시뮬레이션에�
 
 8. **ools > Robotics > ROS 2 OmniGraphs > RTX Lidar**로 이동하여 2D RTX Lidar Publisher를 만드세요.<br>**Lidar Prim**을 `/mock_robot/base_link/lidar_link/Example_Rotary_2D`로 설정하고 **Graph Path**를 `/mock_robot/base_link/lidar_link/Lidar_Graph`로 설정합니다. **Laser Scan**만 활성화된 다음 **OK**을 누르세요.
 
+#### Configuring Namespace Attributes
+이제 기본 자산이 설정되었으므로 네임스페이스 값을 원하는 각 프림에 대해 iaca:namespace 속성을 추가해야 합니다. 네임스페이스는 프림 계층의 상단에서 각 ROS 퍼블리셔에 설정된 각 iaca:namespace 속성 값을 추가하여 생성됩니다. 네임스페이스 생성 동작은 ROS 퍼블리셔의 유형과 단계에서 위치에 따라 달라집니다.
 
+ROS 2 TF 옴니그래프 노드: 생성된 네임스페이스에는 네임스페이스 속성 집합이 있는 최상위 프림의 네임스페이스 값만 포함됩니다. 이는 한 로봇 내에서 게시된 모든 TF가 해당 로봇의 네임스페이스(즉, robot1/tf) 아래에만 위치하기 때문입니다.
 
+ROS 2 카메라 및 라이다 옴니그래프 헬퍼 노드: 카메라 또는 라이다 렌더 제품 경로는 네임스페이스 검색 알고리즘이 취하는 경로를 식별하고 그에 따라 네임스페이스 값을 추가하는 데 사용됩니다. 따라서 이 경우 카메라/라이다 헬퍼 노드의 위치는 관련이 없으며, 오히려 카메라/라이다 센서 프림의 위치가 사용됩니다.
 
+다른 모든 OmniGraph 노드: OmniGraph 노드로의 경로는 네임스페이스 검색 알고리즘이 선택한 경로를 식별하고 그에 따라 네임스페이스 값을 추가하는 데 사용됩니다. 이 경우 이러한 OmniGraph 노드의 위치가 중요합니다.
 
+#### Adding the isaac:namespace Prim Attribute
+prim에 isaac:namespace 속성을 추가하려면 다음 단계를 따릅니다:
+> 1. 프림을 선택하고 속성 창에서 추가를 클릭합니다. 팝업 메뉴에서 Isaac > 네임스페이스로 이동합니다. 이 속성이 프림에 적용됩니다.
+> 2. 속성 패널에서 네임스페이스 필드에 네임스페이스 값을 추가합니다.
 
+#### Testing the isaac:namespace Prim Attribute
+다음 프림에 iaca:namespace 속성을 적용합니다. 이 튜토리얼에서는 각 네임스페이스 값을 프림 이름으로 설정합니다(사용자 지정 네임스페이스 값을 시도해 볼 수는 있지만):
+> `/mock_robot/base_link/lidar_link`
+> `/mock_robot/base_link/camera_link`
+> `/mock_robot/base_link/camera_link/Hawk`
+> `/mock_robot/base_link/camera_link/Hawk/left`
+> `/mock_robot/base_link/camera_link/Hawk/right`
+> `/mock_robot/base_link/wheel_left`
+
+1. 재생을 클릭하고 시뮬레이션을 시작합니다.
+2. ROS 소스 터미널을 열고 ros2 주제 목록을 입력하고, 최소한 다음 주제들을 관찰했는지 확인합니다:
+> `/camera_link/Hawk/left/camera_info`
+> `/camera_link/Hawk/left/rgb`
+> `/camera_link/Hawk/right/camera_info`
+> `/camera_link/Hawk/right/rgb`
+> `/lidar_link/laser_scan`
+> `/wheel_left/tf`
+> `/wheel_left/topic`
+> 위 목록에서 자동으로 생성된 주제를 확인할 수 있습니다. 네임스페이스에 사용자 지정 이름 체계가 필요한 경우 각 ROS 옴니그래프 노드에 대한 nodeNamespace 입력 필드를 입력할 수 있습니다.
+3. 시뮬레이션을 중지합니다. /mock_robot prim을 선택하고 iaca:namespace 속성을 추가합니다. 그런 다음 네임스페이스 값을 prim 이름으로 설정합니다.
+
+4. /mock_robot Prim을 선택하고, 마우스 오른쪽 버튼을 클릭한 다음, 복제를 눌러 복제합니다. 새로 생성된 /mock_robot_01의 경우, Prim을 선택하고 속성 패널로 이동한 다음, iaca:namespace 속성을 mock_robot_01로 변경합니다.
+
+5. 재생을 눌러 시뮬레이션을 시작합니다.
+
+6. ROS 소스 터미널을 열고 ROS2 주제 목록을 입력합니다. 최소한 다음 주제를 관찰했는지 확인합니다:
+> **Topics from mock_robot**
+> > `/mock_robot/camera_link/Hawk/left/camera_info`
+> > `/mock_robot/camera_link/Hawk/left/rgb`
+> > `/mock_robot/camera_link/Hawk/right/camera_info`
+> > `/mock_robot/camera_link/Hawk/right/rgb`
+> > `/mock_robot/lidar_link/laser_scan`
+> > `/mock_robot/tf`
+> > `/mock_robot/wheel_left/topic`
+> **Topics from mock_robot_01**
+> > `/mock_robot_01/camera_link/Hawk/left/camera_info`
+> > `/mock_robot_01/camera_link/Hawk/left/rgb`
+> > `/mock_robot_01/camera_link/Hawk/right/camera_info`
+> > `/mock_robot_01/camera_link/Hawk/right/rgb`
+> > `/mock_robot_01/lidar_link/laser_scan`
+> > `/mock_robot_01/tf`
+> > `/mock_robot_01/wheel_left/topic`
+
+> [!IMPORTANT]
+> 위 목록에서 주제가 자동으로 생성된 것을 확인할 수 있습니다. 네임스페이스에 사용자 지정 이름 체계가 필요한 경우 각 ROS OmniGraph 노드에 대한 nodeNamespace 입력 필드를 입력할 수 있습니다.
 
 
 
