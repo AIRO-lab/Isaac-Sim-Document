@@ -62,20 +62,33 @@ ROS 2에서 namespaces를 관리하는 것은 다중 로봇 시뮬레이션에�
 >     # Position wheel_right 0.2 meters to the right of the center (X-axis)
 >     wheel_right.AddTranslateOp().Set(value=(0.2, 0, 0))
 > ```
+> <img width="500" alt="image" src="https://github.com/user-attachments/assets/805b7546-94e0-4cd1-92aa-8a5963e8cf0d" /><br>
 
 2. **Create > Sensors > RTX Lidar > NVIDIA > Example Rotary 2D**로 이동하여 2D RTX Lidar sensor를 추가하고 `/mock_robot/base_link/lidar_link` 아래로 드래그합니다.
+> <img width="500" alt="image" src="https://github.com/user-attachments/assets/8e2d56a4-3b48-4825-809e-fcda46e6f84b" /><br>
 
-3. **reate > Sensors > Camera and Depth Sensors > LeopardImaging > Hawk**로 이동하여 Hawk stereo camera system을 추가하고 `/mock_robot/base_link/camera_link` 아래로 드래그합니다.
+3. **Create > Sensors > Camera and Depth Sensors > LeopardImaging > Hawk**로 이동하여 Hawk stereo camera system을 추가하고 `/mock_robot/base_link/camera_link` 아래로 드래그합니다.
+> <img width="500" alt="image" src="https://github.com/user-attachments/assets/51d54eab-6dd3-44ed-8a32-1a274953152f" /><br>
 
 4. **Tools > Robotics > ROS 2 OmniGraphs > Generic Publisher**로 이동하여 Generic Publisher를 만듭니다.<br>**Generic Publisher Graph**를 `Publish String`로 설정하고 **Graph Path**를 `/mock_robot/base_link/wheel_left/String_graph`로 설정합니다.<br>그런 다음 **OK**을 누릅니다.
+> <img width="300" alt="image" src="https://github.com/user-attachments/assets/680a9a1a-4e7f-4214-9cdb-e96f37801520" /><br>
+> <img width="500" alt="image" src="https://github.com/user-attachments/assets/010011b6-09c2-46b0-b205-2a1319707ac0" /><br>
 
 5. **Tools > Robotics > ROS 2 OmniGraphs > TF Publisher**로 이동하여 TF Publisher를 만듭니다.<br>**Target Prim**을 `/mock_robot`으로 설정하고 **Graph Path**를 `/mock_robot/base_link/wheel_left/TF_graph`로 설정합니다.<br>그런 다음 **OK**을 누릅니다.
+> <img width="300" alt="image" src="https://github.com/user-attachments/assets/8f0cd0fc-7b43-4288-bb59-e8ffcef78b84" /><br>
+> <img width="500" alt="image" src="https://github.com/user-attachments/assets/9d10f3e7-399b-40d5-8a19-6d9e31416191" /><br>
 
 6. **Tools > Robotics > ROS 2 OmniGraphs > Camera**로 이동하여 Camera Publisher를 만듭니다.<br>**Camera Prim**을 `/mock_robot/base_link/camera_link/Hawk/left/camera_left`로 설정하고 **Graph Path**를 `/mock_robot/base_link/camera_link/Hawk/Camera_Left_Graph`로 설정합니다. **Depth** 항목을 선택 취소한 다음 **OK**을 누릅니다.
+> <img width="400" alt="image" src="https://github.com/user-attachments/assets/5aec00df-b602-47cb-aedd-44c66cbc043d" /><br>
+> <img width="500" alt="image" src="https://github.com/user-attachments/assets/e6dddd43-eed6-4a54-9526-e8148ce6a270" /><br>
 
 7. **Tools > Robotics > ROS 2 OmniGraphs > Camera**로 이동하여 second Camera Publisher를 만듭니다.<br>**Camera Prim**을 `/mock_robot/base_link/camera_link/Hawk/right/camera_right`로 설정하고 **Graph Path**를 `/mock_robot/base_link/camera_link/Hawk/Camera_Right_Graph`로 설정합니다. **Depth** 항목을 선택 취소한 다음 **OK**을 누릅니다.
+> <img width="400" alt="image" src="https://github.com/user-attachments/assets/73c0805f-e49e-46b1-9aee-398d106bc01a" /><br>
+> <img width="500" height="388" alt="image" src="https://github.com/user-attachments/assets/f644d8eb-0064-49f6-a484-2a233c475bb0" /><br>
 
-8. **ools > Robotics > ROS 2 OmniGraphs > RTX Lidar**로 이동하여 2D RTX Lidar Publisher를 만드세요.<br>**Lidar Prim**을 `/mock_robot/base_link/lidar_link/Example_Rotary_2D`로 설정하고 **Graph Path**를 `/mock_robot/base_link/lidar_link/Lidar_Graph`로 설정합니다. **Laser Scan**만 활성화된 다음 **OK**을 누르세요.
+8. **Tools > Robotics > ROS 2 OmniGraphs > RTX Lidar**로 이동하여 2D RTX Lidar Publisher를 만드세요.<br>**Lidar Prim**을 `/mock_robot/base_link/lidar_link/Example_Rotary_2D`로 설정하고 **Graph Path**를 `/mock_robot/base_link/lidar_link/Lidar_Graph`로 설정합니다. **Laser Scan**만 활성화된 다음 **OK**을 누르세요.
+> <img width="300" alt="image" src="https://github.com/user-attachments/assets/58b2bce7-3032-4196-b3cb-b63481e1ab9f" /><br>
+> <img width="500" alt="image" src="https://github.com/user-attachments/assets/6722d598-31c8-47d5-a210-01bb71e5075d" /><br>
 
 #### Configuring Namespace Attributes
 이제 기본 자산이 설정되었으므로 네임스페이스 값을 원하는 각 프림에 대해 iaca:namespace 속성을 추가해야 합니다. 네임스페이스는 프림 계층의 상단에서 각 ROS 퍼블리셔에 설정된 각 iaca:namespace 속성 값을 추가하여 생성됩니다. 네임스페이스 생성 동작은 ROS 퍼블리셔의 유형과 단계에서 위치에 따라 달라집니다.
