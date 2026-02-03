@@ -167,6 +167,7 @@ source install/local_setup.bash
 ```bash
 ros2 topic list
 ```
+> <img width="500" alt="image" src="https://github.com/user-attachments/assets/ade01818-fe6e-474d-bb3a-496ccdfe9b08" /><br>
 > **Topics from mock_robot**
 > > - `/mock_robot/camera_link/Hawk/left/camera_info`
 > > - `/mock_robot/camera_link/Hawk/left/rgb`
