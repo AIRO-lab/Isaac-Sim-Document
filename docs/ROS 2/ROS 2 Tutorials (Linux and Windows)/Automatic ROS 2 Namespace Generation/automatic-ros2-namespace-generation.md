@@ -146,7 +146,8 @@ ros2 topic list
 > - `/wheel_left/tf`<br>
 > - `/wheel_left/topic`<br>
 > <br>
-> 위 목록에서 자동으로 생성된 topic을 확인할 수 있습니다. namespace에 사용자 지정 이름 체계가 필요한 경우 각 ROS OmniGraph 노드에 대한 `nodeNamespace` 입력 필드를 입력할 수 있습니다.
+> 위 목록에서 자동으로 생성된 topic을 확인할 수 있습니다.<br>
+> namespace에 사용자 지정 이름 체계가 필요한 경우 각 ROS OmniGraph 노드에 대한 `nodeNamespace` 입력 필드를 입력할 수 있습니다.
 
 3. 시뮬레이션을 중지합니다. `/mock_robot` prim을 선택하고 `isaac:namespace` 속성을 추가합니다. 그런 다음 namespace 값을 prim 이름으로 설정합니다.
 > <img width="500" alt="image" src="https://github.com/user-attachments/assets/5e737f01-e3d8-488d-8610-2568787f8436" /><br>
