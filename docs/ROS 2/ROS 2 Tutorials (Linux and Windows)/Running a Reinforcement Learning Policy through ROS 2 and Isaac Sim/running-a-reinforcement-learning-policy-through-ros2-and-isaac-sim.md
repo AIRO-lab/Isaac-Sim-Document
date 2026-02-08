@@ -128,7 +128,7 @@ joint state API 값이 재설정되지 않도록 하려면 로봇 상태를 정�
 5. 다시 **Reset Simulation on Stop**를 체크하세요.
 
 ## Setting Joint Configuration
-1. 각 joint 마다 Property에서 joint drive API의 `Stiffness`를 다음 내용의 `stiffness`를 참고해서 설정하세요.<br>각 joint 마다 Property에서 joint drive API의 `Damping`를 다음 내용의 `damping`를 참고해서 설정하세요.<br>각 joint 마다 Property에서 joint drive API의 `Maximum Joint Velocity`를 다음 내용의 `velocity_limit`를 참고해서 설정하세요.<br>각 joint 마다 Property에서 joint drive API의 `Max Force`를 다음 내용의 `effort_limit`를 참고해서 설정하세요.<br>
+1. 각 joint 마다 Property에서 **joint drive API**의 `Stiffness`를 다음 내용의 `stiffness`를 참고해서 설정하세요.<br>각 joint 마다 Property에서 **joint drive API**의 `Damping`를 다음 내용의 `damping`를 참고해서 설정하세요.<br>`d435_left_imager`, ``d435_rgb_module`, `imu`, `logo`, `mid360`을 제외한 joint의 Property에서 **joint drive API**의 `Max Force`를 다음 내용의 `effort_limit`를 참고해서 설정하세요.<br>`d435_left_imager`, ``d435_rgb_module`, `imu`, `logo`, `mid360`을 제외한 joint의 Property에서 **Raw USD Properties**의 `Maximum Joint Velocity`를 다음 내용의 `velocity_limit`를 참고해서 설정하세요.<br>
 > [!NOTE]
 > `stiffness`, `damping`, `velocity_limit`는 다음 수식을 이용하여 degree로 변환해서 넣어야 합니다.<br>
 > <br>
@@ -156,13 +156,9 @@ joint state API 값이 재설정되지 않도록 하려면 로봇 상태를 정�
 > | torso | 5.0 | 0.087 |
 > 
 > **velocity_limit**<br>
-> | Joint | Rad | Deg |
-> |-|-|-|
-> | *_hip_yaw | 100.0 | 5729.58 |
-> | *_hip_roll | 100.0 | 5729.58 |
-> | *_hip_pitch | 100.0 | 5729.58 |
-> | *_knee | 100.0 | 5729.58 |
-> | torso | 100.0 | 5729.58 |
+> | Rad | Deg |
+> |-|-|
+> | 100.0 | 5729.58 |
 
 > ```python
 > actuators:k
