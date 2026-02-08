@@ -26,10 +26,10 @@
 > nvidia-smi
 > ```
 > <img width="500" alt="image" src="https://github.com/user-attachments/assets/d1e40da6-f539-41aa-aa84-acda1b6a4a3a" />
-> <br>
+> 
 > 2. [PyTorch](https://pytorch.org/get-started/locally/)에서 다음과 같이 옵션 선택 후 설치 명령어 확인<br>안정성을 위해 CUDA 버전을 최전 버전이 아닌 12.8 선택
 > <img width="500" alt="image" src="https://github.com/user-attachments/assets/91ce023c-573b-4e24-9e45-b906fbe5fc6c" />
-> <br>
+> 
 > 3. 설치 명령어 실행
 > ```bash
 > sudo apt update
