@@ -114,7 +114,7 @@ joint state API 값이 재설정되지 않도록 하려면 로봇 상태를 정�
 
 1. 각 joint 마다 Property에서 joint drive API의 `Stiffness`를 다음 내용의 `stiffness`를 참고해서 설정하세요.<br>각 joint 마다 Property에서 joint drive API의 `Damping`를 다음 내용의 `damping`를 참고해서 설정하세요.<br>
 > [!NOTE]
-> `joint_pos`, `joint_vel`는 radian이기에 `Target Velocity`에 넣을 때 degree로 변환해서 넣어야 합니다.
+> `stiffness`, `damping`는 degree로 변환해서 넣어야 합니다.
 
 > ```python
 > actuators:k
