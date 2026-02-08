@@ -62,7 +62,8 @@
 > <img width="300" alt="image" src="https://github.com/user-attachments/assets/34bedf61-9f68-49b2-ba6e-62714233ae3b" />
 
 ## Set Up Robot Joint Configurations
-Set Up Robot Joint Configurations은 [Tutorial 13: Rigging a Legged Robot for Locomotion Policy](https://docs.isaacsim.omniverse.nvidia.com/5.1.0/robot_setup_tutorials/tutorial_rig_legged_robot.html#isaac-sim-app-tutorial-rig-legged-robot)의 내용을 진행합니다.
+Set Up Robot Joint Configurations은 [Tutorial 13: Rigging a Legged Robot for Locomotion Policy](https://docs.isaacsim.omniverse.nvidia.com/5.1.0/robot_setup_tutorials/tutorial_rig_legged_robot.html#isaac-sim-app-tutorial-rig-legged-robot)의 내용을 진행합니다.<br>
+<br>
 
 1. content browser에서 `Isaac Sim/Robots/Unitree/H1`에 있는 `h1.usd`를 Stage로 드래그합니다.
 > <img width="1000" alt="image" src="https://github.com/user-attachments/assets/f4451ce5-f89f-4a56-acbe-012ab98b176d" /><br>
@@ -207,6 +208,47 @@ joint state API 값이 재설정되지 않도록 하려면 로봇 상태를 정�
 콘솔 출력 값은 radian 단위입니다.<br>
 각 행은 첫 번째 목록과 동일한 순서로 나열된 joint에 대한 값입니다.<br>
 각 행의 마지막 네 가지 값, 즉 maxVelocity, maxEffort, stiffness, damping을 각각 확인합니다.
+
+## Add IMU Sensor
+IMU 센서를 사용하여 신체 프레임의 linear acceleration, angular velocity 및 orientation을 구합니다. 평지 지형 정책에는 골반 링크의 linear acceleration, angular velocity 및 gravity vector가 필요합니다. 이러한 값을 계산하려면 pelvis link에 IMU 센서를 추가해야 합니다.<br>
+<br>
+
+1. `/h1/pelvis`를 클릭하고 **Create > Isaac > Sensors > Imu Sensor**를 클릭하여 센서를 추가하세요.
+> <img width="300" alt="image" src="https://github.com/user-attachments/assets/55ba3a12-28b4-41e7-bad9-2c36a34f3021" /><br>
+> <img width="500" alt="image" src="https://github.com/user-attachments/assets/11e6c745-4eed-4a50-a11c-d86c7deeb849" /><br>
+
+## Set up ROS 2 Node for the H1 Humanoid Robot
+ROS 2 노드는 관측치를 publish하고 Isaac Sim으로부터 action을 receive합니다.<br>
+환경 정의 파일에 명시된 대로 관측치에는 다음 정보가 필요합니다:
+- Body frame linear velocity
+- Body frame angular velocity
+- Body frame gravity vector
+- Command (linear and angular velocity)
+- Relative joint position
+- Relative joint velocity
+- Previous Action
+<br>
+IMU 데이터를 처리하여 body frame linear acceleration, angular velocity 및 gravity vector를 얻을 수 있습니다. 이 명령은 로봇의 원하는 linear acceleration와 angular velocity이며, ROS 2 twist message에서 가져올 수 있습니다. 상대적인 관절 위치와 속도는 Isaac Sim joint state topic에서 계산할 수 있습니다. 이전 작업은 마지막 반복에 적용된 작업이며 정책 노드에서 추적할 수 있습니다.
+
+### Create an On Demand OmniGraph
+1. **Stage**에서 오른쪽 클릭 후 **Create > Scope**를 클릭하여 Scope를 생성하세요.<br>생성 된 Scope의 이름을 Graph로 변경하세요.
+> <img width="500" alt="image" src="https://github.com/user-attachments/assets/24734d6d-6a93-4ab0-956b-6d5c5fe9973b" />
+
+2. **Stage**에서 오른쪽 클릭 후 **Create > Visual Scripting > ActionGraph**를 클릭하여 ActionGraph를 생성하세요.<br>생성 된 ActionGraph의 이름을 ROS_Imu로 변경하세요.<br>ActionGraph를 "Graph" scope에 드래그하여 Graph 하위로 이동하세요.
+> <img width="500" alt="image" src="https://github.com/user-attachments/assets/7325298b-579f-40e9-9503-ddaed9125921" />
+
+3. ActionGraph를 클릭하고 Property에서 **Raw USD Properties**의 `pipelineStage`를 `pipelineStageOnDemand`으로 설정하세요.
+> <img width="500" alt="image" src="https://github.com/user-attachments/assets/5e307726-44ac-4038-b559-812b63f650e2" />
+
+이렇게 하면 Isaac Sim physics 단계에서 ActionGraph 노드가 실행됩니다.
+
+### Create Imu Publisher Node
+
+
+
+
+
+### Create Joint State Publisher and Subscriber Nodes
 
 
 
