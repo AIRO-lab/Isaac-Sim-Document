@@ -47,6 +47,10 @@ IOMMU가 켜져 있으면, Linux에서 CUDA랑 NVIDIA 드라이버가 GPU 간 �
 
 메인보드가 SUPERMICRO 같은 경우 설정 방법은 다음과 같다.
 
+### IOMMU Disable
+> [!NOTE]
+> IOMMU 비활성화 방법은 메인보드 제품에 따라 본 내용에 나오는 비활성화 방법과 다를 수 있습니다.
+
 ### Intel VT for Directed I/O (VT-d) Disabled
 | Step | Screenshot | Path / Description |
 |:-:|:-:|-|
