@@ -71,7 +71,7 @@ Set Up Robot Joint Configurations은 [Tutorial 13: Rigging a Legged Robot for Lo
 > <img width="250" alt="image" src="https://github.com/user-attachments/assets/6c0f159a-268f-4a4b-9c4d-98468f0f8555" /><br>
 
 3. `left_hip_yaw`를 클릭하고 Shift를 누른 상태에서 `right_elbow`를 눌러 모든 joint를 선택합니다.<br>**Add > Physics > Joint State Angular**를 추가하세요.<br>**Add > Physics > Angular drive**를 추가하세요.
-> <img width="250" alt="image" src="https://github.com/user-attachments/assets/9f274499-8c80-49ef-9f86-dd4aad3f1f79" /><br>
+> <img width="250" alt="image" src="https://github.com/user-attachments/assets/9f274499-8c80-49ef-9f86-dd4aad3f1f79" />
 > <img width="250" alt="image" src="https://github.com/user-attachments/assets/dc82953e-2b54-467d-aae5-b9b986cfc152" /><br>
 
 
