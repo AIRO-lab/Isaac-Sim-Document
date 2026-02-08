@@ -30,6 +30,18 @@
 > <img width="500" alt="image" src="https://github.com/user-attachments/assets/91ce023c-573b-4e24-9e45-b906fbe5fc6c" /><br>
 > 3. 설치 명령어 실행
 > ```bash
+> sudo apt update
+> ```
+> pip 설치 (없을 시)
+> ```bash
+> sudo apt install -y python3-pip python3-venv
+> ```
+> pip 확인
+> ```bash
+> python3 -m pip --version
+> ```
+> PyTorch 설치
+> ```bash
 > pip3 install torch torchvision --index-url https://download.pytorch.org/whl/cu128
 > ```
 
