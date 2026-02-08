@@ -152,7 +152,7 @@ rviz2 -d ./src/isaac_tutorials/rviz2/carter_stereo.rviz
 
 ### Multiple Robot ROS 2 Navigation
 이 샘플은 기존 USD stage를 실행하는 방법을 보여줍니다.<br>
-출력을 시각화하려면 [Multiple Robot ROS2 Navigation]()을 참조하세요:<br>
+출력을 시각화하려면 [Multiple Robot ROS2 Navigation]()을 참조하세요.<br>
 <br>
 
 - On each frame:
@@ -174,7 +174,7 @@ Office Environment
 
 ### MoveIt2
 이 샘플은 여러 USD stage를 추가하는 방법을 보여줍니다. 또한 ROS 2 component nodes로 action graph를 수동으로 생성한 다음 수동으로 tick하는 방법도 보여줍니다.<br>
-출력을 시각화하려면 [MoveIt 2]()을 참조하세요:<br>
+출력을 시각화하려면 [MoveIt 2]()을 참조하세요.<br>
 <br>
 
 - On each frame:
@@ -206,6 +206,7 @@ source install/local_setup.bash
 ```bash
 ros2 topic pub -r 1 /move_cube std_msgs/msg/Empty
 ```
+> <img width="500" alt="image" src="https://github.com/user-attachments/assets/709c1268-5b4a-4b80-8319-dc510d52e8ec" />
 
 
 
