@@ -307,6 +307,13 @@ IMU 데이터를 처리하여 body frame linear acceleration, angular velocity �
 5. `Physics Scene`을 클릭하고 Property에서 `Time Steps Per Second`을 `200`으로 설정하세요.
 > <img width="500" alt="image" src="https://github.com/user-attachments/assets/7867c500-229a-4025-b648-15f3d57965a9" />
 
+6. `Physics Scene`을 클릭하고 Property에서 다음을 설정하세요.
+> <img width="500" alt="image" src="https://github.com/user-attachments/assets/866b77ff-24de-4269-8bb0-6b5388aa7b0b" /><br>
+> 
+> - `Physics Scene`을 클릭하고 Property에서 `Time Steps Per Second`을 `200`으로 설정하세요.
+> - `Enable GPU Dynamics`를 체크 해제하세요.
+> - `Broadphase Type`를 `MBP`로 설정하세요.
+
 ### Setup ROS 2 Clock Publisher
 1. 새로운 ActionGraph를 생성하고 이름을 `ROS_Clock`으로 변경하세요.
 2. ActionGraph를 클릭하고 Property에서 **Raw USD Properties**의 `pipelineStage`를 `pipelineStageOnDemand`으로 설정하세요.
