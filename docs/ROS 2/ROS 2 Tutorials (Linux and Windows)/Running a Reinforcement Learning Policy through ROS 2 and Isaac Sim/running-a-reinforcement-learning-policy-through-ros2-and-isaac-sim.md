@@ -116,8 +116,9 @@ joint state API 값이 재설정되지 않도록 하려면 로봇 상태를 정�
 > [!NOTE]
 > `stiffness`, `damping`는 다음 수식을 이용하여 degree로 변환해서 넣어야 합니다.<br>
 > <br>
-> $S_{\text{deg}} = S_{\text{rad}} \times \frac{\pi}{180}$<br>
-> $D_{\text{deg}} = D_{\text{rad}} \times \frac{\pi}{180}$<br>
+> $S_{\text{deg}} = S_{\text{rad}} \times \frac{\pi}{180}$
+> $D_{\text{deg}} = D_{\text{rad}} \times \frac{\pi}{180}$
+> $\omega_{\text{deg}} = \omega_{\text{rad}} \times \frac{180}{\pi}$<br>
 > <br>
 > 
 > **stiffness**<br>
