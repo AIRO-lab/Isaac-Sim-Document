@@ -203,7 +203,6 @@ joint state API 값이 재설정되지 않도록 하려면 로봇 상태를 정�
 > print(prim.dof_properties)
 > ```
 > <img width="500" alt="image" src="https://github.com/user-attachments/assets/bd7517c4-2b98-4cb1-a4cd-36259e982a36" /><br>
->
 
 콘솔 출력 값은 radian 단위입니다.<br>
 각 행은 첫 번째 목록과 동일한 순서로 나열된 joint에 대한 값입니다.<br>
