@@ -111,7 +111,6 @@ joint state API 값이 재설정되지 않도록 하려면 로봇 상태를 정�
 > <img width="1000" alt="image" src="https://github.com/user-attachments/assets/17e78913-81e8-46cc-b2fd-cb437ecd061a" /><br>
 
 ## Setting Joint Configuration
-
 1. 각 joint 마다 Property에서 joint drive API의 `Stiffness`를 다음 내용의 `stiffness`를 참고해서 설정하세요.<br>각 joint 마다 Property에서 joint drive API의 `Damping`를 다음 내용의 `damping`를 참고해서 설정하세요.<br>각 joint 마다 Property에서 joint drive API의 `Maximum Joint Velocity`를 다음 내용의 `velocity_limit`를 참고해서 설정하세요.<br>각 joint 마다 Property에서 joint drive API의 `Max Force`를 다음 내용의 `effort_limit`를 참고해서 설정하세요.<br>
 > [!NOTE]
 > `stiffness`, `damping`, `velocity_limit`는 다음 수식을 이용하여 degree로 변환해서 넣어야 합니다.<br>
@@ -178,9 +177,19 @@ joint state API 값이 재설정되지 않도록 하려면 로봇 상태를 정�
 > <img width="500" alt="image" src="https://github.com/user-attachments/assets/8b7b4c58-6545-4683-8c92-7390d4a8658d" /><br>
 > <img width="500" alt="image" src="https://github.com/user-attachments/assets/bbc51792-3fb5-42dd-bd14-51229ea2c8ea" /><br>
 
-
-
-
+## Verify Joint Configuration
+1. **Play**를 클릭하여 시뮬레이션을 실행하세요.
+2. **Window > Script Editor**를 클릭하여 script editor를 열어주세요.
+3. 다음 명령어를 입력하고 **Run**을 클릭하여 snippet을 실행하세요.
+> ```bash
+> from isaacsim.core.prims import SingleArticulation
+> 
+> prim_path = "/h1"
+> prim = SingleArticulation(prim_path=prim_path, name="h1")
+> print(prim.dof_names)
+> print(prim.dof_properties)
+> ```
+> <img width="500" alt="image" src="https://github.com/user-attachments/assets/5e83a137-e64d-4f91-bc29-002aa03b5ca7" /><br>
 
 
 
