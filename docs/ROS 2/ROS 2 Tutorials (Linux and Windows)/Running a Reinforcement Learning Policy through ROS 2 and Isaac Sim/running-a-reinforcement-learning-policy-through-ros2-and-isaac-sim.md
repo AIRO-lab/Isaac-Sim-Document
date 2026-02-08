@@ -92,6 +92,8 @@ Set Up Robot Joint Configurations은 [Tutorial 13: Rigging a Legged Robot for Lo
 >     joint_vel:
 >       .*: 0.0
 > ```
+> <img width="500" alt="image" src="https://github.com/user-attachments/assets/8b7b4c58-6545-4683-8c92-7390d4a8658d" />
+
 
 
 
