@@ -87,7 +87,7 @@ source /opt/ros/humble/setup.bash
 source install/local_setup.bash
 ```
 ```bash
-rviz2 -d <ros2_ws>/src/isaac_tutorials/rviz2/camera_manual.rviz
+rviz2 -d ./src/isaac_tutorials/rviz2/camera_manual.rviz
 ```
 > <img width="1000" alt="image" src="https://github.com/user-attachments/assets/c8881307-117b-490b-9658-afda7101c0ee" />
 
@@ -98,7 +98,7 @@ rviz2 -d <ros2_ws>/src/isaac_tutorials/rviz2/camera_manual.rviz
 > ros2 run rqt_image_view rqt_image_view
 > ```
 > 2. topic을 `/depth`로 설정하세요.
-> <img width="721" height="568" alt="image" src="https://github.com/user-attachments/assets/16c4ba09-bcdf-4a55-b10e-e5c4d7222836" />
+> <img width="500" height="568" alt="image" src="https://github.com/user-attachments/assets/16c4ba09-bcdf-4a55-b10e-e5c4d7222836" />
 
 ### Manual Image Publishing
 ROS 2 image 및 camera info publishers는 각 publisher node와 해당 Isaac Simulation Gate OmniGraph node 사이에 Branch OmniGraph nodes를 주입하여 수동으로 제어됩니다. 브랜치 노드는 사용자 지정 gate처럼 작동하며 언제든지 활성화하거나 비활성화할 수 있습니다. 브랜치 노드가 활성화될 때마다 연결된 ROS 2 publisher node가 tick됩니다.<br>
@@ -116,13 +116,13 @@ source /opt/ros/humble/setup.bash
 source install/local_setup.bash
 ```
 ```bash
-rviz2 -d <ros2_ws>/src/isaac_tutorials/rviz2/camera_manual.rviz
+rviz2 -d ./src/isaac_tutorials/rviz2/camera_manual.rviz
 ```
 > <img width="1000" alt="image" src="https://github.com/user-attachments/assets/0dc5be67-8c10-446d-bf3f-d7075160afd6" />
 
 ### Carter Stereo
-
-
+이 샘플은 ROS 2 component nodes가 포함된 action graph를 사용하여 기존 USD stage를 수행하고 기본 설정을 수정하는 방법을 보여줍니다. stereo camera pair가 자동으로 활성화되고 두 번째 viewport 창이 UI에 도킹됩니다.<br>
+<br>
 
 - On each frame:
   - The ROS 2 clock is published
@@ -134,13 +134,35 @@ rviz2 -d <ros2_ws>/src/isaac_tutorials/rviz2/camera_manual.rviz
 - Every Two Frames:
   > - The Twist command message is published
 
+1. 컨테이너에서 다음을 명령을 실행하세요.
+```bash
+./python.sh standalone_examples/api/isaacsim.ros2.bridge/carter_stereo.py
+```
+2. 새로운 터미널에서 다음 명령을 실행하여 Rviz2에서 시각화하세요.
+```bash
+cd ~/IsaacSim-ros_workspaces/humble_ws/
+export FASTRTPS_DEFAULT_PROFILES_FILE=/home/oms/IsaacSim-ros_workspaces/humble_ws/fastdds.xml
+source /opt/ros/humble/setup.bash
+source install/local_setup.bash
+```
+```bash
+rviz2 -d ./src/isaac_tutorials/rviz2/carter_stereo.rviz
+```
+> <img width="1000" alt="image" src="https://github.com/user-attachments/assets/e9c23bb3-76ff-4136-b364-d686f01ae30a" />
+
+### Multiple Robot ROS 2 Navigation
+이 샘플은 기존 USD 단계를 실행하는 방법을 보여줍니다.
+
+출력을 시각화하려면 샘플의 인터랙티브 버전을 참조하세요:
+- On each frame:
+    - The ROS 2 clock component is published
+    - ROS 2 PointCloud2 messages originating from RTX Lidars are published
+    - Odometry is published
+    - The Twist subscriber is spun
+    - TF messages are published
 
 
-
-
-
-
-
+샘플은 병원 및 사무실 환경 모두에서 실행할 수 있습니다. 다음 명령 중 하나를 실행하여 지정된 환경에서 샘플을 실행합니다:
 
 
 
