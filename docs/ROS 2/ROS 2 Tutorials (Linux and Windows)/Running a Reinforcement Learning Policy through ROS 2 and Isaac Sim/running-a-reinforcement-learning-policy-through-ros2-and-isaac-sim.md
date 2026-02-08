@@ -114,7 +114,25 @@ joint state API 값이 재설정되지 않도록 하려면 로봇 상태를 정�
 
 1. 각 joint 마다 Property에서 joint drive API의 `Stiffness`를 다음 내용의 `stiffness`를 참고해서 설정하세요.<br>각 joint 마다 Property에서 joint drive API의 `Damping`를 다음 내용의 `damping`를 참고해서 설정하세요.<br>
 > [!NOTE]
-> `stiffness`, `damping`는 degree로 변환해서 넣어야 합니다.
+> `stiffness`, `damping`는 다음 수식을 이용하여 degree로 변환해서 넣어야 합니다.
+> $S_{\text{deg}} = S_{\text{rad}} \times \frac{\pi}{180}$  
+> $D_{\text{deg}} = D_{\text{rad}} \times \frac{\pi}{180}$
+> **stiffness**
+> | Joint | Rad | Deg |
+> |-|-|-|
+> | *_hip_yaw | 150.0 | 2.62 |
+> | *_hip_roll | 150.0 | 2.62 |
+> | *_hip_pitch | 200.0 | 3.49 |
+> | *_knee | 200.0 | 3.49 |
+> | torso | 200.0 | 3.49 |
+> **damping**
+> | Joint | Rad | Deg |
+> |-|-|-|
+> | *_hip_yaw | 5.0 | 0.087 |
+> | *_hip_roll | 5.0 | 0.087 |
+> | *_hip_pitch | 5.0 | 0.087 |
+> | *_knee | 5.0 | 0.087 |
+> | torso | 5.0 | 0.087 |
 
 > ```python
 > actuators:k
