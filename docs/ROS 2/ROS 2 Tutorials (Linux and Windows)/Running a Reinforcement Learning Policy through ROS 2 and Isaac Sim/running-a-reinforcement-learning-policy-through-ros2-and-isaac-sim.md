@@ -26,8 +26,10 @@
 > nvidia-smi
 > ```
 > <img width="500" alt="image" src="https://github.com/user-attachments/assets/d1e40da6-f539-41aa-aa84-acda1b6a4a3a" />
+> 
 > 2. [PyTorch](https://pytorch.org/get-started/locally/)에서 다음과 같이 옵션 선택 후 설치 명령어 확인<br>안정성을 위해 CUDA 버전을 최전 버전이 아닌 12.8 선택
 > <img width="500" alt="image" src="https://github.com/user-attachments/assets/91ce023c-573b-4e24-9e45-b906fbe5fc6c" />
+> 
 > 3. 설치 명령어 실행
 > ```bash
 > sudo apt update
@@ -43,6 +45,19 @@
 > PyTorch 설치
 > ```bash
 > pip3 install torch torchvision --index-url https://download.pytorch.org/whl/cu128
+> ```
+> GPU 동작 확인
+> ```bash
+> python3 - <<EOF
+import torch
+print("torch:", torch.__version__)
+print("cuda available:", torch.cuda.is_available())
+print("torch cuda:", torch.version.cuda)
+if torch.cuda.is_available():
+    print("gpu:", torch.cuda.get_device_name(0))
+    x = torch.randn(1024, 1024, device="cuda")
+    print("cuda tensor ok:", x.mean().item())
+EOF
 > ```
 
 
