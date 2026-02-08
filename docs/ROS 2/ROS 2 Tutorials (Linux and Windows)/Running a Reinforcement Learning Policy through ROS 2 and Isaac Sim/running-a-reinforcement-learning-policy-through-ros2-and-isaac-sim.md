@@ -129,7 +129,7 @@ joint state API 값이 재설정되지 않도록 하려면 로봇 상태를 정�
 5. 다시 **Reset Simulation on Stop**를 체크하세요.
 
 ## Setting Joint Configuration
-1. 각 joint 마다 Property에서 **joint drive API**의 `Stiffness`를 다음 내용의 `stiffness`를 참고해서 설정하세요.<br>각 joint 마다 Property에서 **joint drive API**의 `Damping`를 다음 내용의 `damping`를 참고해서 설정하세요.<br>`d435_left_imager`, `d435_rgb_module`, `imu`, `logo`, `mid360`을 제외한 joint의 Property에서 **joint drive API**의 `Max Force`를 다음 내용의 `effort_limit`를 참고해서 설정하세요.<br>`d435_left_imager`, `d435_rgb_module`, `imu`, `logo`, `mid360`을 제외한 joint의 Property에서 **Raw USD Properties**의 `Maximum Joint Velocity`를 다음 내용의 `velocity_limit`를 참고해서 설정하세요.<br>
+1. 각 joint 마다 Property에서 **joint drive API**의 `Stiffness`를 다음 내용의 `stiffness`를 참고해서 설정하세요.<br>각 joint 마다 Property에서 **joint drive API**의 `Damping`를 다음 내용의 `damping`를 참고해서 설정하세요.<br>각 joint 마다 Property에서 **joint drive API**의 `Max Force`를 다음 내용의 `effort_limit`를 참고해서 설정하세요.<br>`d435_left_imager`, `d435_rgb_module`, `imu`, `logo`, `mid360`을 제외한 joint의 Property에서 **Raw USD Properties**의 `Maximum Joint Velocity`를 다음 내용의 `velocity_limit`를 참고해서 설정하세요.<br>
 > [!NOTE]
 > `stiffness`, `damping`, `velocity_limit`는 다음 수식을 이용하여 degree로 변환해서 넣어야 합니다.<br>
 > <br>
@@ -146,6 +146,13 @@ joint state API 값이 재설정되지 않도록 하려면 로봇 상태를 정�
 > | *_hip_pitch | 200.0 | 3.49 |
 > | *_knee | 200.0 | 3.49 |
 > | torso | 200.0 | 3.49 |
+> | | | |
+> | .*_ankle | 20.0 | 0.34906585 |
+> | | | |
+> | .*_shoulder_pitch | 40.0 | 0.698131701 |
+> | .*_shoulder_roll | 40.0 | 0.698131701 |
+> | .*_shoulder_yaw | 40.0 | 0.698131701 |
+> | .*_elbow | 40.0 | 0.698131701 |
 > 
 > **damping**<br>
 > | Joint | Rad | Deg |
@@ -155,6 +162,13 @@ joint state API 값이 재설정되지 않도록 하려면 로봇 상태를 정�
 > | *_hip_pitch | 5.0 | 0.087 |
 > | *_knee | 5.0 | 0.087 |
 > | torso | 5.0 | 0.087 |
+> | | | |
+> | .*_ankle | 4.0 | 0.06981317 |
+> | | | |
+> | .*_shoulder_pitch | 10.0 | 0.174532925 |
+> | .*_shoulder_roll | 10.0 | 0.174532925 |
+> | .*_shoulder_yaw | 10.0 | 0.174532925 |
+> | .*_elbow | 10.0 | 0.174532925 |
 > 
 > **velocity_limit**<br>
 > | Rad | Deg |
@@ -185,6 +199,39 @@ joint state API 값이 재설정되지 않도록 하려면 로봇 상태를 정�
 >       .*_hip_pitch: 5.0
 >       .*_knee: 5.0
 >       torso: 5.0
+>     armature: null
+>     friction: null
+>   feet:
+>     class_type: omni.isaac.lab.actuators.actuator_pd:ImplicitActuator
+>     joint_names_expr:
+>     - .*_ankle
+>     effort_limit: 100
+>     velocity_limit: 100.0
+>     stiffness:
+>       .*_ankle: 20.0
+>     damping:
+>       .*_ankle: 4.0
+>     armature: null
+>     friction: null
+>   arms:
+>     class_type: omni.isaac.lab.actuators.actuator_pd:ImplicitActuator
+>     joint_names_expr:
+>     - .*_shoulder_pitch
+>     - .*_shoulder_roll
+>     - .*_shoulder_yaw
+>     - .*_elbow
+>     effort_limit: 300
+>     velocity_limit: 100.0
+>     stiffness:
+>       .*_shoulder_pitch: 40.0
+>       .*_shoulder_roll: 40.0
+>       .*_shoulder_yaw: 40.0
+>       .*_elbow: 40.0
+>     damping:
+>       .*_shoulder_pitch: 10.0
+>       .*_shoulder_roll: 10.0
+>       .*_shoulder_yaw: 10.0
+>       .*_elbow: 10.0
 >     armature: null
 >     friction: null
 > ```
