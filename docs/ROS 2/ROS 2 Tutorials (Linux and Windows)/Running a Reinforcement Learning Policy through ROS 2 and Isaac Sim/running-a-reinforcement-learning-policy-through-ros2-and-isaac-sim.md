@@ -79,7 +79,21 @@ Set Up Robot Joint Configurations은 [Tutorial 13: Rigging a Legged Robot for Lo
 
 5. 각 joint 마다 Property에서 joint drive API의 `Target Position`를 다음 내용의 `joint_pos`를 참고해서 설정하세요.<br>각 joint 마다 Property에서 joint drive API의 `Target Velocity`를 다음 내용의 `joint_vel`를 참고해서 설정하세요.<br>
 > [!NOTE]
-> `joint_pos`, `joint_vel`는 radian 단위이기에 `Target Velocity`에 넣을 때 degree로 변환해서 넣어야 합니다.
+> `joint_pos`, `joint_vel`는 radian 단위이기에 `Target Velocity`에 넣을 때 degree로 변환해서 넣어야 합니다.<br>
+> 
+> **joint_pos**<br>
+> | Joint | Rad | Deg |
+> |-|-|-|
+> | *_hip_yaw | 0.0 | 0.0 |
+> | *_hip_roll | 0.0 | 0.0 |
+> | *_hip_pitch | -0.28 | -16.04282 |
+> | *_knee | 0.79 | 45.26367 |
+> | *_ankle | -0.52 | -29.79381 |
+> | torso | 0.0 | 0.0 |
+> | *_shoulder_pitch | 0.28 | 16.04282 |
+> | *_shoulder_roll | 0.0 | 0.0 |
+> | *_shoulder_yaw | 0.0 | 0.0 |
+> | *_elbow | 0.52 | 29.79381 |
 
 > ```python
 > robot:
