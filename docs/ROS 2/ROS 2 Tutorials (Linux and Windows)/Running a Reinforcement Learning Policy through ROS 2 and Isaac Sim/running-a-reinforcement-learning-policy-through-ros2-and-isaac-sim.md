@@ -110,5 +110,54 @@ joint state API 값이 재설정되지 않도록 하려면 로봇 상태를 정�
 3. **Reset Simulation on Stop**를 체크 해제하세요.
 > <img width="1000" alt="image" src="https://github.com/user-attachments/assets/17e78913-81e8-46cc-b2fd-cb437ecd061a" /><br>
 
+## Setting Joint Configuration
+
+1. 각 joint 마다 Property에서 joint drive API의 `Stiffness`를 다음 내용의 `stiffness`를 참고해서 설정하세요.<br>각 joint 마다 Property에서 joint drive API의 `Damping`를 다음 내용의 `damping`를 참고해서 설정하세요.<br>
+> [!NOTE]
+> `joint_pos`, `joint_vel`는 radian이기에 `Target Velocity`에 넣을 때 degree로 변환해서 넣어야 합니다.
+
+> ```python
+> actuators:k
+>   legs:
+>     class_type: omni.isaac.lab.actuators.actuator_pd:ImplicitActuator
+>     joint_names_expr:
+>     - .*_hip_yaw
+>     - .*_hip_roll
+>     - .*_hip_pitch
+>     - .*_knee
+>     - torso
+>     effort_limit: 300
+>     velocity_limit: 100.0
+>     stiffness:
+>       .*_hip_yaw: 150.0
+>       .*_hip_roll: 150.0
+>       .*_hip_pitch: 200.0
+>       .*_knee: 200.0
+>       torso: 200.0
+>     damping:
+>       .*_hip_yaw: 5.0
+>       .*_hip_roll: 5.0
+>       .*_hip_pitch: 5.0
+>       .*_knee: 5.0
+>       torso: 5.0
+>     armature: null
+>     friction: null
+> ```
+> <img width="500" alt="image" src="https://github.com/user-attachments/assets/8b7b4c58-6545-4683-8c92-7390d4a8658d" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
