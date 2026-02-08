@@ -51,7 +51,7 @@ IOMMU가 켜져 있으면, Linux에서 CUDA랑 NVIDIA 드라이버가 GPU 간 �
 > [!NOTE]
 > IOMMU 비활성화 방법은 메인보드 제품에 따라 본 내용에 나오는 비활성화 방법과 다를 수 있습니다.
 
-**Intel VT for Directed I/O (VT-d) Disabled**
+#### Intel VT for Directed I/O (VT-d) Disabled
 | Step | Screenshot | Path / Description |
 |:-:|:-:|-|
 | 1 | <img src="https://github.com/user-attachments/assets/ccf9846d-4826-45a8-a159-2c752d53f3e8" width="300"/> | BIOS 진입 후 **Advanced** 탭 선택 후<br>**Chipset Configuration** 진입 |
@@ -66,7 +66,7 @@ IOMMU가 켜져 있으면, Linux에서 CUDA랑 NVIDIA 드라이버가 GPU 간 �
 **X2APIC**를 Disable 하지 않고 **Intel VT for Directed I/O (VT-d)** 만 Disabled 하게 되면
 저장하고 나와도 **Intel VT for Directed I/O (VT-d)** 는 다시 Enabled 가 된다.<br>
 
-### **X2APIC** Disabled
+#### **X2APIC** Disabled
 | Step | Screenshot | Path / Description |
 |:-:|:-:|-|
 | 1 | <img src="https://github.com/user-attachments/assets/ccf9846d-4826-45a8-a159-2c752d53f3e8" width="300"/> | BIOS 진입 후 **Advanced** 탭 선택 후<br>**CPU Configuration** 진입 |
