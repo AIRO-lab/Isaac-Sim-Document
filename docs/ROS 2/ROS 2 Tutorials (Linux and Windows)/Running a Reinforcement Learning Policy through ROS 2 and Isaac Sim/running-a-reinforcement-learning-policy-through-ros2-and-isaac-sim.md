@@ -1,4 +1,4 @@
-# ROS 2 Ackermann Controller
+# Running a Reinforcement Learning Policy through ROS 2 and Isaac Sim
 ## Environment Infomation
 | Item | Description |
 |-|-|
