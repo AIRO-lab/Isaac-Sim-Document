@@ -20,7 +20,26 @@
 - Isaac Sim 내에서 **Window > Extensions**로 이동하여 `isaacsim.ros2.bridge`를 Enable하세요.
 > <img width="500" alt="image" src="https://github.com/user-attachments/assets/0fa2211b-b9fa-4a93-aa73-92dfd93973b3" />
 - ROS 2 워크스페이스에 `h1_fullbody_controller` 패키지가 있어야 합니다.<br>없을 경우 [ROS 2 Humble Installation](/docs/Installation/ROS%202/ros2-humble-installation.md)를 참고하세요.
-- torch package가 필요합니다.<br>다음 명령어를 통해 설치하세요.
+- torch package가 필요합니다.<br>[PyTorch](https://pytorch.org/get-started/locally/) 설치 지침을 따라 설치합니다.
+> 컨테이너 실행
 > ```bash
-> sudo apt install ros-humble-ackermann-msgs
+> docker start isaac-sim
 > ```
+> 컨테이너 진입
+> ```bash
+> docker exec -it isaac-sim bash
+> ```
+> CUDA 지원 버전 확인
+> ```bash
+> nvidia-smi
+> ```
+> <img width="500" alt="image" src="https://github.com/user-attachments/assets/d1e40da6-f539-41aa-aa84-acda1b6a4a3a" /><br>
+> [PyTorch](https://pytorch.org/get-started/locally/)에서 다음과 같이 옵션 선택 후 설치 명령어 확인
+> <img width="500" alt="image" src="https://github.com/user-attachments/assets/91ce023c-573b-4e24-9e45-b906fbe5fc6c" /><br>
+> 설치 명령어 실행
+> ```bash
+> pip3 install torch torchvision --index-url https://download.pytorch.org/whl/cu128
+> ```
+
+
+
