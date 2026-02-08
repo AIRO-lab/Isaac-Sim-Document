@@ -21,14 +21,6 @@
 > <img width="500" alt="image" src="https://github.com/user-attachments/assets/0fa2211b-b9fa-4a93-aa73-92dfd93973b3" />
 - ROS 2 워크스페이스에 `h1_fullbody_controller` 패키지가 있어야 합니다.<br>없을 경우 [ROS 2 Humble Installation](/docs/Installation/ROS%202/ros2-humble-installation.md)를 참고하세요.
 - torch package가 필요합니다.<br>[PyTorch](https://pytorch.org/get-started/locally/) 설치 지침을 따라 설치합니다.
-> 컨테이너 실행
-> ```bash
-> docker start isaac-sim
-> ```
-> 컨테이너 진입
-> ```bash
-> docker exec -it isaac-sim bash
-> ```
 > CUDA 지원 버전 확인
 > ```bash
 > nvidia-smi
