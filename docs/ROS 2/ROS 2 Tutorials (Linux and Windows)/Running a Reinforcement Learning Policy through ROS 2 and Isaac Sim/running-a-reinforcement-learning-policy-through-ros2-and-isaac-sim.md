@@ -61,6 +61,6 @@
 > ```
 > <img width="300" alt="image" src="https://github.com/user-attachments/assets/34bedf61-9f68-49b2-ba6e-62714233ae3b" />
 
-
-
+## Set Up Robot Joint Configurations
+Set Up Robot Joint Configurations은 [Tutorial 13: Rigging a Legged Robot for Locomotion Policy](https://docs.isaacsim.omniverse.nvidia.com/5.1.0/robot_setup_tutorials/tutorial_rig_legged_robot.html#isaac-sim-app-tutorial-rig-legged-robot)의 내용을 진행합니다.
 
