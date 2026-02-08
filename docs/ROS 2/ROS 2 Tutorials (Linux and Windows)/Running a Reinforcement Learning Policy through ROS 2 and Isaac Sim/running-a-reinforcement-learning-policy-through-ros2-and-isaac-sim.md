@@ -297,8 +297,7 @@ IMU 데이터를 처리하여 body frame linear acceleration, angular velocity �
 2. content browser에서 위에서 만들었던 **running_a_reinforcement_learning_policy_through_ros2_and_isaac_sim.usd**를 Stage로 드래그하세요.
 > <img width="1000" alt="image" src="https://github.com/user-attachments/assets/f9a872de-70d7-4274-b041-2105d361777b" />
 
-3. `h1`의 Z값을 `1.0`으로 설정하여 ground 위로 올라오게 합니다.
-> <img width="1000" alt="image" src="https://github.com/user-attachments/assets/72948166-e689-4457-ba1f-e5bf5db55794" />
+3. `h1`의 Z값을 `1.1`으로 설정하여 ground 위로 올라오게 합니다.
 
 4. Stage에서 오른쪽 클릭을 하고 **Create > Physics > Physcis Scene**을 클릭하여 `Physics Scene`을 생성하세요.
 > <img width="500" alt="image" src="https://github.com/user-attachments/assets/b141a1d1-1e95-4251-aeb4-031967abe3f5" /><br>
