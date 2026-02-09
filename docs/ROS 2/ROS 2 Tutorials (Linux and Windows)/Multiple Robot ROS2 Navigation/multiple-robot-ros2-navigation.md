@@ -78,16 +78,18 @@ ROS2 message를 namespaces로 publish하고 receive하기 위해, `Nova_Carter_R
 > ros2 launch carter_navigation multiple_robot_carter_navigation_hospital.launch.py
 > ```
 
+4. 각 RViz2 창에서 **Map**을 클릭해서 Topic 이름을 확인합니다.
+> <img width="200" alt="image" src="https://github.com/user-attachments/assets/5fdb8eae-d094-4ff7-9570-262cd606c2b9" /><br>
+> <img width="200" alt="image" src="https://github.com/user-attachments/assets/4c63382d-ff74-4eb1-9532-a84aef2c9130" /><br>
+> <img width="200" alt="image" src="https://github.com/user-attachments/assets/bb771d29-a5ef-4477-b68c-f7a0d65e400c" /><br>
 
+5. 각 로봇의 위치는 `carter_navigation/params/hospital/` 또는 `carter_navigation/params/office/`에 정의되어 있습니다.
 
+6. 각 RViz2에서 **Nav2 Goal**을 클릭한 다음 원하는 위치를 클릭합니다.
+> [multiple_robot_ros2_navigation.webm](https://github.com/user-attachments/assets/7cfce602-4261-4238-b473-9b5ef81cc7a8)
 
-
-
-
-
-
-
-
+## Troubleshooting
+오류 발생 시 [Multiple Robot ROS2 Navigation Troubleshooting](https://docs.isaacsim.omniverse.nvidia.com/5.1.0/ros2_tutorials/tutorial_ros2_multi_navigation.html#troubleshooting)를 참고하세요.
 
 
 
