@@ -101,6 +101,7 @@
 > [!NOTE]
 > 해당 설치 내용은 Linux 환경에 ROS 2 Humble에서만 지원됩니다.
 locale을 설정합니다 (locale 설정은 ROS 2 Humble 설치 시 이미 설정된 것이기에 넘어가셔도 됩니다.)
+
 > ```bash
 > locale
 > 
