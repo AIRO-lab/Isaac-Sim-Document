@@ -204,7 +204,7 @@ docker exec -it isaac-sim bash
 > 터미널1에서는 다음을 실행합니다.<br>
 > - Container 생성
 > - Container 실행
-> - Isaac Sim 실행<br>
+> - Isaac Sim 실행
 > 터미널2에서는 다음을 실행합니다.<br>
 > - Isaac Sim WebRTC Streaming Client 실행
 > 해당 Container 생성 코드는 한 번 생성하면 컴퓨터를 재부팅해도 사라지지 않기에 이후에도 Container 실행, Container 진입만 하면 됩니다.<br>
