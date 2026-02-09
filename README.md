@@ -23,7 +23,7 @@ https://docs.isaacsim.omniverse.nvidia.com/5.1.0/index.html
 ## Installation
 ### Isaac Sim
   - [Workstation Installation](/docs/Installation/Isaac%20Sim/isaac-sim-workstation-installation.md)
-  - [Container Installation (Recommanded)](/docs/Installation/Isaac%20Sim/isaac-sim-container-installation.md)
+  - [Container Installation (Recommand)](/docs/Installation/Isaac%20Sim/isaac-sim-container-installation.md)
 
 ### ROS 2
   - [ROS 2 Humble Installation](/docs/Installation/ROS%202/ros2-humble-installation.md)
