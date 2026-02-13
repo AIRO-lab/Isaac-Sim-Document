@@ -119,7 +119,6 @@ ROS 2의 주요 communication interfaces 스타일 중 하나는 이 topic에 �
 > <img width="250" alt="image" src="https://github.com/user-attachments/assets/aa49dc0e-a1b7-4d62-8664-8224b44c4312" /><br>
 
 ## Generic Subscriber
-## Generic Publisher
 > [!NOTE]
 > 해당 **Generic Publisher** 부분은 예시가 아닌 방법을 설명합니다.
 
@@ -139,6 +138,8 @@ ROS 2의 주요 communication interfaces 스타일 중 하나는 이 topic에 �
 4. 노드 출력을 다른 노드의 입력에 연결하여 수신된 데이터를 소비합니다.
 
 5. **Play**를 클릭하여 시뮬레이션을 시작합니다.
+
+---
 
 ## Example: Subscribe to Object Pose
 
