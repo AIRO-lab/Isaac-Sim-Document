@@ -3,7 +3,7 @@
 | Item | Description |
 |-|-|
 | Author | 오민석 |
-| Date | 2026-02-13 |
+| Date | 2026-02-14 |
 | OS | Ubuntu 22.04 |
 | GPU | NVIDIA RTX 6000 Ada Generation |
 | Driver Version | 580.126.09 |
