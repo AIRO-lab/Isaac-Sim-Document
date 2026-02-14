@@ -30,6 +30,9 @@ int64 my_num
 Isaac Sim과 함께 사용할 수 있는 ROS 2 custom message packages를 만들려면 Isaac Sim ROS Workspace 폴더의 `humble_ws/src` 또는 `jazzy_ws/src` 아래에 패키지를 배치할 수 있습니다. 그런 다음 `./build_ros.sh`를 실행하고 작업 공간을 소싱한 후 Isaac Sim을 실행합니다. 사용자 지정 패키지 설치 트랙에 따라 ROS 설치 가이드의 단계를 완료했는지 확인합니다.
 
 ### Script Editor
+> [!NOTE]
+> 환경이 Container로 Isaac Sim을 실행하기 때문에 
+
 1. **Window > Script Editor**로 이동하여 다음 코드를 입력합니다.
 > ```python
 > import rclpy
