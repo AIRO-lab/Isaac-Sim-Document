@@ -209,11 +209,11 @@
 1. Isaac Sim에서 **Window > Extensions**로 이동하여 `custom.python.ros2_node`을 활성화합니다.
 > - **Setting** 클릭
 > > <img width="1000" alt="image" src="https://github.com/user-attachments/assets/48409f49-b783-45ce-a047-062c8f49992b" />
-> - **Extension Search Paths**에 경로 추가
+> - **Extension Search Paths**에 `/IsaacSim-ros_workspaces/extsUser` 경로 추가
 > > <img width="1000" halt="image" src="https://github.com/user-attachments/assets/31b94141-bd9d-44c6-8f65-e985a27934b1" />
 > - **Refresh** 클릭
 > > <img width="1000" alt="image" src="https://github.com/user-attachments/assets/f6095bf8-cbb0-48eb-85e8-029a4fda28cf" />
-> - 검색창에 `custom.python.ros2_node` 입력 후 **THIRD PARTY** 클릭하여 `custom.python.ros2_node` extension 활성화
+> - **THIRD PARTY** 클릭하여 `custom.python.ros2_node` extension 활성화
 > > <img width="1000" alt="image" src="https://github.com/user-attachments/assets/52ce0adb-b572-4714-9aa3-42184a932dae" />
 
 2. **Window > Graph Editors > Action Graph**로 이동하여 Action Graph를 생성 후 다음과 같이 구성합니다.
