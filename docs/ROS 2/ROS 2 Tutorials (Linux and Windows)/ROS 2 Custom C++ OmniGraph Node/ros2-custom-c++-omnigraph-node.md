@@ -30,16 +30,16 @@ Isaac Sim에서 사용자 지정 메시지를 사용하려면 ROS 2를 사용하
 > > ```
 > 
 > 3. 다음 파일을 생성합니다.
-> - `tutorial_interfaces/msg` 경로에 `Num.msg`라는 이름으로 파일 생성 후 아래 내용 입력
+> > - `tutorial_interfaces/msg` 경로에 `Num.msg`라는 이름으로 파일 생성 후 아래 내용 입력
 > > ```text
 > > int64 num
 > > ```
-> - `tutorial_interfaces/msg` 경로에 `Sphere.msg`라는 이름으로 파일 생성 후 아래 내용 입력
+> > - `tutorial_interfaces/msg` 경로에 `Sphere.msg`라는 이름으로 파일 생성 후 아래 내용 입력
 > > ```text
 > > geometry_msgs/Point center
 > > float64 radius
 > > ```
-> - `tutorial_interfaces/srv` 경로에 `AddThreeInts.srv`라는 이름으로 파일 생성 후 아래 내용 입력
+> > - `tutorial_interfaces/srv` 경로에 `AddThreeInts.srv`라는 이름으로 파일 생성 후 아래 내용 입력
 > > ```text
 > > int64 a
 > > int64 b
