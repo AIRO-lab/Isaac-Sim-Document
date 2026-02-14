@@ -67,7 +67,7 @@ https://docs.isaacsim.omniverse.nvidia.com/5.1.0/index.html
 ### Customization
 - [ROS 2 Python Custom Messages](/docs/ROS%202/ROS%202%20Tutorials%20(Linux%20and%20Windows)/ROS%202%20Python%20Custom%20Messages/ros2-python-custom-messages.md)
 - [ROS 2 Python Custom OmniGraph Node](/docs/ROS%202/ROS%202%20Tutorials%20(Linux%20and%20Windows)/ROS%202%20Python%20Custom%20OmniGraph%20Node/ros2-python-custom-omnigraph-node.md)
-- [ROS 2 Custom C++ OmniGraph Node]
+- [ROS 2 Custom C++ OmniGraph Node](/docs/ROS%202/ROS%202%20Tutorials%20(Linux%20and%20Windows)/ROS%202%20Custom%20C++%20OmniGraph%20Node/ros2-custom-c++-omnigraph-node.md)
 
 ### Deploying
 - [ROS 2 Launch]
