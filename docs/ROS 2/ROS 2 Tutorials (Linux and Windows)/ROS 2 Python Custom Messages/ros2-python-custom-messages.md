@@ -63,31 +63,32 @@ print("Message assignment completed!")
 ```
 
 2. 다음 명령을 실행합니다.
-- ROS2 워크스페이스안에 Dockerfile 안에 파이썬 312로 되어 있다면 아래 명령어를 실행
-```bash
-cd ~/IsaacSim-ros_workspaces/
-git checkout IsaacSim-5.1.0
-```
+> - ROS2 워크스페이스안에 Dockerfile 안에 파이썬 312로 되어 있다면 아래 명령어를 실행
+> > ```bash
+> > cd ~/IsaacSim-ros_workspaces/
+> > git checkout IsaacSim-5.1.0
+> > ```
+> > 
+> - ROS2 워크스페이스에서 파이썬 3.11로 빌드
+> > ```bash
+> > cd ~/IsaacSim-ros_workspaces/
+> > ./build_ros.sh
+> > ```
 
-- ROS2 워크스페이스에서 파이썬 3.11로 빌드
-```bash
-cd ~/IsaacSim-ros_workspaces/
-./build_ros.sh
-```
 > [!NOTE]
 > `./build_ros.sh` 실행 시 오류가 날 경우 해당 오류 패키지를 잠시 다른 위치로 이동하여 다시 빌드하고 원래 위치로 이동하는 걸 추천합니다.
 > `Successfully copied 4.29GB to /home/oms/IsaacSim-ros_workspaces/build_ws/humble/humble_ws`와 같은 문구가 나오면 빌드 성공입니다.
 
-- 컨테이너에서 소싱하기 위한 python3 경로 설정
-```bash
-export PATH=/isaac-sim/kit/python/bin:$PATH
-```
-
-- 컨테이너에서 소싱
-```bash
-source /IsaacSim-ros_workspaces/build_ws/humble/humble_ws/install/local_setup.bash
-source /IsaacSim-ros_workspaces/build_ws/humble/isaac_sim_ros_ws/install/setup.bash
-```
+> - 컨테이너에서 소싱하기 위한 python3 경로 설정
+> > ```bash
+> > export PATH=/isaac-sim/kit/python/bin:$PATH
+> > ```
+> > 
+> - 컨테이너에서 소싱
+> > ```bash
+> > source /IsaacSim-ros_workspaces/build_ws/humble/humble_ws/install/local_setup.bash
+> > source /IsaacSim-ros_workspaces/build_ws/humble/isaac_sim_ros_ws/install/setup.bash
+> > ```
 
 > [!NOTE]
 > ```bash
@@ -99,13 +100,14 @@ source /IsaacSim-ros_workspaces/build_ws/humble/isaac_sim_ros_ws/install/setup.b
 > error: unable to find python3 executable
 > ```
 
-- 컨테이너에서 실행
-```bash
-./python.sh {path}/ros2_custom_message.py
-
-# 작성자 경우 아래와 같이 실행함
-./python.sh /IsaacSim-ros_workspaces/tutorials/ros2_tutorials/ros2_python_custom_messages/ros2_custom_message.py
-```
+> - 컨테이너에서 실행
+> > ```bash
+> > ./python.sh {path}/ros2_custom_message.py
+> > 
+> > # 작성자 경우 아래와 같이 실행함
+> > ./python.sh /IsaacSim-ros_workspaces/tutorials/ros2_tutorials/ros2_python_custom_messages/ros2_custom_message.py
+> > ```
+> > <img width="300" alt="image" src="https://github.com/user-attachments/assets/eb3fd458-dec4-400e-bbe4-28e45714f3f7" />
 
 
 
