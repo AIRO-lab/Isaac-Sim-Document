@@ -93,11 +93,14 @@ source /IsaacSim-ros_workspaces/build_ws/humble/isaac_sim_ros_ws/install/setup.b
 > ```bash
 > source /IsaacSim-ros_workspaces/build_ws/humble/isaac_sim_ros_ws/install/setup.bash
 > ```
-> 해당 명령어를 실행하여 
+> 
+> 해당 명령어를 실행하여
+> 
 > ```bash
 > not found: "/workspace/humble_ws/install/local_setup.bash"
 > error: unable to find python3 executable
 > ```
+> 
 > 와 같은 로그가 나와도 무시하고 진행
 
 - 컨테이너에서 실행
