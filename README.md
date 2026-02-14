@@ -61,7 +61,7 @@ https://docs.isaacsim.omniverse.nvidia.com/5.1.0/index.html
 
 ### Additional ROS 2 OmniGraph Nodes
 - [ROS 2 Generic Publisher and Subscriber](/docs/ROS%202/ROS%202%20Tutorials%20(Linux%20and%20Windows)/ROS%202%20Generic%20Publisher%20and%20Subscriber/ros2-generic-publisher-and-subscriber.md)
-- [ROS 2 Generic Server and Client]
+- [ROS 2 Generic Server and Client](/docs/ROS%202/ROS%202%20Tutorials%20(Linux%20and%20Windows)/ROS%202%20Generic%20Server%20and%20Client/ros2-generic-server-and-client.md)
 - [ROS 2 Service for Manipulating Prims Attributes]
 
 ### Customization
