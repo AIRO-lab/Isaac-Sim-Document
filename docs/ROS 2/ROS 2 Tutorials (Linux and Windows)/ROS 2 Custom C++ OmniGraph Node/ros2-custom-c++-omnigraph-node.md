@@ -168,12 +168,26 @@ Isaac Sim에서 사용자 지정 메시지를 사용하려면 ROS 2를 사용하
 > > <img width="1000" alt="image" src="https://github.com/user-attachments/assets/31da71fc-e17d-49b2-9c85-3a63409915e7" />
 
 5. **Window > Graph Editors > Action Graph**로 이동하여 Action Graph를 생성 후 다음과 같이 구성합니다.
-> <img width="1000" alt="image" src="https://github.com/user-attachments/assets/f246f6bd-fa61-4c9b-96d5-7a06d5f20d76" /><br>
->
-> **Custom Python ROS 2 Node** 노드는 커스텀 노드입니다.<br>
-> **To String** 노드는 사용자 지정 노드의 출력을 문자열로 변환합니다.<br>
-> **Print Text** 노드는 인쇄하여 뷰포트 또는 터미널에 대한 사용자 지정 노드의 출력을 문자열로 표시합니다. 속성 패널에서 `To Screen`을 체크하면 뷰포트에 텍스트가 출력됩니다.<br>
-> `To Screen`을 체크합니다.
+> <img width="500" alt="image" src="https://github.com/user-attachments/assets/f85e8832-8741-48ca-8847-44cb40d43441" />
+
+6. **Play**를 눌러 시뮬레이션을 시작하여 노드들이 ROS 2로 메시지를 출력하기 시작합니다.
+
+7. 새로운 터미널에서 다음 명령을 실행하여 토픽 `/custom_node/my_string`, `/custom_node/sphere_msg`가 추가되었는지 확인합니다.
+> ```bash
+> cd ~/IsaacSim-ros_workspaces/humble_ws/
+> export FASTRTPS_DEFAULT_PROFILES_FILE=/home/oms/IsaacSim-ros_workspaces/humble_ws/fastdds.xml
+> source /opt/ros/humble/setup.bash
+> source install/local_setup.bash
+> ```
+> ```bash
+> ros2 topic list
+> ```
+> <img width="200" alt="image" src="https://github.com/user-attachments/assets/33b36db0-be1e-48f2-9682-a3f8dc3eae2c" />
+
+
+
+
+
 
 
 
