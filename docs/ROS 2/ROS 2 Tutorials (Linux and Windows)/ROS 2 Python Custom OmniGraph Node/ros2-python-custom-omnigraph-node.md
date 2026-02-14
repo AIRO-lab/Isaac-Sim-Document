@@ -205,6 +205,40 @@
 >         state.initialized = False
 > ```
 
+## Running the Custom OmniGraph Node
+1. Isaac Sim에서 **Window > Extensions**로 이동하여 `custom.python.ros2_node`을 활성화합니다.
+> - **Setting** 클릭
+> > <img width="1000" alt="image" src="https://github.com/user-attachments/assets/48409f49-b783-45ce-a047-062c8f49992b" />
+> - **Extension Search Paths**에 경로 추가
+> > <img width="1000" halt="image" src="https://github.com/user-attachments/assets/31b94141-bd9d-44c6-8f65-e985a27934b1" />
+> - **Refresh** 클릭
+> > <img width="1000" alt="image" src="https://github.com/user-attachments/assets/f6095bf8-cbb0-48eb-85e8-029a4fda28cf" />
+> - 검색창에 `custom.python.ros2_node` 입력 후 **THIRD PARTY** 클릭하여 `custom.python.ros2_node` extension 활성화
+> > <img width="1000" alt="image" src="https://github.com/user-attachments/assets/52ce0adb-b572-4714-9aa3-42184a932dae" />
+
+2. **Window > Graph Editors > Action Graph**로 이동하여 Action Graph를 생성 후 다음과 같이 구성합니다.
+> <img width="1000" alt="image" src="https://github.com/user-attachments/assets/f246f6bd-fa61-4c9b-96d5-7a06d5f20d76" /><br>
+>
+> **Custom Python ROS 2 Node** 노드는 커스텀 노드입니다.<br>
+> **To String** 노드는 사용자 지정 노드의 출력을 문자열로 변환합니다.<br>
+> **Print Text** 노드는 인쇄하여 뷰포트 또는 터미널에 대한 사용자 지정 노드의 출력을 문자열로 표시합니다. 속성 패널에서 `To Screen`을 체크하면 뷰포트에 텍스트가 출력됩니다.<br>
+> `To Screen`을 체크합니다.
+
+3. **Play**를 눌러 시뮬레이션을 시작합니다.
+
+4. 새로운 터미널에서 다음 명령을 실행하면 Fibonacci 수가 뷰포트 왼쪽 상단에 나타납니다.
+> ```bash
+> cd ~/IsaacSim-ros_workspaces/humble_ws/
+> export FASTRTPS_DEFAULT_PROFILES_FILE=/home/oms/IsaacSim-ros_workspaces/humble_ws/fastdds.xml
+> source /opt/ros/humble/setup.bash
+> source install/local_setup.bash
+> ```
+> ```bash
+> ros2 topic pub -1 /number std_msgs/msg/Int32 "{data: 10}"
+> ```
+> <img width="200" alt="image" src="https://github.com/user-attachments/assets/5bef2eff-3e0e-40df-92a8-a51b51fdfa59" /><br>
+> [ros2_python_custom_omnigraph_node.webm](https://github.com/user-attachments/assets/c24c0e8e-febc-400c-b457-0888e882e003)
+
 
 
 
