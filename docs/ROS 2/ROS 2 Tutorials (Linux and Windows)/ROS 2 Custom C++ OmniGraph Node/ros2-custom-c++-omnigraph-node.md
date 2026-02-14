@@ -101,6 +101,20 @@ Isaac Sim에서 사용자 지정 메시지를 사용하려면 ROS 2를 사용하
 > ./build.sh
 > ```
 
+> [!IMPORTANT]
+> 빌드를 하게 되면 `kit-extension-template-cpp/_build/linux-x86_64/release/exts`에 있는 확장 프로그램들의 config 폴더가 바로가기 폴더로 생성된다.<br>
+> 바로가기 폴더 때문에 Isaac Sim에서 인식을 못하는 경우를 해결하기 위해<br>
+> 아래 명령을 실행하여 해당 예제에서 사용하는 확장 프로그램만 바로가기 폴더를 실제 폴더로 변경해준다.<br>
+> 아래 명령어에서 **user**는 개인 환경에 맞게 설정하세요.<br>
+> ```bash
+> EXT=/home/user/kit-extension-template-cpp/_build/linux-x86_64/release/exts/omni.example.cpp.omnigraph_node_ros
+> SRC=/home/user/kit-extension-template-cpp/source/extensions/omni.example.cpp.omnigraph_node_ros/config
+> 
+> rm -rf "$EXT/docs"
+> mkdir -p "$EXT/docs"
+> cp -a "$SRC/." "$EXT/docs/"
+> ```
+
 ## Adding the Extension to Isaac Sim
 1. 기존 컨테이너를 삭제하고 `kit-extension-template-cpp`을 마운트하여 다시 생성합니다.
 > ```bash
@@ -150,8 +164,8 @@ Isaac Sim에서 사용자 지정 메시지를 사용하려면 ROS 2를 사용하
 > > <img width="1000" alt="image" src="https://github.com/user-attachments/assets/ef0375c6-7608-4c98-bd25-6ae5c789c07c" />
 > - **Refresh** 클릭
 > > <img width="1000" alt="image" src="https://github.com/user-attachments/assets/ec7aba3c-d9cf-4074-adb8-794ef079d580" />
-> - 검색창에 `Custom ROS2 OGN Example Extension` 입력 후 **THIRD PARTY** 클릭하여 `Custom ROS2 OGN Example Extension` extension 활성화
-> > <img width="1000" alt="image" src="https://github.com/user-attachments/assets/52ce0adb-b572-4714-9aa3-42184a932dae" />
+> - **THIRD PARTY** 클릭하여 `Custom ROS2 OGN Example Extension` extension 활성화
+> > <img width="1000" alt="image" src="https://github.com/user-attachments/assets/31da71fc-e17d-49b2-9c85-3a63409915e7" />
 
 5. **Window > Graph Editors > Action Graph**로 이동하여 Action Graph를 생성 후 다음과 같이 구성합니다.
 > <img width="1000" alt="image" src="https://github.com/user-attachments/assets/f246f6bd-fa61-4c9b-96d5-7a06d5f20d76" /><br>
