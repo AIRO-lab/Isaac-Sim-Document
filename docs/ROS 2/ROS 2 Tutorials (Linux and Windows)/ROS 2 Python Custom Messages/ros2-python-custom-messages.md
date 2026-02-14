@@ -92,10 +92,10 @@ source /IsaacSim-ros_workspaces/build_ws/humble/isaac_sim_ros_ws/install/setup.b
 - 컨테이너에서 실행
 ```bash
 ./python.sh {path}/ros2_custom_message.py
+
+# 작성자 경우 아래와 같이 실행함
 ./python.sh /IsaacSim-ros_workspaces/tutorials/ros2_tutorials/ros2_python_custom_messages/ros2_custom_message.py
 ```
-
-
 
 
 
