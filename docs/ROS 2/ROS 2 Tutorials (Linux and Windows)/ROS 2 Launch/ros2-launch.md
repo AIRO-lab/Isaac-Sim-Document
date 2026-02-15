@@ -137,7 +137,7 @@ iw_hub robot navigation scene과 `iw_hub_navigation` 패키지를 사용하여 �
 > source install/local_setup.bash
 > ```
 > ```bash
-> ros2 launch carter_navigation carter_navigation_isaacsim.launch.py
+> ros2 launch iw_hub_navigation iw_hub_navigation_isaacsim.launch.py
 > ```
 
 
